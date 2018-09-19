@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="txT-Yi-fBh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Monitor Controller-->
+        <scene sceneID="V7i-Y3-PTG">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="txT-Yi-fBh" customClass="MonitorController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="T70-9N-C9S"/>
+                        <viewControllerLayoutGuide type="bottom" id="hVa-nr-lB4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aEW-Am-XOt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xwC-mw-EGG">
+                                <rect key="frame" x="0.0" y="20" width="375" height="211"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="X3c-Jb-HG7">
+                                        <rect key="frame" x="169" y="87" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VCN-Wi-bbg">
+                                        <rect key="frame" x="10" y="144.5" width="100" height="56.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="45T-ft-yUz"/>
+                                            <constraint firstAttribute="width" secondItem="VCN-Wi-bbg" secondAttribute="height" multiplier="16:9" id="m5z-Pf-1KG"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="X3c-Jb-HG7" firstAttribute="centerX" secondItem="xwC-mw-EGG" secondAttribute="centerX" id="2o7-fa-fiR"/>
+                                    <constraint firstItem="VCN-Wi-bbg" firstAttribute="leading" secondItem="xwC-mw-EGG" secondAttribute="leading" constant="10" id="Pf6-O5-f4Z"/>
+                                    <constraint firstAttribute="bottom" secondItem="VCN-Wi-bbg" secondAttribute="bottom" constant="10" id="lLK-0l-tZp"/>
+                                    <constraint firstItem="X3c-Jb-HG7" firstAttribute="centerY" secondItem="xwC-mw-EGG" secondAttribute="centerY" id="r8L-dj-b3Y"/>
+                                    <constraint firstAttribute="width" secondItem="xwC-mw-EGG" secondAttribute="height" multiplier="16:9" id="uWv-MB-DIf"/>
+                                </constraints>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lzN-SY-VhK">
+                                <rect key="frame" x="0.0" y="231" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="play" id="P2d-my-BcZ">
+                                        <connections>
+                                            <action selector="call:" destination="txT-Yi-fBh" id="bQa-dX-fml"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="aZF-PV-yPH"/>
+                                    <barButtonItem systemItem="pause" id="Xq0-bq-Yb9">
+                                        <connections>
+                                            <action selector="stop:" destination="txT-Yi-fBh" id="Hiu-hD-bhS"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="uiq-lz-D3d"/>
+                                    <barButtonItem systemItem="camera" id="4BV-lv-CRZ">
+                                        <connections>
+                                            <action selector="screenShot:" destination="txT-Yi-fBh" id="zxN-if-9yN"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="ABE-WJ-rMV"/>
+                                    <barButtonItem title="对讲" id="ZDt-Ta-YZX">
+                                        <connections>
+                                            <action selector="talkSwitch:" destination="txT-Yi-fBh" id="Xe4-uE-mmX"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="静音" id="dF6-7f-53w">
+                                        <connections>
+                                            <action selector="mute:" destination="txT-Yi-fBh" id="OMA-DQ-ADa"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="手势开关" id="46H-m9-4Nw">
+                                        <connections>
+                                            <action selector="gestureSwitch:" destination="txT-Yi-fBh" id="ubf-ta-dQd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqK-BM-T53">
+                                <rect key="frame" x="0.0" y="275" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="流畅" id="FF3-PE-xBi">
+                                        <connections>
+                                            <action selector="PTZChangeDenifition:" destination="txT-Yi-fBh" id="Pdc-6c-2AI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="1" title="标清" id="vVw-fA-Hgh">
+                                        <connections>
+                                            <action selector="PTZChangeDenifition:" destination="txT-Yi-fBh" id="u7D-d4-oFW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="2" title="高清" id="5id-rc-yXH">
+                                        <connections>
+                                            <action selector="PTZChangeDenifition:" destination="txT-Yi-fBh" id="9RO-xE-dh5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="AUL-2n-mvl"/>
+                                    <barButtonItem title="录MP4" id="CWg-QF-OoS">
+                                        <connections>
+                                            <action selector="startRecordMP4:" destination="txT-Yi-fBh" id="EM0-K4-hJ0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="停止" id="Opu-LW-Q3k">
+                                        <connections>
+                                            <action selector="stopRecordMP4:" destination="txT-Yi-fBh" id="139-1m-2bR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69Q-XB-i6r">
+                                <rect key="frame" x="0.0" y="319" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="[云台控制]" id="bNN-9G-com"/>
+                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="dzY-jM-hRU"/>
+                                    <barButtonItem title="上" id="Sbi-eS-dq1">
+                                        <connections>
+                                            <action selector="PTZTurnToDirection:" destination="txT-Yi-fBh" id="4H0-pz-8TP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="fvo-e6-AzX"/>
+                                    <barButtonItem tag="2" title="下" id="sVA-5D-JL4">
+                                        <connections>
+                                            <action selector="PTZTurnToDirection:" destination="txT-Yi-fBh" id="qUU-0b-ogk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="7bX-7R-UOq"/>
+                                    <barButtonItem tag="1" title="左" id="7E8-ma-O8i">
+                                        <connections>
+                                            <action selector="PTZTurnToDirection:" destination="txT-Yi-fBh" id="5CY-iE-fqB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="avC-FA-4ac"/>
+                                    <barButtonItem tag="3" title="右" id="nDY-Vf-FON">
+                                        <connections>
+                                            <action selector="PTZTurnToDirection:" destination="txT-Yi-fBh" id="dgK-Rh-urd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vwr-Tv-bWu">
+                                <rect key="frame" x="0.0" y="363" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="qdy-hR-Can"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="[全景变换]" id="3nK-VG-YyY"/>
+                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="fYU-m5-ANL"/>
+                                    <barButtonItem title="切换模式" id="x0A-eB-gc8">
+                                        <connections>
+                                            <action selector="switchPanoMode:" destination="txT-Yi-fBh" id="ey8-kF-95k"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xwC-mw-EGG" firstAttribute="leading" secondItem="aEW-Am-XOt" secondAttribute="leading" id="15u-mt-O9W"/>
+                            <constraint firstAttribute="trailing" secondItem="Vwr-Tv-bWu" secondAttribute="trailing" id="2yV-Cm-Idy"/>
+                            <constraint firstItem="Vwr-Tv-bWu" firstAttribute="leading" secondItem="aEW-Am-XOt" secondAttribute="leading" id="6zT-K7-eAU"/>
+                            <constraint firstItem="lzN-SY-VhK" firstAttribute="top" secondItem="xwC-mw-EGG" secondAttribute="bottom" id="AJp-hW-qlX"/>
+                            <constraint firstItem="69Q-XB-i6r" firstAttribute="leading" secondItem="aEW-Am-XOt" secondAttribute="leading" id="JoH-mw-fDg"/>
+                            <constraint firstItem="dqK-BM-T53" firstAttribute="top" secondItem="lzN-SY-VhK" secondAttribute="bottom" id="K0q-6K-pTc"/>
+                            <constraint firstItem="xwC-mw-EGG" firstAttribute="top" secondItem="T70-9N-C9S" secondAttribute="bottom" id="SuM-Jt-00v"/>
+                            <constraint firstItem="Vwr-Tv-bWu" firstAttribute="top" secondItem="69Q-XB-i6r" secondAttribute="bottom" id="UMV-e0-9C4"/>
+                            <constraint firstAttribute="trailing" secondItem="xwC-mw-EGG" secondAttribute="trailing" id="ZGE-5N-nRz"/>
+                            <constraint firstAttribute="trailing" secondItem="69Q-XB-i6r" secondAttribute="trailing" id="a2g-VD-sfc"/>
+                            <constraint firstItem="69Q-XB-i6r" firstAttribute="top" secondItem="dqK-BM-T53" secondAttribute="bottom" id="c3u-VD-2dj"/>
+                            <constraint firstItem="dqK-BM-T53" firstAttribute="leading" secondItem="aEW-Am-XOt" secondAttribute="leading" id="cQR-cZ-YhU"/>
+                            <constraint firstAttribute="trailing" secondItem="dqK-BM-T53" secondAttribute="trailing" id="dnX-Pg-Rf1"/>
+                            <constraint firstAttribute="trailing" secondItem="lzN-SY-VhK" secondAttribute="trailing" id="gKw-L7-oWZ"/>
+                            <constraint firstItem="lzN-SY-VhK" firstAttribute="leading" secondItem="aEW-Am-XOt" secondAttribute="leading" id="zMO-7D-KJH"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="PTZDirectionBar" destination="69Q-XB-i6r" id="eh7-3N-2Lk"/>
+                        <outlet property="activityView" destination="X3c-Jb-HG7" id="Zbh-qF-mVs"/>
+                        <outlet property="playView" destination="xwC-mw-EGG" id="u3f-HD-tTg"/>
+                        <outlet property="playViewRatio" destination="uWv-MB-DIf" id="tTX-JW-mzQ"/>
+                        <outlet property="screenShotView" destination="VCN-Wi-bbg" id="rEQ-qA-Yua"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B10-iR-k1W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="238" y="67"/>
+        </scene>
+    </scenes>
+</document>

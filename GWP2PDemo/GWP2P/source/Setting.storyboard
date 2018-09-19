@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gaa-6a-aps">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Setting Controller-->
+        <scene sceneID="aT2-u7-vg0">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="gaa-6a-aps" customClass="SettingController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="F1H-75-aUl"/>
+                        <viewControllerLayoutGuide type="bottom" id="6eA-y8-tUE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ppq-Np-k9P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yYQ-Wt-mKb">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IlH-bE-xTb">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DWI-5l-GPk">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">日志:
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5g9-h7-kCl">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="w5r-W8-p4z"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="清空"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="clearLogAction:" destination="gaa-6a-aps" eventType="touchUpInside" id="JrQ-rz-JYq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="5g9-h7-kCl" firstAttribute="trailing" secondItem="DWI-5l-GPk" secondAttribute="trailing" constant="-20" id="2s2-CK-JIi"/>
+                            <constraint firstItem="DWI-5l-GPk" firstAttribute="leading" secondItem="ppq-Np-k9P" secondAttribute="leading" id="B27-Ny-okF"/>
+                            <constraint firstAttribute="trailing" secondItem="DWI-5l-GPk" secondAttribute="trailing" id="B3k-dp-uKI"/>
+                            <constraint firstItem="IlH-bE-xTb" firstAttribute="top" secondItem="F1H-75-aUl" secondAttribute="bottom" id="Bzy-Dw-K0I"/>
+                            <constraint firstItem="DWI-5l-GPk" firstAttribute="height" secondItem="IlH-bE-xTb" secondAttribute="height" multiplier="2:3" id="DhM-Xr-PII"/>
+                            <constraint firstItem="5g9-h7-kCl" firstAttribute="top" secondItem="DWI-5l-GPk" secondAttribute="top" constant="10" id="FL1-IM-PFV"/>
+                            <constraint firstItem="DWI-5l-GPk" firstAttribute="top" secondItem="IlH-bE-xTb" secondAttribute="bottom" constant="8" id="OIV-8g-NWm"/>
+                            <constraint firstItem="yYQ-Wt-mKb" firstAttribute="top" secondItem="IlH-bE-xTb" secondAttribute="top" id="PAk-Kk-Pj8"/>
+                            <constraint firstItem="yYQ-Wt-mKb" firstAttribute="leading" secondItem="IlH-bE-xTb" secondAttribute="trailing" constant="8" id="ULa-d7-Q8G"/>
+                            <constraint firstItem="IlH-bE-xTb" firstAttribute="leading" secondItem="ppq-Np-k9P" secondAttribute="leading" id="ct6-Rn-ZHJ"/>
+                            <constraint firstAttribute="trailing" secondItem="yYQ-Wt-mKb" secondAttribute="trailing" id="mdD-UV-DqV"/>
+                            <constraint firstItem="yYQ-Wt-mKb" firstAttribute="width" secondItem="IlH-bE-xTb" secondAttribute="width" multiplier="3:2" id="v90-gK-0tL"/>
+                            <constraint firstAttribute="bottom" secondItem="DWI-5l-GPk" secondAttribute="bottom" id="xSJ-Zw-No1"/>
+                            <constraint firstItem="yYQ-Wt-mKb" firstAttribute="bottom" secondItem="IlH-bE-xTb" secondAttribute="bottom" id="yxr-YR-ceY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoryTableView" destination="IlH-bE-xTb" id="Jgd-U0-SL7"/>
+                        <outlet property="exampleTableView" destination="yYQ-Wt-mKb" id="tCq-F3-zKS"/>
+                        <outlet property="logTextView" destination="DWI-5l-GPk" id="Mf3-h9-nN6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rZW-qA-yim" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="802.39999999999998" y="-169.56521739130437"/>
+        </scene>
+    </scenes>
+</document>

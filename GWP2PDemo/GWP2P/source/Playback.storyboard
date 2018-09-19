@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="pBK-XV-Bsx">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Playback Controller-->
+        <scene sceneID="rkO-yk-14k">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="pBK-XV-Bsx" customClass="PlaybackController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ClW-10-OtP"/>
+                        <viewControllerLayoutGuide type="bottom" id="kGi-ew-rVw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aOG-bW-SmT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jpe-Od-slg">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Jpe-Od-slg" secondAttribute="height" multiplier="16:9" id="4aF-Ap-Cp9"/>
+                                </constraints>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s9j-J0-N4o">
+                                <items>
+                                    <barButtonItem systemItem="play" id="AWG-ed-A0w">
+                                        <connections>
+                                            <action selector="playback:" destination="pBK-XV-Bsx" id="OC1-ZF-vSg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="15" style="plain" systemItem="fixedSpace" id="M8k-yF-LlH"/>
+                                    <barButtonItem systemItem="pause" id="2Qd-Fo-Eh5">
+                                        <connections>
+                                            <action selector="pause:" destination="pBK-XV-Bsx" id="3fP-Nd-Ya8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="15" style="plain" systemItem="fixedSpace" id="93Z-kq-Qsu"/>
+                                    <barButtonItem systemItem="fastForward" id="1dX-jz-541">
+                                        <connections>
+                                            <action selector="fastForward:" destination="pBK-XV-Bsx" id="FAG-dr-yJn"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="10" systemItem="fixedSpace" id="d56-c3-y0B"/>
+                                    <barButtonItem title="上一个" id="tht-j0-aDq">
+                                        <connections>
+                                            <action selector="previous:" destination="pBK-XV-Bsx" id="b2x-GV-Fcd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="10" style="plain" systemItem="fixedSpace" id="Ujt-JT-69M"/>
+                                    <barButtonItem title="下一个" id="f5v-xG-FHA">
+                                        <connections>
+                                            <action selector="next:" destination="pBK-XV-Bsx" id="uxA-gr-Eep"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="播放进度:0/0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEK-jy-SiE">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SeekTo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAr-r7-bHG">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="22h-XB-mWp"/>
+                                    <constraint firstAttribute="width" constant="72" id="AeB-QU-dJk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="30" borderStyle="roundedRect" placeholder="跳到第几秒" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zyi-ad-Cf3">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="4nM-76-m5Y"/>
+                                    <constraint firstAttribute="width" constant="97" id="bt8-N7-alm"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="79x-HP-M8Z">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Y0p-Ha-VfX"/>
+                                    <constraint firstAttribute="width" constant="46" id="lfa-1G-Etm"/>
+                                </constraints>
+                                <state key="normal" title="确定"/>
+                                <connections>
+                                    <action selector="seekToTime:" destination="pBK-XV-Bsx" eventType="touchUpInside" id="Tvv-go-Ebk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PAr-r7-bHG" firstAttribute="leading" secondItem="aOG-bW-SmT" secondAttribute="leadingMargin" constant="20" id="1XZ-ug-Ucl"/>
+                            <constraint firstItem="s9j-J0-N4o" firstAttribute="top" secondItem="mEK-jy-SiE" secondAttribute="bottom" id="4AY-n1-5bs"/>
+                            <constraint firstItem="Jpe-Od-slg" firstAttribute="top" secondItem="ClW-10-OtP" secondAttribute="bottom" id="5Sy-ff-dtx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mEK-jy-SiE" secondAttribute="trailing" id="6Rt-QT-qgp"/>
+                            <constraint firstItem="79x-HP-M8Z" firstAttribute="leading" secondItem="zyi-ad-Cf3" secondAttribute="trailing" constant="10" id="FIl-aL-5ei"/>
+                            <constraint firstItem="mEK-jy-SiE" firstAttribute="leading" secondItem="aOG-bW-SmT" secondAttribute="leadingMargin" id="IQr-Rh-7qu"/>
+                            <constraint firstItem="79x-HP-M8Z" firstAttribute="centerY" secondItem="zyi-ad-Cf3" secondAttribute="centerY" id="NYq-Xa-bXt"/>
+                            <constraint firstItem="s9j-J0-N4o" firstAttribute="leading" secondItem="aOG-bW-SmT" secondAttribute="leading" id="Pd3-kT-JT1"/>
+                            <constraint firstItem="PAr-r7-bHG" firstAttribute="top" secondItem="s9j-J0-N4o" secondAttribute="bottom" constant="10" id="VyJ-Nh-KEN"/>
+                            <constraint firstItem="zyi-ad-Cf3" firstAttribute="leading" secondItem="PAr-r7-bHG" secondAttribute="trailing" constant="10" id="eLp-Go-8c2"/>
+                            <constraint firstItem="zyi-ad-Cf3" firstAttribute="centerY" secondItem="PAr-r7-bHG" secondAttribute="centerY" id="fBE-do-sUw"/>
+                            <constraint firstItem="Jpe-Od-slg" firstAttribute="leading" secondItem="aOG-bW-SmT" secondAttribute="leadingMargin" id="mCv-qO-3cX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jpe-Od-slg" secondAttribute="trailing" id="qrv-Gx-dw0"/>
+                            <constraint firstAttribute="trailing" secondItem="s9j-J0-N4o" secondAttribute="trailing" id="t7O-sl-YGa"/>
+                            <constraint firstItem="mEK-jy-SiE" firstAttribute="top" secondItem="Jpe-Od-slg" secondAttribute="bottom" id="v6L-2k-Zuc"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="playProgressLabel" destination="mEK-jy-SiE" id="FAM-lh-rQd"/>
+                        <outlet property="playView" destination="Jpe-Od-slg" id="v2O-BG-Mwx"/>
+                        <outlet property="seekTimeTextField" destination="zyi-ad-Cf3" id="8SN-i8-oM2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CXR-AY-uDG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2762" y="-84"/>
+        </scene>
+    </scenes>
+</document>

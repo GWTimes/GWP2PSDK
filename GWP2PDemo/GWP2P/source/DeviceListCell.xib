@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeviceList" rowHeight="200" id="KGk-i7-Jjw" customClass="DeviceListCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="199.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6DO-3c-FhH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="145.5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0oQ-Wb-9aT">
+                        <rect key="frame" x="135" y="48" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="6Xu-hN-G1r"/>
+                            <constraint firstAttribute="height" constant="50" id="sKr-sy-tDd"/>
+                        </constraints>
+                        <state key="normal" image="btn_bofang"/>
+                        <connections>
+                            <action selector="monitor:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uG0-bh-GTJ"/>
+                        </connections>
+                    </button>
+                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k6B-pA-NMK">
+                        <rect key="frame" x="0.0" y="145.5" width="320" height="44"/>
+                        <items>
+                            <barButtonItem style="plain" systemItem="flexibleSpace" id="3yZ-zO-USc"/>
+                            <barButtonItem title="改密" width="44" style="done" id="YBd-zx-SKA">
+                                <connections>
+                                    <action selector="changePassword:" destination="KGk-i7-Jjw" id="dlk-Cb-HAi"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="回放" width="44" style="done" id="qno-qV-mnq">
+                                <connections>
+                                    <action selector="playback:" destination="KGk-i7-Jjw" id="dTx-hj-hbE"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="设置" width="44" style="done" id="AgS-5v-btR">
+                                <connections>
+                                    <action selector="setting:" destination="KGk-i7-Jjw" id="rcw-e1-xSp"/>
+                                </connections>
+                            </barButtonItem>
+                        </items>
+                        <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </toolbar>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eOT-Ed-w0Y">
+                        <rect key="frame" x="10" y="124.5" width="300" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="eHW-99-OHG"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQt-jc-a3g">
+                        <rect key="frame" x="20" y="18" width="61" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.343429762143314" green="1" blue="0.49372355688376379" alpha="0.57782240316901412" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="分享设备"/>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="eOT-Ed-w0Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="BBc-Xs-4Fa"/>
+                    <constraint firstAttribute="trailing" secondItem="k6B-pA-NMK" secondAttribute="trailing" id="CYV-oP-POW"/>
+                    <constraint firstItem="k6B-pA-NMK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="MYw-GA-VMn"/>
+                    <constraint firstItem="6DO-3c-FhH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="PuL-Mw-eVY"/>
+                    <constraint firstAttribute="bottom" secondItem="k6B-pA-NMK" secondAttribute="bottom" constant="10" id="Trr-4F-oBz"/>
+                    <constraint firstAttribute="trailing" secondItem="eOT-Ed-w0Y" secondAttribute="trailing" constant="10" id="ZLq-Dd-COW"/>
+                    <constraint firstItem="k6B-pA-NMK" firstAttribute="top" secondItem="eOT-Ed-w0Y" secondAttribute="bottom" id="aDl-J8-kFN"/>
+                    <constraint firstItem="0oQ-Wb-9aT" firstAttribute="centerY" secondItem="6DO-3c-FhH" secondAttribute="centerY" id="cwp-et-h2T"/>
+                    <constraint firstItem="k6B-pA-NMK" firstAttribute="top" secondItem="6DO-3c-FhH" secondAttribute="bottom" id="mGN-9t-fc7"/>
+                    <constraint firstItem="6DO-3c-FhH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="nds-aN-1nh"/>
+                    <constraint firstItem="0oQ-Wb-9aT" firstAttribute="centerX" secondItem="6DO-3c-FhH" secondAttribute="centerX" id="uOV-Ca-aah"/>
+                    <constraint firstAttribute="trailing" secondItem="6DO-3c-FhH" secondAttribute="trailing" id="zL4-zl-e0a"/>
+                </constraints>
+            </tableViewCellContentView>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="deviceInfoLabel" destination="eOT-Ed-w0Y" id="HvQ-DO-kcq"/>
+                <outlet property="sharingButton" destination="GQt-jc-a3g" id="nus-k8-Vlm"/>
+            </connections>
+            <point key="canvasLocation" x="-176" y="38"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="btn_bofang" width="50" height="50"/>
+    </resources>
+</document>

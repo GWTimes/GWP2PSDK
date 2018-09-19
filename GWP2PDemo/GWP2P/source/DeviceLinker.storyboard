@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TGC-Sz-gKE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--配网-->
+        <scene sceneID="VzD-k2-R2z">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="TGC-Sz-gKE" customClass="DeviceLinkerController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b8G-tJ-Ijh"/>
+                        <viewControllerLayoutGuide type="bottom" id="keb-P5-3gN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DlO-Ge-Add">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="IPC_YunWei_Group" borderStyle="roundedRect" placeholder="配网WiFi名称,设备和手机要在同一局域网" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ckn-mb-V8R">
+                                <rect key="frame" x="16" y="36" width="343" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="WnH-o6-0eW"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLZ-0a-F6D">
+                                <rect key="frame" x="114" y="258" width="146" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="ToS-Hl-5Ct"/>
+                                    <constraint firstAttribute="width" constant="146" id="vOn-H1-6sB"/>
+                                </constraints>
+                                <state key="normal" title="声波配网"/>
+                                <connections>
+                                    <action selector="smartLink:" destination="TGC-Sz-gKE" eventType="touchUpInside" id="IqK-od-DfW"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="29088360" borderStyle="roundedRect" placeholder="配网WiFi密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EHo-8j-NBU">
+                                <rect key="frame" x="16" y="87" width="343" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="vtK-pT-zlq"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123" borderStyle="roundedRect" placeholder="初始化设备密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cTZ-ud-JW1">
+                                <rect key="frame" x="16" y="138" width="343" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="riC-Ok-nce"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PdR-Y8-6fJ">
+                                <rect key="frame" x="147.5" y="201" width="80" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="5zw-aW-d1c"/>
+                                    <constraint firstAttribute="width" constant="80" id="6ID-Ds-dRa"/>
+                                </constraints>
+                                <state key="normal" title="AP配网"/>
+                                <connections>
+                                    <action selector="apLink:" destination="TGC-Sz-gKE" eventType="touchUpInside" id="FQA-1h-VwE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EHo-8j-NBU" firstAttribute="leading" secondItem="DlO-Ge-Add" secondAttribute="leading" constant="16" id="D8Q-eI-2Ak"/>
+                            <constraint firstItem="PdR-Y8-6fJ" firstAttribute="centerX" secondItem="DlO-Ge-Add" secondAttribute="centerX" id="DHu-Q5-jiZ"/>
+                            <constraint firstItem="PLZ-0a-F6D" firstAttribute="top" secondItem="PdR-Y8-6fJ" secondAttribute="bottom" constant="22" id="IFg-3v-QlM"/>
+                            <constraint firstItem="EHo-8j-NBU" firstAttribute="top" secondItem="ckn-mb-V8R" secondAttribute="bottom" constant="16" id="TuW-bY-DDa"/>
+                            <constraint firstItem="ckn-mb-V8R" firstAttribute="top" secondItem="b8G-tJ-Ijh" secondAttribute="bottom" constant="16" id="W6I-FO-3l5"/>
+                            <constraint firstAttribute="trailing" secondItem="EHo-8j-NBU" secondAttribute="trailing" constant="16" id="WuJ-mV-4qK"/>
+                            <constraint firstItem="cTZ-ud-JW1" firstAttribute="leading" secondItem="DlO-Ge-Add" secondAttribute="leading" constant="16" id="Z6f-nx-jjv"/>
+                            <constraint firstItem="PdR-Y8-6fJ" firstAttribute="top" secondItem="cTZ-ud-JW1" secondAttribute="bottom" constant="28" id="Zfb-yI-BJf"/>
+                            <constraint firstItem="PLZ-0a-F6D" firstAttribute="centerX" secondItem="DlO-Ge-Add" secondAttribute="centerX" id="iNk-A9-vQQ"/>
+                            <constraint firstItem="cTZ-ud-JW1" firstAttribute="top" secondItem="EHo-8j-NBU" secondAttribute="bottom" constant="16" id="k2C-sP-NeN"/>
+                            <constraint firstAttribute="trailing" secondItem="cTZ-ud-JW1" secondAttribute="trailing" constant="16" id="kLG-F1-oam"/>
+                            <constraint firstAttribute="trailing" secondItem="ckn-mb-V8R" secondAttribute="trailing" constant="16" id="m84-lk-vSi"/>
+                            <constraint firstItem="ckn-mb-V8R" firstAttribute="leading" secondItem="DlO-Ge-Add" secondAttribute="leading" constant="16" id="rH9-Vb-jw3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="配网" id="oUb-2G-GOl"/>
+                    <connections>
+                        <outlet property="devicePasswordTF" destination="cTZ-ud-JW1" id="FnM-eL-kcx"/>
+                        <outlet property="wifiPasswordTF" destination="EHo-8j-NBU" id="0Bs-sH-n0p"/>
+                        <outlet property="wifiSSIDTF" destination="ckn-mb-V8R" id="lQE-jS-3XG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xmM-Rt-RIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="101.59999999999999" y="-170.46476761619192"/>
+        </scene>
+    </scenes>
+</document>
