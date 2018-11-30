@@ -206,6 +206,7 @@
                         @"example":
                             @[
                                 [SettingExample exampleWithTitle:@"设置设备视频制式" sel:@selector(setDeviceRecordTypeExample)],
+                                [SettingExample exampleWithTitle:@"设置设备色彩模式" sel:@selector(setDeviceColorModeExample)],
                             ],
                         },
                       
@@ -767,6 +768,24 @@ typedef struct AA {
 - (void)setDeviceRecordTypeExample {
     [[GWP2PClient sharedClient] setDeviceRecordType:GWP2PRecordTypeManual withDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
         [self outputLog:dataDictionary success:success];
+    }];
+}
+
+/**
+ 设置设备彩色模式
+ */
+- (void)setDeviceColorModeExample {
+    static GWP2PColorMode color = GWP2PColorModeBlackWhite;
+    [[GWP2PClient sharedClient] setDeviceColorMode:color withDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+        [self outputLog:dataDictionary success:success];
+        if (success) {
+            NSLog(@"color: %d", color);
+            if (color == GWP2PColorModeBlackWhite) {
+                color = GWP2PColorModeColorful;
+            } else {
+                color = GWP2PColorModeBlackWhite;
+            }
+        }
     }];
 }
 

@@ -16,6 +16,14 @@ typedef enum GWP2PSetVideoFormat{
     GWP2PSetVideoFormatPAL
 }GWP2PSetVideoFormat;
 
+/**
+ 彩色模式
+ */
+typedef enum GWP2PColorMode{
+    GWP2PColorModeBlackWhite,/**< 黑白色/开启红外灯 */
+    GWP2PColorModeColorful,/**< 彩色/关闭红外灯 */
+}GWP2PColorMode;
+
 
 /**
  @brief 处理图像声音的分类
@@ -92,5 +100,18 @@ typedef enum GWP2PSetVideoFormat{
                          withDeviceID:(NSString *)deviceID
                        devicePassword:(NSString *)devicePassword
                       completionBlock:(CompletionBlock)completionBlock;
+
+/**
+ 设置设备色彩模式
+ 
+ @param colorMode               色彩模式
+ @param deviceID                设备ID
+ @param devicePassword          设备密码
+ @param completionBlock         与设备交互完成后的回调Block
+ */
+- (void)setDeviceColorMode:(GWP2PColorMode)colorMode
+              withDeviceID:(NSString *)deviceID
+            devicePassword:(NSString *)devicePassword
+           completionBlock:(CompletionBlock)completionBlock;
 
 @end
