@@ -93,6 +93,34 @@
                       devicePassword:(NSString *)devicePassword
                      completionBlock:(CompletionBlock)completionBlock;
 
+
+/**
+ 白光的 自动亮灯模式 开关
+
+ @param on  YES：开   NO：关
+ @param deviceID 设备ID
+ @param devicePassword 设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)setDeviceWhiteLightAutomaticMode:(BOOL)on
+                        withDeviceID:(NSString *)deviceID
+                      devicePassword:(NSString *)devicePassword
+                     completionBlock:(CompletionBlock)completionBlock;
+
+/**
+ 白光的 预设开关灯时间模式 开关
+
+ @param on  YES：开   NO：关
+ @param deviceID 设备ID
+ @param devicePassword 设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)setDeviceWhiteLightTimingMode:(BOOL)on
+                        withDeviceID:(NSString *)deviceID
+                      devicePassword:(NSString *)devicePassword
+                     completionBlock:(CompletionBlock)completionBlock;
+
+
 #pragma mark - 声控
 /**
  设置白光灯亮度,这个功能是在做声控时才加的,只有支持声控的设备才支持此功能
@@ -215,5 +243,18 @@
                       withDeviceID:(NSString *)deviceID
                     devicePassword:(NSString *)devicePassword
                    completionBlock:(CompletionBlock)completionBlock;
+
+/**
+ 设置旧灯光开关状态
+
+ @param on 是否打开
+ @param deviceID 设备ID
+ @param devicePassword 设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)setOldLightState:(BOOL)on
+            withDeviceID:(NSString *)deviceID
+          devicePassword:(NSString *)devicePassword
+         completionBlock:(CompletionBlock)completionBlock;
 
 @end

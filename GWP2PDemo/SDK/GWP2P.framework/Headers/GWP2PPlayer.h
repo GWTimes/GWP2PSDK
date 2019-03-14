@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "GWP2PCallDefine.h"
+#import "GWP2PPlayerDefine.h"
 
 @class GWP2PPlayer;
 
@@ -42,7 +42,7 @@ typedef void (^P2PRejectBlock)(GWP2PCallError error, NSString *errorCode);
 /**
  连接上设备并准备就绪,开始显示画面
  */
-typedef void (^P2PReadyBlock)();
+typedef void (^P2PReadyBlock)(void);
 
 
 /**
@@ -77,13 +77,10 @@ typedef void (^ScreenshotCompletionBlock)(UIImage *screenshot, NSTimeInterval ti
  */
 @interface GWP2PPlayer : NSObject
 
-/** 播放View */
-@property (nonatomic, readonly) UIView *view;
+/** 播放器ViewController */
+@property (nonatomic, readonly) UIViewController *viewController;
 
-/** scrollView是view的子view (usePano=YES时无效)*/
-@property (nonatomic, weak, readonly) UIScrollView *scrollView;
-
-/** 是否正在播放 */
+/** 是否正在播放, 从call开始就为YES，播放中断置为NO */
 @property (nonatomic, assign, readonly) BOOL isPlaying;
 
 /** 静音 */
@@ -123,28 +120,18 @@ typedef void (^ScreenshotCompletionBlock)(UIImage *screenshot, NSTimeInterval ti
 - (void)p2pScreenshot:(ScreenshotCompletionBlock)completionBlock;
 
 /**
- 全景模式
+ 开始录制视频，当播放器销毁、视频监控中断、切换分辨率时，都会自动停止录制并保存视频
  
- - PM_NONE: 黑屏,切换此模式无效
- - PM_HALF_SPHERE: 半球
- - PM_CYLINDER: 圆柱
- - PM_SCROLL: 画卷
- - PM_FOUR_SCREEN: 四画面
- - PM_MIX: 混合
- - PM_WIDE_ANGLE: 广角
- - PM_QUAD: 四边形,适用于普通监控
+ @param savePath 视频保存路径
+ @param eventHandler 录制开始、异常等事件回调
+ @param saveAlbum 是否将录制的视频保存到系统相册，将会占用应用沙盒和系统相册两份空间
  */
-typedef NS_ENUM(NSUInteger, PanoMode) {
-    PM_NONE,
-    PM_HALF_SPHERE,
-    PM_CYLINDER,
-    PM_SCROLL,
-    PM_FOUR_SCREEN,
-    PM_MIX,
-    PM_WIDE_ANGLE,
-    PM_QUAD
-};
+- (void)startRecordWithSavePath:(NSString *)savePath saveToPhotosAlbum:(BOOL)saveAlbum eventHandler:(MP4RecordEventHandler)eventHandler;
 
+/**
+ 停止录制视频并保存视频
+ */
+- (void)stopRecord;
 
 /**
  设置全景模式
@@ -153,16 +140,11 @@ typedef NS_ENUM(NSUInteger, PanoMode) {
 
 
 /**
- 获取全景视图控制器,用于将PanoController添加到当前UIViewController
- */
-@property (nonatomic, strong, readonly) UIViewController *panoViewController;
+ 设置全景切边参数，主要是中心点偏移、边缘剪切
 
-/**
- 设置切边参数
-
- @param x 切边中心点x
- @param y 切边中心点y
- @param ratio 边缘切边比例
+ @param x 切边中心点x,范围0~1
+ @param y 切边中心点y,范围0~1
+ @param ratio 边缘切边比例,范围0~1
  */
 - (void)setCutParam:(float)x y:(float)y ratio:(float)ratio;
 

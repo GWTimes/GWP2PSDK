@@ -8,11 +8,15 @@
 
 #import "GWP2PClient.h"
 
-typedef enum GWP2PSceneMode {
-    GWP2PSceneModeAtHome = 1,//在家
-    GWP2PSceneModeGoOut,     //外出
-    GWP2PSceneModeSleep,     //睡眠
-} GWP2PSceneMode;
+
+/**
+ 情景模式
+ */
+typedef NS_ENUM(NSUInteger, GWP2PSceneMode) {
+    GWP2PSceneModeAtHome = 1,/**< 在家 */
+    GWP2PSceneModeGoOut,     /**< 外出 */
+    GWP2PSceneModeSleep,     /**< 睡眠 */
+};
 
 
 /**
@@ -39,11 +43,74 @@ typedef enum GWP2PSceneMode {
 
 
 
+/**
+ 防护模式
+ */
+typedef NS_ENUM(NSInteger, GWProtectionPlanMode) {
+    GWProtectionPlanModeNotSurpport, /**< 设备不支持 */
+    GWProtectionPlanModeOut = 1,    /**< 外出 值和固件保持一致 */
+    GWProtectionPlanModeAtHome, /**< 在家 */
+};
+
+/**
+ 防护计划模型
+ */
+@interface GWProtectionPlanModel : NSObject<NSCopying>
+
+@property (nonatomic, assign) BOOL enable;  /**< 是否生效 */
+@property (nonatomic, assign) GWProtectionPlanMode mode;  /**< 防护模式 */
+@property (nonatomic, assign) NSUInteger hour;  /**< 时间：时 */
+@property (nonatomic, assign) NSUInteger minute;  /**< 时间：分 */
+
+@end
+
+/**
+ 各传感器的防护设置状态
+ */
+typedef NS_ENUM(uint8_t, GWProtectionSettingState) {
+    GWProtectionSettingStateNotSurpport, /**< 设备不支持 */
+    GWProtectionSettingStateOn = 1,    /**< 状态开 */
+    GWProtectionSettingStateOff, /**< 状态关 */
+};
+
+
+/**
+ 防护设置模型
+ */
+@interface GWProtectionSettingModel : NSObject
+
+
+@property (nonatomic, assign) GWProtectionPlanMode protectionMode;
+
+@property (nonatomic, assign) GWProtectionSettingState motionDetectState; /**< 移动侦测 */
+@property (nonatomic, assign) NSInteger alarmSensitivity;/**< 报警灵敏度，同之前的移动侦测灵敏度 0-6表示灵敏度值，7表示不支持 */
+@property (nonatomic, assign) GWProtectionSettingState objectTrackingState; /**< 物件追踪 */
+@property (nonatomic, assign) GWProtectionSettingState humanBodyInfraredState; /**< 人体红外 */
+@property (nonatomic, assign) GWProtectionSettingState externalAlarmInputState; /**< 外部报警输入 */
+@property (nonatomic, assign) GWProtectionSettingState externalAlarmOutputState; /**< 外部报警输出 */
+@property (nonatomic, assign) GWProtectionSettingState externalSensorState; /**< 外部传感器 */
+
+@end
+
+
 
 /**
  @brief 处理情景模式的分类
  */
 @interface GWP2PClient (SceneMode)
+
+/**
+ 设置设备的情景模式，仅868情景模式设备支持
+
+ @param mode 情景模式，1,表示在家
+ @param deviceID 设备ID
+ @param devicePassword 设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)setDeviceSceneMode:(GWP2PSceneMode)mode
+              withDeviceID:(NSString *)deviceID
+            devicePassword:(NSString *)devicePassword
+           completionBlock:(CompletionBlock)completionBlock;
 
 /**
  获取设备所有情景模式
@@ -89,5 +156,87 @@ typedef enum GWP2PSceneMode {
                           withDeviceID:(NSString *)deviceID
                         devicePassword:(NSString *)devicePassword
                        completionBlock:(CompletionBlock)completionBlock;
+
+
+//设置优化由于和之前的情景模式比较相似，因此放到这个分类里面
+
+/**
+ 获取设备的防护计划
+ 
+ @param deviceID 设备ID
+ @param devicePassword 设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)getDeviceProtectionPlansWithDeviceID:(NSString *)deviceID
+                              devicePassword:(NSString *)devicePassword
+                             completionBlock:(CompletionBlock)completionBlock;
+
+/**
+ 设置设备的防护计划
+ 
+ @param protectionPlansArray 防护计划数组
+ @param deviceID 设备ID
+ @param devicePassword 设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)setDeviceProtectionPlans:(NSArray<GWProtectionPlanModel *> *)protectionPlansArray
+                    withDeviceID:(NSString *)deviceID
+                  devicePassword:(NSString *)devicePassword
+                 completionBlock:(CompletionBlock)completionBlock;
+
+/**
+ 设置设备的防护计划模式
+ 
+ @param protectionPlanMode 防护计划模式
+ @param deviceID 设备ID
+ @param devicePassword 设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)setDeviceProtectionPlanMode:(GWProtectionPlanMode)protectionPlanMode
+                       withDeviceID:(NSString *)deviceID
+                     devicePassword:(NSString *)devicePassword
+                    completionBlock:(CompletionBlock)completionBlock;
+
+/**
+ 获取设备对应模式的防护设置
+ 
+ completionBlock返回数据 @“protection setting” 对应一个类 GWProtectionSettingModel
+ 
+ @param protectionMode 防护模式
+ @param deviceID 设备ID
+ @param devicePassword 设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)getDeviceProtectionSettingsWithProtectionMode:(GWProtectionPlanMode)protectionMode
+                                             deviceID:(NSString *)deviceID
+                                       devicePassword:(NSString *)devicePassword
+                                      completionBlock:(CompletionBlock)completionBlock;
+
+/**
+ 设置防护模式
+ 
+ @param protectionSetting 设置项类，如果获取时设备不支持那一项，设置时也请传不支持
+ @param deviceID 设备ID
+ @param devicePassword 设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)setDeviceProtectionSettings:(GWProtectionSettingModel *)protectionSetting
+                           deviceID:(NSString *)deviceID
+                     devicePassword:(NSString *)devicePassword
+                    completionBlock:(CompletionBlock)completionBlock;
+
+/**
+ 设置报警推送间隔
+ 
+ @param timeinterval 报警推送间隔，可设的值有 10 60 300 600 1800，单位为秒
+ @param deviceID 设备ID
+ @param devicePassword 设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)setDeviceAlarmTimeinterval:(NSInteger)timeinterval
+                      withDeviceID:(NSString *)deviceID
+                    devicePassword:(NSString *)devicePassword
+                   completionBlock:(CompletionBlock)completionBlock;
+
 
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "LoginViewController.h"
-#import "GWNet.h"
 #import <GWP2P/GWP2P.h>
 #import "AppDelegate.h"
 #import "LoginResult.h"
@@ -53,7 +52,8 @@
     [MBProgressManager showWaitingWithTitle:@"正在登录"];
     
     //登录Web服务器
-    [GWNetSingleton loginWithUserName:self.accountTextField.text withPassword:self.passwordTextField.text withAppleToken:nil completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
+    NSInteger timeZone = [NSTimeZone systemTimeZone].secondsFromGMT / 60;
+    [GWNetSingleton loginWithUserName:self.accountTextField.text withPassword:self.passwordTextField.text withAppleToken:nil withTimeZone:timeZone completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
         [MBProgressManager hideAlert];
         NSLog(@"success:%d errorCode:%@ errorString:%@", success, errorCode, errorString);
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -103,7 +103,8 @@
     [MBProgressManager showWaitingWithTitle:@"正在登录"];
     
     //第三方登陆
-    [GWNetSingleton thirdLoginWithPlatformType:@"3" withUnionID:@"test" withUser:@"" withPassword:@"" withAppleToken:@"" withOption:@"3" withStoreID:@"" nickName:@"老王" completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
+    NSInteger timeZone = [NSTimeZone systemTimeZone].secondsFromGMT / 60;
+    [GWNetSingleton thirdLoginWithPlatformType:@"3" withUnionID:@"test" withUser:@"" withPassword:@"" withAppleToken:@"" withOption:@"3" withStoreID:@"" withNickName:@"老王" timeZone:timeZone completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
         [MBProgressManager hideAlert];
         NSLog(@"errorCode:%@ errorString:%@ json:%@", errorCode, errorString, json);
     }];

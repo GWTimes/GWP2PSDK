@@ -8,7 +8,7 @@
 
 #import "DeviceLinkerController.h"
 #import "DeviceModel.h"
-#import "GWNet.h"
+#import <GWP2P/GWP2P.h>
 #import "LoginResult.h"
 
 @interface DeviceLinkerController ()

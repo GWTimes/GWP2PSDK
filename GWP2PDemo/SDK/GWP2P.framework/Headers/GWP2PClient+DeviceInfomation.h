@@ -34,8 +34,6 @@ typedef NS_ENUM(NSUInteger, GWDeviceRTSPPasswordMode) {
     GWDeviceRTSPPasswordModeUnSurpurted = 999, /**< 设备不支持RTSP功能,设备模型初始化时附此值,方便后面判断 */
 };
 
-
-
 /**
  @brief 该分类可获取和设置设备各种状态信息
  */
@@ -517,5 +515,18 @@ typedef NS_ENUM(NSUInteger, GWDeviceRTSPPasswordMode) {
 -(void)getFisheyeDeviceInfoWithDeviceId:(NSString*)deviceID
                          devicePassword:(NSString*)devicePassword
                         completionBlock:(CompletionBlock)completionBlock;
+
+
+#pragma mark - 恢复出厂设置
+/**
+ 恢复出厂设置
+
+ @param deviceID                设备ID
+ @param devicePassword          设备密码
+ @param completionBlock         与设备交互完成后的回调Block
+ */
+- (void)setDeviceRestoreFactorySettingsWithDeviceID:(NSString *)deviceID
+                                     devicePassword:(NSString *)devicePassword
+                                    completionBlock:(CompletionBlock)completionBlock;
 
 @end

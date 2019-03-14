@@ -12,7 +12,6 @@
 @interface MonitorController () <GWP2PVideoPlayerProtocol>
 @property (nonatomic, strong) DeviceModel *deviceModel;
 @property (nonatomic, strong) GWP2PVideoPlayer *player;
-@property (nonatomic, strong) GWP2PMP4Recorder *mp4Recorder;
 
 @property (weak, nonatomic) IBOutlet UIView *playView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
@@ -37,10 +36,10 @@
     //添加播放器
     self.player = [[GWP2PVideoPlayer alloc] init];
     self.player.delegate = self;
-    self.player.view.backgroundColor = [UIColor redColor];
-    [self.playView addSubview:self.player.view];
+    self.player.viewController.view.backgroundColor = [UIColor redColor];
+    [self.playView addSubview:self.player.viewController.view];
 #warning 下面这句话必须要加，否则监控画面不能显示
-    [self addChildViewController:self.player.panoViewController];
+    [self addChildViewController:self.player.viewController];
     
     [self.playView bringSubviewToFront:self.activityView];
     [self.playView bringSubviewToFront:self.screenShotView];
@@ -49,7 +48,7 @@
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    self.player.view.frame = self.playView.bounds;
+    self.player.viewController.view.frame = self.playView.bounds;
 }
 
 #pragma mark - 播放画面比例
@@ -77,7 +76,7 @@
     __weak typeof(self) weakSelf = self; //这里的几个代码块都要用弱引用
     [self.activityView startAnimating];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        [weakSelf.player p2pCallDeviceWithDeviceId:_deviceModel.deviceID password:_deviceModel.devicePassword deviceType:_deviceModel.deviceType deviceSubtype:_deviceModel.deviceSubtype calling:^(NSDictionary *parameters) {
+        [weakSelf.player p2pCallDeviceWithDeviceId:_deviceModel.deviceID password:_deviceModel.devicePassword definition:GWP2PPTZDefinitionSD calling:^(NSDictionary *parameters) {
             NSLog(@"[p2pCallDevice-Calling],paras=%@",parameters);
         } accept:^(NSDictionary *parameters) {
             NSLog(@"[p2pCallDevice-Accept],paras=%@",parameters);
@@ -186,8 +185,8 @@
 
 #pragma mark - 录制MP4，全部设备都支持
 - (IBAction)startRecordMP4:(UIBarButtonItem *)sender {
-    
-    [self.mp4Recorder startRecordWithSavePath:[self getRecordFilePathWithDeviceId:self.deviceModel.deviceID] eventHandler:^(MP4RecordEvent stopEvent) {
+    NSString *savePath = [self getRecordFilePathWithDeviceId:self.deviceModel.deviceID];
+    [self.player startRecordWithSavePath:savePath saveToPhotosAlbum:YES eventHandler:^(MP4RecordEvent stopEvent) {
         switch (stopEvent) {
             case MP4RecordEventStart:
                 NSLog(@"录像开始（初始化需要少量时间等待关键帧）");
@@ -198,9 +197,6 @@
             case MP4RecordEventRatioChanged:
                 NSLog(@"切换了监控清晰度，录像停止（正常保存）");
                 break;
-            case MP4RecordEventEncoderInitFailed:
-                NSLog(@"录像失败，初始化失败");
-                break;
                 
             default:
                 break;
@@ -209,14 +205,7 @@
 }
 
 - (IBAction)stopRecordMP4:(UIBarButtonItem *)sender {
-    [self.mp4Recorder stopRecordAndSaveToPhotosAlbum:YES];
-}
-
-- (GWP2PMP4Recorder *)mp4Recorder {
-    if (!_mp4Recorder) {
-        _mp4Recorder = [[GWP2PMP4Recorder alloc] init];
-    }
-    return _mp4Recorder;
+    [self.player stopRecord];
 }
 
 - (NSString*)getRecordFilePathWithDeviceId:(NSString*)deviceId {

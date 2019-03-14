@@ -48,6 +48,8 @@ typedef enum GWP2PRecordDefinition {
 @property (nonatomic, copy) NSString *cType; /**< 文件类型 一个字符 */
 @property (nonatomic, assign) NSInteger time; /**< 文件播放时长 若不支持,则为-1 */
 
+@property (nonatomic, assign) NSInteger month_yoosee; //yoosee专用
+
 @end
 
 

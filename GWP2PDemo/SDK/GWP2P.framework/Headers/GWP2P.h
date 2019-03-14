@@ -6,6 +6,9 @@
 //  Copyright © 2017年 gwell. All rights reserved.
 //
 
+// 用户接口
+#import "GWNet.h"
+#import "GWNetError.h"
 
 //设置
 #import "GWP2PClient.h"                     //初始化连接
@@ -19,6 +22,7 @@
 #import "GWP2PClient+Sensor.h"
 #import "GWP2PClient+WhiteLight.h"
 #import "GWP2PClient+GarageLight.h"
+#import "GWP2PClient+HXVision.h"
 #import "GWP2PDefine.h"
 
 
@@ -26,14 +30,10 @@
 #import "GWP2PPlayer.h"                 //播放器基类
 #import "GWP2PVideoPlayer.h"            //监控、视频通话时使用
 #import "GWP2PPlaybackPlayer.h"         //回放使用
-#import "GWP2PCallDefine.h"
-#import "GWP2PUserCommandDefine.h"
-#import "GWMP4Recorder.h"               
-#import "GWP2PMP4Recorder.h"            //录制MP4
+#import "GWP2PPlayerDefine.h"
 
 //配网
 #import "GWP2PDeviceLinker.h"   //设备联网
-#import "GWSimpleConfigManager.h"
 
 //模型
 #import "GWP2PDevice.h" //设备

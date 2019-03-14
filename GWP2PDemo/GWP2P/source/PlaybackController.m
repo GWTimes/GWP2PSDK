@@ -27,8 +27,8 @@
   
     self.playbackPlayer = [[GWP2PPlaybackPlayer alloc]init];
 
-    [self.playView addSubview:self.playbackPlayer.view];
-    [self addChildViewController:self.playbackPlayer.panoViewController];
+    [self.playView addSubview:self.playbackPlayer.viewController.view];
+    [self addChildViewController:self.playbackPlayer.viewController];
     
     //添加监听
     [self.playbackPlayer addObserver:self forKeyPath:@"currentTime" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
@@ -39,7 +39,7 @@
 -(void)viewDidLayoutSubviews {
 
     [super viewDidLayoutSubviews];
-    self.playbackPlayer.view.frame = self.playView.bounds;
+    self.playbackPlayer.viewController.view.frame = self.playView.bounds;
 
 }
 
@@ -74,7 +74,7 @@
     
     [MBProgressManager showWaitingWithTitle:@"正在缓冲"];
     //[self.playbackPlayer setValue:@(GWP2PPlaybackStatePlaying) forKey:@"playbackState"];
-    [self.playbackPlayer p2pCallPlaybackFileWithDeviceId:self.deviceModel.deviceID password:self.deviceModel.devicePassword deviceType:self.deviceModel.deviceType deviceSubtype:self.deviceModel.deviceSubtype playbackFile:self.fillModelArr[self.currentIndex] calling:^(NSDictionary *parameters) {
+    [self.playbackPlayer p2pCallPlaybackFileWithDeviceId:self.deviceModel.deviceID password:self.deviceModel.devicePassword playbackFile:self.fillModelArr[self.currentIndex] calling:^(NSDictionary *parameters) {
         NSLog(@"P2PCallingBlock--%@",parameters);
     } accept:^(NSDictionary *parameters) {
         NSLog(@"P2PAcceptBlock---%@",parameters);

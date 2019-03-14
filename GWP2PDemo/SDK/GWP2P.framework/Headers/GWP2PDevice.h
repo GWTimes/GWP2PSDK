@@ -132,6 +132,13 @@ typedef NS_ENUM(NSUInteger, GWP2PDeviceVideoRatio) {
 
 
 /**
+ 是否支持摇头功能
+ 只能用于判断IPC(DeviceType=7)的设备子类型支持摇头功能
+ */
++ (BOOL)isSupportRotateIPCDevice:(GWP2PDeviceIPCSubtype)deviceSubtype;
+
+
+/**
  获取鱼眼类型 180or360
  
  @param deviceSubtype 设备子类型

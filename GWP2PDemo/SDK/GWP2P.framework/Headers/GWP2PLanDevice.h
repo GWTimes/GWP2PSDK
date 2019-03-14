@@ -38,4 +38,7 @@
 /** MAC地址12个字母 */
 @property (nonatomic, copy) NSString *macAddress;
 
+/** 设备加密功能选项 */
+@property (nonatomic, assign) uint64_t deviceFuciton;
+
 @end

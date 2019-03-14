@@ -73,7 +73,7 @@ typedef void (^DeviceReceiveBlock)(NSString *deviceId, BOOL isSupport);
 
 
 /**
- 智能联机，内部会同时发送声波和空中发包
+ 智能联机，内部会同时发送声波、空中发包、SimpleConfig数据
  
  此接口停用，请调 [GWP2PDeviceLinker p2pSmartLinkDeviceWithWiFiSSID:password:useSimpleConfig:deviceLinkIn:]
  

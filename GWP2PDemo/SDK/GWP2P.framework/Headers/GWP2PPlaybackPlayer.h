@@ -33,8 +33,6 @@
  
  @param deviceId      设备ID
  @param password      设备密码
- @param deviceType    设备类型
- @param deviceSubtype 设备子类型
  @param playbackFile  回放文件对象,由GWP2PClient+Record中的获取回放文件列表方法获取
  @param callingBlock  正在呼叫回调,详见block定义注释
  @param acceptBlock   接收呼叫回调,详见block定义注释
@@ -43,8 +41,6 @@
  */
 - (void)p2pCallPlaybackFileWithDeviceId:(NSString *)deviceId
                                password:(NSString *)password
-                             deviceType:(GWP2PDeviceType)deviceType
-                          deviceSubtype:(GWP2PDeviceIPCSubtype)deviceSubtype
                            playbackFile:(GWPlaybackFileModel *)playbackFile
                                 calling:(P2PCallingBlock)callingBlock
                                  accept:(P2PAcceptBlock)acceptBlock

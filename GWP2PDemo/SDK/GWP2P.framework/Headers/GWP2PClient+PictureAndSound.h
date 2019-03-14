@@ -16,6 +16,7 @@ typedef enum GWP2PSetVideoFormat{
     GWP2PSetVideoFormatPAL
 }GWP2PSetVideoFormat;
 
+
 /**
  彩色模式
  */
@@ -23,7 +24,6 @@ typedef enum GWP2PColorMode{
     GWP2PColorModeBlackWhite,/**< 黑白色/开启红外灯 */
     GWP2PColorModeColorful,/**< 彩色/关闭红外灯 */
 }GWP2PColorMode;
-
 
 /**
  @brief 处理图像声音的分类

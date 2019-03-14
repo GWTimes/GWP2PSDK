@@ -12,7 +12,6 @@
 
 @class GWP2PClient;
 
-
 #pragma mark - GWP2PClientProtocol
 /**
  @brief P2P客户端协议,包含接收设备报警和文件下载等回调
@@ -93,6 +92,19 @@
  */
 - (void)client:(GWP2PClient *)client receavedSerialTransmissionData:(NSDictionary *)data;
 
+
+/**
+ P2P库接收到通知，包括 设备升级、系统消息、权限通知等
+ 
+ @param client GWP2PClient 类
+ @param noti 通知数据字典
+ 
+    "PermissionMessage"
+    "AppNeedUpdate"
+    "SystemMessage"
+ */
+- (void)client:(GWP2PClient *)client didReceivedNotification:(NSDictionary *)userInfo;
+
 @end
 
 
@@ -117,6 +129,7 @@
 
 @property (nonatomic, assign) BOOL isAPMode;/**< 是不是AP模式。此属性只保存上次与路由器交互后的数据，调 getDeviceIDInAPMode 方法会重新与路由器交互更新APMode状态，每次app进入前台时会更新APMode状态 */
 
+@property (nonatomic, copy) NSString *serverList; /**< P2P服务器列表，自建服务器需要设置此属性，格式"|p2p1.cloudlinks.cn|p2p2.cloudlinks.cn|p2p3.cloud-links.net" */
 
 #pragma mark 获取单例
 /**

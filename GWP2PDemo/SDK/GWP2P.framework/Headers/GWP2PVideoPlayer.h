@@ -7,7 +7,7 @@
 //
 
 #import "GWP2PPlayer.h"
-#import "GWP2PUserCommandDefine.h"
+#import "GWP2PPlayerDefine.h"
 #import "GWP2PDevice.h"
 
 @class GWP2PVideoPlayer;
@@ -37,6 +37,14 @@ extern NSString * const kGWP2PDeviceIsCallingNotification;
  @param currentNumber 当前观看人数
  */
 - (void)p2pVideoPlayer:(GWP2PVideoPlayer *)player numberOfAudiencesChange:(NSUInteger)currentNumber;
+
+/**
+ 监控网速发生改变，每秒回调一次
+
+ @param player 播放器
+ @param speed 网速
+ */
+- (void)p2pVideoPlayer:(GWP2PVideoPlayer *)player networkSpeedChanged:(NSInteger)speed;
 
 /**
  远程录像(SD卡录像)状态发送改变
@@ -72,8 +80,7 @@ extern NSString * const kGWP2PDeviceIsCallingNotification;
  
  @param deviceId      设备ID
  @param password      设备密码
- @param deviceType    设备类型
- @param deviceSubtype 设备子类型
+ @param definition    默认清晰度
  @param callingBlock  正在呼叫回调,详见block定义注释
  @param acceptBlock   接收呼叫回调,详见block定义注释
  @param rejectBlock   拒绝连接回调,详见block定义注释
@@ -81,8 +88,7 @@ extern NSString * const kGWP2PDeviceIsCallingNotification;
  */
 - (void)p2pCallDeviceWithDeviceId:(NSString *)deviceId
                          password:(NSString *)password
-                       deviceType:(GWP2PDeviceType)deviceType
-                    deviceSubtype:(GWP2PDeviceIPCSubtype)deviceSubtype
+                       definition:(GWP2PPTZDefinition)definition
                           calling:(P2PCallingBlock)callingBlock
                            accept:(P2PAcceptBlock)acceptBlock
                            reject:(P2PRejectBlock)rejectBlock
@@ -138,5 +144,39 @@ extern NSString * const kGWP2PDeviceIsCallingNotification;
  @param definition 清晰度枚举
  */
 - (void)p2pSetDefinition:(GWP2PPTZDefinition)definition;
+
+/**
+ 控制汇讯视通镜头转向
+ 
+ @param  direction 镜头转动方向
+ */
+- (void)p2pHXVsionTurnDirection:(GWP2PHXVisonDirection)direction;
+
+/**
+ 汇讯视通3D手势
+ 
+ @param zoomType 3D手势类型
+ @param point 手势坐标
+ @param size  手势大小,当定位移动时，宽高必须传0
+ */
+- (void)p2pHXVsionOperate3DGesture:(GWP2PHXVison3DGestureZoomType)zoomType point:(CGPoint)point size:(CGSize)size;
+
+/**
+ 开始摄像
+ 
+ @param view 显示画面视图
+ */
+- (void)startCameraWithAddView:(UIView *)view;
+
+/**
+ 停止摄像
+ */
+- (void)stopCamera;
+
+/**
+ 切换摄像镜头
+ */
+- (void)switchCamera;
+
 
 @end

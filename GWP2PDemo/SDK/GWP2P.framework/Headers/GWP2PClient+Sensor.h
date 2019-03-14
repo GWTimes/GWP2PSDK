@@ -546,6 +546,20 @@ typedef enum GWSensorLikeSocketOperationType {
                           devicePassword:(NSString *)devicePassword
                          completionBlock:(CompletionBlock)completionBlock;
 
+#pragma mark - 设置访客开锁权限
+/**
+ 设置访客开锁权限
+ 
+ @param onOrOff                 访客是否拥有开锁权限
+ @param deviceID                设备ID
+ @param devicePassword          设备密码
+ @param completionBlock         与设备交互完成后的回调Block
+ */
+- (void)setVisitorUnlockAuthorityState:(BOOL)onOrOff
+                          withDeviceId:(NSString *)deviceID
+                        devicePassword:(NSString*)devicePassword
+                       completionBlock:(CompletionBlock)completionBlock;
+
 #pragma mark - 串口透传
 /**
  发送串口透传数据

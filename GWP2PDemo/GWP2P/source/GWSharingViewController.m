@@ -8,7 +8,7 @@
 
 #import "GWSharingViewController.h"
 #import "DeviceModel.h"
-#import "GWNet.h"
+#import <GWP2P/GWP2P.h>
 #import "LoginResult.h"
 #import "GWSharingFlowchartViewController.h"
 
@@ -124,7 +124,7 @@
                                     
                                     NSLog(@"参数 deviceID:%@ account:%@ sessionID:%@ time:%@ secretKey:%@ guestKey:%@ keyID:%llu customID:%@ macAddr:%@", deviceID, account, sessionID, time, secretKey, guestKey, keyID, customID, macAddr);
                                     //5 绑定设备
-                                    [GWNetSingleton bindDevice:deviceID withUserID:account sessionID:sessionID modifyTime:time deviceInfoVersion:@"0" groupID:@"0" permission:3 secretKey:secretKey guestKey:guestKey remarkName:@"填个名字" keyID:keyID customID:customID.intValue  macAddr:macAddr completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
+                                    [GWNetSingleton bindDevice:deviceID withUserID:account sessionID:sessionID modifyTime:time deviceInfoVersion:@"0" groupID:@"0" permission:3 secretKey:@"0" guestKey:guestKey remarkName:@"填个名字" keyID:keyID customID:customID.intValue macAddr:macAddr isSupport:NO completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
                                         if ([errorCode isEqualToString:GWNET_RET_OPERATION_SUCCESS]) {
                                             NSLog(@"绑定成功");
                                             //获取设备必要信息,这一步非必需,为了保证添加的设备有准确信息,最好执行
@@ -236,7 +236,7 @@ static NSString *inviteCode = nil;
 - (IBAction)unbind:(id)sender {
     NSString *account = [LoginResult getAccount];
     NSString *sessionID = [LoginResult getSessionID1];
-    [GWNetSingleton deleteOwnerWithUserID:account sessionID:sessionID deviceID:self.deviceID completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
+    [GWNetSingleton deleteOwnerWithUserID:account sessionID:sessionID deviceID:self.deviceID packageOption:NO completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
         NSLog(@" errorCode:%@ errorString:%@ %@", errorCode, errorString, json);
         if ([errorCode isEqualToString:GWNET_RET_OPERATION_SUCCESS]) {
             [MBProgressManager showBriefAlert:@"解绑成功"];
@@ -260,7 +260,8 @@ static NSString *inviteCode = nil;
     NSString *sessionID = [LoginResult getSessionID1];
     //这里添加不进,只是演示代码,要调接口成功,不能与主人用同一个账号,用户测试时也可把账号改一下
     //访客通过一定的途径(如二维码,纯文本),获取到邀请码后,从服务器获取设备访客密码,添加设备
-    [GWNetSingleton getSharedDeviceInfomationWithUserID:account sessionID:sessionID inviteCode:inviteCode completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
+    NSString *modifyTimeString = [NSString stringWithFormat:@"%0.f", [[NSDate date] timeIntervalSince1970]];
+    [GWNetSingleton getSharedDeviceInfomationWithUserID:account sessionID:sessionID inviteCode:inviteCode modifyTime:modifyTimeString completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
         NSLog(@" errorCode:%@ errorString:%@ %@", errorCode, errorString, json);
         if ([errorCode isEqualToString:GWNET_RET_OPERATION_SUCCESS]) {
             NSString *guestKey = [NSString stringWithFormat:@"%@", json[@"GuestKey"]];
