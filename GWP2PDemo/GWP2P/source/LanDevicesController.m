@@ -37,6 +37,7 @@
 
     //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         GWP2PDeviceLinker *linker = [GWP2PDeviceLinker shareInstance];
+          [linker refreshLanDevices];
         self.listsArr = linker.lanDevices;
         
         NSLog(@"%@",linker.lanDevices);

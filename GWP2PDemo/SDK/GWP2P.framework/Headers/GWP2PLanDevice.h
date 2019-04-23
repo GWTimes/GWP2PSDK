@@ -17,6 +17,9 @@
 /** 设备ID */
 @property (nonatomic, copy) NSString *deviceId;
 
+/** 新设备ID（重复的设备号升级） */
+@property (nonatomic, copy) NSString *upgradeDeviceId;
+
 /** 设备类型 */
 @property (nonatomic, assign) GWP2PDeviceType deviceType;
 

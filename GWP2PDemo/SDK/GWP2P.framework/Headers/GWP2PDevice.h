@@ -21,7 +21,21 @@ typedef NS_ENUM(NSUInteger, GWP2PDeviceType) {
     GWP2PDeviceTypeNVR = 11,
 };
 
-
+//设备加密功能选项枚举值
+typedef NS_ENUM(uint64_t, GWDeviceFunctionType) {
+    
+    GWDeviceFunctionVoiceControl = 1 << 0, //声控功能
+    GWDeviceFunctionBattryInside = 1 << 1, //内置电池
+    GWDeviceFunction2kVideo = 1 << 2, //2K分辨率的图像
+    GWDeviceFunction4kVideo = 1 << 3,//4K分辨率的图像
+    GWDeviceFunctionSoundPos = 1 << 4,//听声辨位
+    GWDeviceFunctionMotionTrack = 1 << 5,//物件追踪
+    GWDeviceFunctionPanoPuzzle = 1 << 6,//全景拼图
+    GWDeviceFunctionOneButtonCall = 1 <<7,//按钮呼叫
+    GWDeviceFunctionGarageLight = 1 << 8,//智能车库灯
+    GWDeviceFunctionHXVsion = 1 << 9,//汇讯视通
+    
+};
 /**
  IPC设备(DeviceType=7)的设备子类型,目前只有IPC有子类型
  */

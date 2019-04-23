@@ -68,6 +68,15 @@ typedef void (^ScreenshotCompletionBlock)(UIImage *screenshot, NSTimeInterval ti
  */
 - (void)p2pPlayer:(GWP2PPlayer *)player recieveGestureRecognizer:(UIGestureRecognizer *)gesture;
 
+
+/**
+ 更新时间戳
+
+ @param player 播放器对象
+ @param pts 显示时间戳(Presentation Time Stamp)
+ */
+- (void)p2pPlayer:(GWP2PPlayer *)player updatePTS:(NSTimeInterval)pts;
+
 @end
 
 
@@ -83,7 +92,10 @@ typedef void (^ScreenshotCompletionBlock)(UIImage *screenshot, NSTimeInterval ti
 /** 是否正在播放, 从call开始就为YES，播放中断置为NO */
 @property (nonatomic, assign, readonly) BOOL isPlaying;
 
-/** 静音 */
+/** 无声播放 */
+@property (nonatomic, assign, getter=isSilent) BOOL silent;
+
+/** 静音, 当`silent=YES`时`mute=YES` */
 @property (nonatomic, assign, getter=isMute) BOOL mute;
 
 /** 手势开关 默认开启 (usePano=YES时无效)*/
@@ -147,6 +159,9 @@ typedef void (^ScreenshotCompletionBlock)(UIImage *screenshot, NSTimeInterval ti
  @param ratio 边缘切边比例,范围0~1
  */
 - (void)setCutParam:(float)x y:(float)y ratio:(float)ratio;
-
+/**
+ 设置开启关闭自动巡航
+ */
+- (void)setWideAngleAuto:(BOOL)isAuto ;
 
 @end

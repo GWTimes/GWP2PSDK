@@ -74,6 +74,12 @@ extern NSString * const kGWP2PDeviceIsCallingNotification;
 /** 代理 */
 @property (nonatomic, weak) id <GWP2PVideoPlayerProtocol> delegate;
 
+/** 手势操作水平翻转 */
+@property (nonatomic, assign) BOOL isFlipHorizontal;
+
+/** 手势操作垂直翻转 */
+@property (nonatomic, assign) BOOL isFlipVertical;
+
 
 /**
  呼叫一个设备,进行监控
@@ -136,7 +142,7 @@ extern NSString * const kGWP2PDeviceIsCallingNotification;
 
  @param direction 转动方向枚举
  */
-- (void)p2pTurnDirection:(GWP2PPTZDirection)direction;
+ - (void)p2pTurnDirection:(GWP2PPTZDirection)direction;
 
 /**
  设置视频清晰度

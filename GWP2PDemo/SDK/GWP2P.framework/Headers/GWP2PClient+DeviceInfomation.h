@@ -306,6 +306,8 @@ typedef NS_ENUM(NSUInteger, GWDeviceRTSPPasswordMode) {
                     withDeviceID:(NSString *)deviceID
                  completionBlock:(CompletionBlock)completionBlock;
 
+
+
 /**
  设置管理员密码,设备已经有密码(管理员)时调用
  
@@ -528,5 +530,27 @@ typedef NS_ENUM(NSUInteger, GWDeviceRTSPPasswordMode) {
 - (void)setDeviceRestoreFactorySettingsWithDeviceID:(NSString *)deviceID
                                      devicePassword:(NSString *)devicePassword
                                     completionBlock:(CompletionBlock)completionBlock;
-
+#pragma mark -自动变焦
+/**
+自动变焦 设置(set)变焦镜头马达当前位置的方法声明
+ 
+ @param deviceID                设备ID
+ @param password          设备密码
+ @param params          对接参数
+ @param completionBlock         与设备交互完成后的回调Block
+ */
+-(void)setAutoZoomWithId:(NSString*)deviceID
+                password:(NSString*)password
+                  params:(int)params
+         completionBlock:(CompletionBlock)completionBlock;
+/**
+ 自动变焦 获取变焦镜头马达当前位置方法声明
+ 
+ @param deviceID                设备ID
+ @param password             设备密码
+ @param completionBlock         与设备交互完成后的回调Block
+ */
+-(void)getAutoZoomWithId:(NSString*)deviceID
+                password:(NSString*)password
+         completionBlock:(CompletionBlock)completionBlock;
 @end

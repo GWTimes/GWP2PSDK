@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "GWP2PLanDevice.h"
 
+extern NSString * const DUPLICATE_DEVICE_ID_NOTIFICATION;
+
 @class GWP2PDeviceLinker;
 
 /**

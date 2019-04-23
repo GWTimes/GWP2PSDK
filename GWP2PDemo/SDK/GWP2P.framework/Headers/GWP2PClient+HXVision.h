@@ -7,11 +7,13 @@
 //
 
 #import <GWP2P/GWP2P.h>
-
+#import <Foundation/Foundation.h>
+#import "GWP2PPlayerDefine.h"
+#import <UIKit/UIKit.h>
 /**
  操作预置位方式
  */
-typedef enum GWHXVisonPreseSubcmdType {
+typedef enum  GWHXVisonPreseSubcmdType {
     GWHXVisonPreseSubcmdTypeAdd,//增加
     GWHXVisonPreseSubcmdTypeDelete,//删除
     GWHXVisonPreseSubcmdTypeGoTo,//转向
@@ -36,4 +38,11 @@ typedef enum GWHXVisonPreseSubcmdType {
                                   devicePassword:(NSString *)devicePassword
                                  completionBlock:(CompletionBlock)completionBlock;
 
+
+-(void)hxVison3DGestureCommand:(GWP2PHXVison3DGestureZoomType)zoomType
+                  withDeviceID:(NSString *)deviceID
+                devicePassword:(NSString *)devicePassword
+                         point:(CGPoint)point
+                          size:(CGSize)size;
+- (void)sendHXCommandTypeandOption:(int)option;
 @end
