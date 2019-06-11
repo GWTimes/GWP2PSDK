@@ -58,5 +58,10 @@
  @param completionBlock         与设备交互完成后的回调Block
  */
 - (void)setDeviceWifiPassword:(NSString *)wifiPassword inAPModeWithCompletionBlock:(CompletionBlock)completionBlock;
-
+/**
+ 设置设备列表将设备版本号传给sdk
+ 
+ @param deviceAry 设备数组[@{@"deviceID":.@"p2p version of device",}]
+ */
+-(void)p2pSetDevieAry:(NSArray *)deviceAry;
 @end

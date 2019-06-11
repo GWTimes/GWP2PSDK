@@ -163,6 +163,8 @@
                               [SettingExample exampleWithTitle:@"设置RTSP密码" sel:@selector(setRTSPPasswordExample)],
                               [SettingExample exampleWithTitle:@"确认RTSP密码模式" sel:@selector(confirmRTSPPasswordModeExample)],
                               [SettingExample exampleWithTitle:@"获取设备分辨率,IP地址,MAC(网卡)地址" sel:@selector(getDeviceResolutionAndIpAndMacAddressExample)],
+                            [SettingExample exampleWithTitle:@"获取IP地址,网关地址，子网地址,DNS地址" sel:@selector(getDeviceDnsAndIpAndSubNetAndGateWayExample)],
+                            [SettingExample exampleWithTitle:@"设置IP地址,网关地址，子网地址,DNS地址" sel:@selector(setDeviceDnsAndIpAndSubNetAndGateWayExample)],
                               [SettingExample exampleWithTitle:@"获取设备NVR信息" sel:@selector(getDeviceNVRInifomationExample)],
 
                               ],
@@ -272,7 +274,22 @@
                                 [SettingExample exampleWithTitle:@"设置声控状态" sel:@selector(setDeviceSoundControlStateExample)],
                                 ],
                         },
-                      
+                      @{@"category":@"变倍变焦",
+                        @"example":
+                            @[
+                                [SettingExample exampleWithTitle:@"获取变倍变焦" sel:@selector(getAutoZoom)],
+                                [SettingExample exampleWithTitle:@"设置变倍变焦" sel:@selector(setAutoZoom)],
+
+                                ],
+                        },
+                      @{@"category":@"SDK P2P信息",
+                        @"example":
+                            @[
+                                [SettingExample exampleWithTitle:@"获取SDK P2P版本信息" sel:@selector(getSDKVersion)],
+                               
+                                
+                                ],
+                        },
                       ];
 }
 
@@ -376,8 +393,34 @@
     [[GWP2PClient sharedClient] getDeviceResolutionAndIpAndMacAddressWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
         [self outputLog:dataDictionary success:success];
     }];
+   
 }
-
+/**
+ 获取SDKp2p库的版本号
+ */
+- (void)getSDKVersion {
+  NSString *version =  [[GWP2PClient sharedClient] getP2PVersion];
+    [self outputLog:@{@"version":version} success:YES];
+    
+}
+/**
+ 获取,IP地址,DNS,网关，子网
+ */
+- (void)getDeviceDnsAndIpAndSubNetAndGateWayExample {
+    [[GWP2PClient sharedClient] getDeviceDNSAndIpAndGetWayAndSubNetMaskWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+            [self outputLog:dataDictionary success:success];
+    }];
+    
+}
+/**
+ 设置,IP地址,DNS,网关，子网
+ */
+- (void)setDeviceDnsAndIpAndSubNetAndGateWayExample {
+    [[GWP2PClient sharedClient] setDeviceDNSAndIpAndGetWayAndSubNetMaskWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword isAuto:0 deviceDNS:@"255.255.255.0" deviceIP:@"192.168.1.1" deviceSubNetMask:@"255.255.255.0" deviceGetWay:@"255.255.255.0" completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+         [self outputLog:dataDictionary success:success];
+    }];
+    
+}
 /**
  设置白光灯定时动作
  */
@@ -414,7 +457,23 @@
         [self outputLog:dataDictionary success:success];
     }];
 }
+/**
+ 获取变倍变焦
+ */
+- (void)getAutoZoom {
+    [[GWP2PClient sharedClient] getAutoZoomWithId:self.deviceModel.deviceID password:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+        [self outputLog:dataDictionary success:success];
+    }];
+}
 
+/**
+ 设置 获取变倍变焦
+ */
+- (void)setAutoZoom {
+    [[GWP2PClient sharedClient] setAutoZoomWithId:self.deviceModel.deviceID password:self.deviceModel.devicePassword params:5 completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+        [self outputLog:dataDictionary success:success];
+    }];
+}
 /**
  确认RTSP密码模式
  */

@@ -93,7 +93,7 @@ typedef NS_ENUM(NSUInteger, GWDeviceRTSPPasswordMode) {
  
  @"type" （设备主类型）： GWDeviceType 类型,（如IPC、NPC...） （设备返回的主类型不准）
  
- @"subtype" （设备子类型）： GWDeviceSubtype 类型,（如30只支持868；31支持868+情景模式；32支持868+情景模式+分享）
+ @"device subtype" （设备子类型）： GWDeviceSubtype 类型,（如30只支持868；31支持868+情景模式；32支持868+情景模式+分享）
  
  @"preset position suppurted" （是否支持预置位）:  @(BOOL) NO 不支持; YES 支持
  
@@ -456,6 +456,39 @@ typedef NS_ENUM(NSUInteger, GWDeviceRTSPPasswordMode) {
 - (void)getDeviceResolutionAndIpAndMacAddressWithDeviceID:(NSString *)deviceID
                                            devicePassword:(NSString *)devicePassword
                                           completionBlock:(CompletionBlock)completionBlock;
+#pragma mark - 获取设备DNS,网关，子网，ip
+/**
+ 获取设备获取设备DNS,网关，子网，ip
+ 
+ @param deviceID                设备ID
+ @param devicePassword          设备密码
+ @param completionBlock         与设备交互完成后的回调Block
+ */
+- (void)getDeviceDNSAndIpAndGetWayAndSubNetMaskWithDeviceID:(NSString *)deviceID
+                                           devicePassword:(NSString *)devicePassword
+                                          completionBlock:(CompletionBlock)completionBlock;
+#pragma mark - 设置设备DNS,网关，子网，ip
+
+/**
+ 设置设备DNS,网关，子网，ip
+
+ @param deviceID 设备ID
+ @param devicePassword  设备密码
+ @param isAuto 0为静态，1为动态，为动态时后面的参数都为无效
+ @param dNS 设置静态 DNS 值时填255.255.255.255 .动态时填 0
+ @param IP 设置静态 ip 值时填192.168.1.1。动态时填 0
+ @param subNetMask 设置静态子网掩码值时填255.255.255.0 动态时填 0
+ @param getWay 设置静态网关值时填。动态时填255.255.255.255 动态时填 0
+ @param completionBlock  与设备交互完成后的回调Block
+ */
+- (void)setDeviceDNSAndIpAndGetWayAndSubNetMaskWithDeviceID:(NSString *)deviceID
+                                             devicePassword:(NSString *)devicePassword
+                                                     isAuto:(NSInteger)isAuto
+                                                  deviceDNS:(NSString*)dNS
+                                                   deviceIP:(NSString*)IP
+                                           deviceSubNetMask:(NSString*)subNetMask
+                                               deviceGetWay:(NSString *)getWay
+                                            completionBlock:(CompletionBlock)completionBlock;
 
 #pragma mark - 获取用户及设备列表在线状态等信息
 /**

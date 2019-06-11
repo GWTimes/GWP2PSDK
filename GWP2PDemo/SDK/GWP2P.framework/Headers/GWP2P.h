@@ -24,6 +24,7 @@
 #import "GWP2PClient+GarageLight.h"
 #import "GWP2PClient+HXVision.h"
 #import "GWP2PDefine.h"
+#import "GWP2PClient+P2PInfo.h"
 
 
 //监控、视频通话、回放

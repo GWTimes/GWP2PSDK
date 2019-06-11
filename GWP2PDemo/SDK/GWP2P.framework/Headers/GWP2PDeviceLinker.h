@@ -68,9 +68,9 @@ typedef void (^DeviceReceiveBlock)(NSString *deviceId, BOOL isSupport);
 
 
 /**
- 刷新局域网设备。lanDevices每30刷新，调用此方法马上发送一次刷新指令。
+强制刷新局域网设备
  */
-- (void)refreshLanDevices;
+- (void)forceScanLanDevices;
 
 
 

@@ -41,7 +41,7 @@
     GWNetSingleton.theAppVersion = @"04.73.00.00";
     GWNetSingleton.theAppId = @"d6bf22be8aed98714beedc1d5297e6b2";
     GWNetSingleton.theAppToken = @"465993f9d8974b448e993889cba499fd5afb94955412f7020a255b0e1b236572";
-    GWNetSingleton.connectWithHttps = YES;
+   
 }
 
 - (IBAction)loginBtnAction:(UIButton *)sender {

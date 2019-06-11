@@ -139,5 +139,8 @@ typedef NS_ENUM(NSUInteger, GWSensorAlarmType) {
     GWSensorAlarmTypeMAX,
 };
 
+/** 测试用，请勿读写 */
+//extern void *gwdebug;
+extern void (*gwdebug)(NSInteger level, NSString *file, NSString *func, NSInteger line, NSString *msg);
 
 #endif /* GWP2PDefine_h */

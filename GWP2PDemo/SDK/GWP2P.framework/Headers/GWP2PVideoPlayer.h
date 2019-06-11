@@ -19,6 +19,11 @@
  */
 extern NSString * const kGWP2PDeviceIsCallingNotification;
 
+/**
+ NPC设备主动拒绝的通知
+
+ */
+extern NSString * const kGWP2PDeviceIsRejectNotification;
 
 /**
  @brief GWP2PVideoPlayerProtocol协议包含监控时的设备状态信息的回调,按需要选择性实现
@@ -98,7 +103,8 @@ extern NSString * const kGWP2PDeviceIsCallingNotification;
                           calling:(P2PCallingBlock)callingBlock
                            accept:(P2PAcceptBlock)acceptBlock
                            reject:(P2PRejectBlock)rejectBlock
-                            ready:(P2PReadyBlock)readyBlock;
+                            ready:(P2PReadyBlock)readyBlock
+                         allowLAN:(BOOL)allowLAN;
 
 /**
  呼叫一个NPC设备,进行视频对讲,目前只有NPC一种设备存在对讲视频对讲功能,所以不需要设备类型等参数

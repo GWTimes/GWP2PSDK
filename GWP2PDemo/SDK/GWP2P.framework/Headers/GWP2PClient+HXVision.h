@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import "GWP2PPlayerDefine.h"
 #import <UIKit/UIKit.h>
+
 /**
  操作预置位方式
  */
@@ -44,5 +45,7 @@ typedef enum  GWHXVisonPreseSubcmdType {
                 devicePassword:(NSString *)devicePassword
                          point:(CGPoint)point
                           size:(CGSize)size;
-- (void)sendHXCommandTypeandOption:(int)option;
+
+- (void)sendHXCommandTypeandOption:(GWP2PHXVisonDirection)direction;
+
 @end

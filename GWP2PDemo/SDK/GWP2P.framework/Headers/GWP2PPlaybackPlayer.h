@@ -28,6 +28,9 @@
 /** 回放的状态 */
 @property (nonatomic, readonly) GWP2PPlaybackState playbackState;
 
+/** 播放倍速 */
+@property (nonatomic, assign) GWPlaybackSpeed speed;
+
 /**
  播放设备远程录像文件,原理和监控设备是一样的,需要先呼叫连接设备
  

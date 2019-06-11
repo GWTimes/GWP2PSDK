@@ -37,7 +37,7 @@
 
     //dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         GWP2PDeviceLinker *linker = [GWP2PDeviceLinker shareInstance];
-          [linker refreshLanDevices];
+          [linker forceScanLanDevices];
         self.listsArr = linker.lanDevices;
         
         NSLog(@"%@",linker.lanDevices);
@@ -50,7 +50,7 @@
  手动刷新
  */
 - (void)refreshLanDeviceList {
-    [[GWP2PDeviceLinker shareInstance] refreshLanDevices];
+    [[GWP2PDeviceLinker shareInstance] forceScanLanDevices];
     [MBProgressManager showLoading];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [MBProgressManager hideAlert];

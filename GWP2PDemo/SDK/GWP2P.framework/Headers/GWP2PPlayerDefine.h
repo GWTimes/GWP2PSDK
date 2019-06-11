@@ -45,6 +45,11 @@ typedef NS_ENUM(NSUInteger, GWP2PPlaybackState) { //回放状态
     GWP2PPlaybackStateStop         //停止
 };
 
+typedef NS_ENUM(NSUInteger, GWPlaybackSpeed) { //回放倍速
+    GWPlaybackSpeedNormal,
+    GWPlaybackSpeedFastForward
+};
+
 
 /**
  呼叫失败的错误枚举
@@ -65,6 +70,8 @@ typedef NS_ENUM(NSUInteger, GWP2PCallError) {
     GWP2PCallErrorPwdWrong,        //12密码错误(在远程监控时用到密码，在视频通话是不需要)
     GWP2PCallErrorConnFail,
     GWP2PCallErrorNotSupport,
+    GWP2PCallErrorNotPermissions,    //15无监控权限
+
 };
 
 /**
@@ -146,25 +153,27 @@ typedef NS_ENUM(NSUInteger, GWP2PPlaybackControl) {
     GWP2PPlaybackControlPlay,               //播放
     GWP2PPlaybackControlPause,              //暂停
     GWP2PPlaybackControlStop,               //停止
-    GWP2PPlaybackControlFileEnd,            //文件播放完毕
+    GWP2PPlaybackControlFileEnd,            //文件读取完毕，但不等于播放完毕
     GWP2PPlaybackControlFastForward,        //快进
     GWP2PPlaybackControlFastForwardCancel,  //取消快进
     GWP2PPlaybackControlNextFile,           //切换文件播放
     GWP2PPlaybackControlSeekTime,           //指定时间播放
 };
 
+
 /**
  汇讯视通控制镜头
  */
 typedef NS_ENUM(NSUInteger, GWP2PHXVisonDirection) {
-    GWP2PHXVisonDirectionLeft = 0,  //左
-    GWP2PHXVisonDirectionRight,     //右
-    GWP2PHXVisonDirectionUp,        //上
-    GWP2PHXVisonDirectionDown,      //下
-    GWP2PHXVisonDirectionShort,     //缩小
-    GWP2PHXVisonDirectionLong,      //放大
-    GWP2PHXVisonDirectionStop,      //停止
+    GWP2PHXVisonDirectionLeft = 0,  //左，保持移动
+    GWP2PHXVisonDirectionRight,     //右，保持移动
+    GWP2PHXVisonDirectionUp,        //上，保持移动
+    GWP2PHXVisonDirectionDown,      //下，保持移动
+    GWP2PHXVisonDirectionZoomOut,   //缩小
+    GWP2PHXVisonDirectionZoomIn,    //放大
+    GWP2PHXVisonDirectionStop,      //停止，停止移动
 };
+
 
 /**
  汇讯视通3D手势
