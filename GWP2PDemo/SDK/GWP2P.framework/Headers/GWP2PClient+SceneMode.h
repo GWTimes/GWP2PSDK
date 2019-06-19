@@ -72,6 +72,15 @@ typedef NS_ENUM(uint8_t, GWProtectionSettingState) {
     GWProtectionSettingStateOn = 1,    /**< 状态开 */
     GWProtectionSettingStateOff, /**< 状态关 */
 };
+/**
+ 各传感器的防护设置状态
+ */
+typedef NS_ENUM(uint8_t, GWProtectionSettingBodyState) {
+    GWProtectionSettingBodyStateNotSurpport = 0, /**< 设备不支持 */
+    GWProtectionSettingBodyStateOn = 3,    /**< 状态开 */
+    GWProtectionSettingBodyStateOnlyBodyOff =7, /**< 状态关 */
+ 
+};
 
 
 /**
@@ -89,6 +98,7 @@ typedef NS_ENUM(uint8_t, GWProtectionSettingState) {
 @property (nonatomic, assign) GWProtectionSettingState externalAlarmInputState; /**< 外部报警输入 */
 @property (nonatomic, assign) GWProtectionSettingState externalAlarmOutputState; /**< 外部报警输出 */
 @property (nonatomic, assign) GWProtectionSettingState externalSensorState; /**< 外部传感器 */
+@property (nonatomic, assign) GWProtectionSettingBodyState body_detect; /**< 人体侦测 &1 bit 0 表示不支持  1 支持    &4 bit 3 0表示仅人形   1表示物件跟人形都支持  人形侦测 0不支持 3打开 7关闭*/ 
 
 @end
 

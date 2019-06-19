@@ -21,7 +21,7 @@
  @param errorString 描述具体的错误原因
  @param json 具体的返回数据
  */
-typedef void(^GWNetCompletionBlock)(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json);
+typedef void(^GWNetCompletionBlock)(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary<NSString*,id> *json);
 
 //调接口时会话ID错误发出的通知,会话ID超时/错误时所有接口无法调用,应该让用户重新登录获取新的Session。每个接口处理过于麻烦,所以增加通知。
 extern NSString * const kGWNetSessionIdErrorNotification;
@@ -154,7 +154,6 @@ extern NSString * const kGWNetSessionIdErrorNotification;
                     withUserId:(NSString *)userId
                      sessionId:(NSString *)sessionId
                     completion:(GWNetCompletionBlock)completion;
-
 #pragma mark 退出登录
 /**
  退出登录

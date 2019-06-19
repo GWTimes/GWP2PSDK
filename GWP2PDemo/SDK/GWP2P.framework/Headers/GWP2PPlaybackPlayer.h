@@ -63,6 +63,10 @@
  */
 - (void)p2pPauseOrResume;
 
+/**
+ 暂停
+ */
+- (void)p2pPause;
 
 /**
  快进或者取消快进

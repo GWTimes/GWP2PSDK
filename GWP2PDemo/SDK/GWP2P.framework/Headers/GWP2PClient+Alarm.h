@@ -91,6 +91,45 @@ typedef enum GWUnbindAlarmAccountOperationType {
               devicePassword:(NSString *)devicePassword
              completionBlock:(CompletionBlock)completionBlock;
 
+
+/**
+ 设置设备报警声开关状态
+ 获取设备报警声开关状态请调 getMultipledeviceStatusWithDeviceID:password:completionBlock:
+ @param alarmOn 开关状0关，1开
+ @param deviceID                设备ID
+ @param devicePassword          设备密码
+ @param completionBlock         与设备交互完成后的回调Block
+ */
+- (void)setDeviceSpecialAlarmState:(NSUInteger)alarmOn
+                      withDeviceID:(NSString *)deviceID
+                    devicePassword:(NSString *)devicePassword
+                   completionBlock:(CompletionBlock)completionBlock;
+
+/**
+ 设置设备报警白光灯状态
+ 获取设备备报警白光灯状态请调 getMultipledeviceStatusWithDeviceID:password:completionBlock:
+ @param alarmOn 开关状0关，1开
+ @param deviceID                设备ID
+ @param devicePassword          设备密码
+ @param completionBlock         与设备交互完成后的回调Block
+ */
+- (void)setDeviceWhiteAlarmLightState:(NSUInteger)alarmOn
+                         withDeviceID:(NSString *)deviceID
+                       devicePassword:(NSString *)devicePassword
+                      completionBlock:(CompletionBlock)completionBlock;
+
+/**
+ 设置设备红蓝灯开关状态
+ 获取设备红蓝灯开关状态请调 getMultipledeviceStatusWithDeviceID:password:completionBlock:
+ @param alarmOn 开关状0关，1开
+ @param deviceID                设备ID
+ @param devicePassword          设备密码
+ @param completionBlock         与设备交互完成后的回调Block
+ */
+- (void)setDeviceRedBluelAlarmLightState:(NSUInteger)alarmOn
+                            withDeviceID:(NSString *)deviceID
+                          devicePassword:(NSString *)devicePassword
+                         completionBlock:(CompletionBlock)completionBlock;
 /**
  设置设备人体红外开关状态
  

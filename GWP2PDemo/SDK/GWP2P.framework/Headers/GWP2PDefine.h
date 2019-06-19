@@ -139,7 +139,23 @@ typedef NS_ENUM(NSUInteger, GWSensorAlarmType) {
     GWSensorAlarmTypeMAX,
 };
 
-/** 测试用，请勿读写 */
+
+
+/**
+ 发送设备指令后返回的错误类型
+ */
+typedef NS_ENUM(NSInteger, P2PCloudPlayBackError) {
+    P2PCloudPlayBackErrorNone = 0,              /**< 没有错误 */
+    P2PCloudPlayBackErrorForbidden = -1011,      /**< 鉴权过期禁止访问 */
+    P2PCloudPlayBackErrorNoPermission = 10903001 ,           /**<//没有回放权限 */
+    P2PCloudPlayBackErrorNoPlayback = 10908103,      /**< 没有回放视频 */
+    P2PCloudPlayBackErrorLoginError =10903007 ,           /**< 登录错误 */
+    P2PCloudPlayBackErrorMessageIsSending = 9996,  /**< 当前请求正在进行 */
+    P2PCloudPlayBackErrorUnKnow = 9999      /**< 未知错误,返回结果一般不会描述错误原因 */
+
+};
+
+
 //extern void *gwdebug;
 extern void (*gwdebug)(NSInteger level, NSString *file, NSString *func, NSInteger line, NSString *msg);
 

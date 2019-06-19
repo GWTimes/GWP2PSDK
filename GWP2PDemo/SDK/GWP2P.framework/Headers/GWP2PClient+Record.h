@@ -16,7 +16,14 @@ typedef enum GWP2PRecordType{
     GWP2PRecordTypeAlarm,/**< 报警时录像 */
     GWP2PRecordTypeSchedule,/**< 定时录像 */
 }GWP2PRecordType;
-
+/**
+ 云录像质量
+ */
+typedef enum GWP2PCloudRecordType{
+    GWP2PRecordTypeQuilty = 0,/**< 质量优先 */
+    GWP2PRecordTypeSmooth = 1,/**< 流畅优先 */
+ 
+}GWP2PCloudRecordType;
 /**
  录像质量
  */
@@ -44,6 +51,9 @@ typedef enum GWP2PRecordDefinition {
 @property (nonatomic, assign) NSInteger second; /**< 文件时间 秒 */
 
 @property (nonatomic, strong) NSDate *date;/**< 记录上面的时间 */
+
+@property (nonatomic, assign) NSInteger totalSec;/**< 记录上面的时间 */
+@property (nonatomic, assign) NSInteger totalEndSec;/**< 记录上面的时间结束为totalsec + time */
 
 @property (nonatomic, copy) NSString *cType; /**< 文件类型 一个字符 */
 @property (nonatomic, assign) NSInteger time; /**< 文件播放时长 若不支持,则为-1 */
@@ -222,5 +232,36 @@ typedef enum GWP2PRecordDefinition {
                                  startDate:(NSDate *)startDate
                                    endDate:(NSDate *)endDate
                            completionBlock:(CompletionBlock)completionBlock;
+#pragma mark - 获取某一天的回放文件
+/**
+ 获取设备回放文件
+ 
+ 一次只能获取64个文件,如果给定的时间差大于64个文件,会分多次获取,一次返回多次获取文件,为保证每次数据都能正常返回,若无特殊要求,两次给定的时间差尽量小点
+ 
+ completionBlock返回字典：
+ 
+ @"files" 键对应一个 NSMutableArray<GWPlaybackFileModel *> *
+ 
+ @param deviceID        设备ID
+ @param devicePassword  设备密码
+ @param dayDate       当天日期，如果传空返回当天日期的回放列表
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)getDeviceOneDayPlaybackFilesOWithDeviceID:(NSString *)deviceID
+                            devicePassword:(NSString *)devicePassword
+                                 dayDate:(NSDate *)dayDate
+                                  completionBlock:(CompletionBlock)completionBlock;
 
+/**
+ 设置设备云回放上传的质量
+
+ @param recordType 设置类型。质量优先与流畅优先
+ @param deviceID        设备ID
+ @param devicePassword  设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)setDeviceCloudPlayBackQuality:(GWP2PCloudRecordType)recordType
+                         WithDeviceID:(NSString *)deviceID
+                       devicePassword:(NSString *)devicePassword
+                      completionBlock:(CompletionBlock)completionBlock;
 @end
