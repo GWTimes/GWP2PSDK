@@ -42,6 +42,7 @@
     [self.view endEditing:YES];
     [MBProgressManager showWaitingWithTitle:@"AP配网中..."];
     //需要注意代码块会被回调许多次
+    [GWP2PClient sharedClient].port = 25143;//要先调用这个接口因为第三方厂商有定制端口,无定制请注释
     [[GWP2PDeviceLinker shareInstance] p2pAPLinkDeviceWithWiFiSSID:_wifiSSIDTF.text wifiPassword:_wifiPasswordTF.text devicePassword:_devicePasswordTF.text deviceReceive:^(NSString *deviceId, BOOL isSupport) {
         NSLog(@"设备%@收到WiFi,isSupport:%d",deviceId,isSupport);
     } deviceLinkIn:^(NSDictionary *deviceDict) {

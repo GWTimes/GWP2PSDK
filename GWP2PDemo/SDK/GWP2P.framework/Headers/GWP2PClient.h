@@ -128,6 +128,7 @@
 @property (nonatomic, weak) id<GWP2PClientProtocol> delegate;/**< GWP2PClient的代理，一些设备事件的通知对象 */
 
 @property (nonatomic, assign) BOOL isAPMode;/**< 是不是AP模式。此属性只保存上次与路由器交互后的数据，调 getDeviceIDInAPMode 方法会重新与路由器交互更新APMode状态，每次app进入前台时会更新APMode状态 */
+@property (nonatomic, assign) NSInteger port;/**< 广播端口 */
 
 @property (nonatomic, copy) NSString *serverList; /**< P2P服务器列表，自建服务器需要设置此属性，格式"|p2p1.cloudlinks.cn|p2p2.cloudlinks.cn|p2p3.cloud-links.net" */
 
@@ -218,6 +219,5 @@
             withDevicePassword:(NSString *)devicePassword
                           data:(NSData *)data
                completionBlock:(CompletionBlock)completionBlock;
-
 
 @end

@@ -45,7 +45,7 @@ typedef NS_ENUM(NSUInteger, GWP2PDeviceIPCSubtype) {
     GWP2PDeviceIPCSubtype38X38,             //38板，不带马达，不带人体红外，不带回音消除
     GWP2PDeviceIPCSubtypeDoorbell,          //门铃，不带马达，带语音优化
     GWP2PDeviceIPCSubtypeCostdown,          //costdown版的摇头机，不带人体红外，不带外部无线传感器. 不带回音消除
-    GWP2PDeviceIPCSubtype38Module,
+    GWP2PDeviceIPCSubtype38Module,          //不带马达
 
     GWP2PDeviceIPCSubtypeNvrPtz = 6,        //预留
     GWP2PDeviceIPCSubtypeNvrNoPtz,          //预留
@@ -57,7 +57,7 @@ typedef NS_ENUM(NSUInteger, GWP2PDeviceIPCSubtype) {
     GWP2PDeviceIPCSubtype130w38X38,         //130w,38板，不带马达，不带人体红外，不带回音消除
     GWP2PDeviceIPCSubtype130wDoorbell,      //130w,门铃，不带马达，带语音优化
     GWP2PDeviceIPCSubtype130wCostdown,      //130w,costdown版的摇头机，不带人体红外，不带外部无线传感器. 不带回音消除
-    GWP2PDeviceIPCSubtype130w38Module,
+    GWP2PDeviceIPCSubtype130w38Module,      //不带马达
     
     GWP2PDeviceIPCSubtype130wNvrPtz = 16,   //预留
     GWP2PDeviceIPCSubtype130wNvrNoPtz,      //预留
@@ -69,7 +69,7 @@ typedef NS_ENUM(NSUInteger, GWP2PDeviceIPCSubtype) {
     GWP2PDeviceIPCSubtype200w38X38,         //200w,38板，不带马达，不带人体红外，不带回音消除
     GWP2PDeviceIPCSubtype200wDoorbell,      //200w,门铃，不带马达，带语音优化
     GWP2PDeviceIPCSubtype200wCostdown,      //200w,costdown版的摇头机，不带人体红外，不带外部无线传感器. 不带回音消除
-    GWP2PDeviceIPCSubtype200w38Module,
+    GWP2PDeviceIPCSubtype200w38Module,      //不带马达
     
     GWP2PDeviceIPCSubtype200wNvrPtz = 26,   //预留
     GWP2PDeviceIPCSubtype200wNvrNoPtz,      //预留

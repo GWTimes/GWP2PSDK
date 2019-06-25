@@ -153,6 +153,7 @@
                               [SettingExample exampleWithTitle:@"获取设备版本信息" sel:@selector(getDeviceVersionExample)],
                               [SettingExample exampleWithTitle:@"初始化设备密码" sel:@selector(initDevicePasswordExample)],
                               [SettingExample exampleWithTitle:@"设置管理员密码" sel:@selector(setDeviceAdministratorPasswordExample)],
+                                [SettingExample exampleWithTitle:@"设置访客密码" sel:@selector(setDeviceVisitorPasswordExample)],
                               [SettingExample exampleWithTitle:@"设置设备时间" sel:@selector(setDeviceTimeExample)],
                               [SettingExample exampleWithTitle:@"获取设备时间" sel:@selector(getDeviceTimeExample)],
                               [SettingExample exampleWithTitle:@"设置设备时区" sel:@selector(setDeviceTimeZoneExample)],
@@ -181,9 +182,14 @@
                         @"example":
                             @[
                                 [SettingExample exampleWithTitle:@"设置报警邮箱" sel:@selector(setDeviceAlarmEmailExample)],
-                                [SettingExample exampleWithTitle:@"解除报警邮箱" sel:@selector(unbindDeviceCurrentAlarmAccountExample)],
+                                [SettingExample exampleWithTitle:@"获取报警邮箱" sel:@selector(getDeviceAlarmEmailExample)],
                                 [SettingExample exampleWithTitle:@"移动侦测灵敏度" sel:@selector(setMotionDetectSensityvityExample)],
                                 [SettingExample exampleWithTitle:@"设置报警账号" sel:@selector(setDeviceAlarmAccountExample)],
+                                [SettingExample exampleWithTitle:@"获取报警账号" sel:@selector(getDeviceAlarmAccountExample)],
+                                [SettingExample exampleWithTitle:@"解除报警账号" sel:@selector(unbindDeviceCurrentAlarmAccountExample)],
+
+                                
+
                                 ],
                         },
                       
@@ -416,7 +422,7 @@
  设置,IP地址,DNS,网关，子网
  */
 - (void)setDeviceDnsAndIpAndSubNetAndGateWayExample {
-    [[GWP2PClient sharedClient] setDeviceDNSAndIpAndGetWayAndSubNetMaskWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword isAuto:0 deviceDNS:@"255.255.255.0" deviceIP:@"192.168.1.1" deviceSubNetMask:@"255.255.255.0" deviceGetWay:@"255.255.255.0" completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+    [[GWP2PClient sharedClient] setDeviceDNSAndIpAndGetWayAndSubNetMaskWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword isAuto:1 deviceDNS:@"255.255.255.0" deviceIP:@"192.168.1.1" deviceSubNetMask:@"255.255.255.0" deviceGetWay:@"255.255.255.0" completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
          [self outputLog:dataDictionary success:success];
     }];
     
@@ -754,7 +760,14 @@ typedef struct AA {
         [self outputLog:dataDictionary success:success];
     }];
 }
-
+/**
+ 获取报警账号
+ */
+- (void)getDeviceAlarmAccountExample {
+  [[GWP2PClient sharedClient] getDeviceBindedAlarmAccountWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+        [self outputLog:dataDictionary success:success];
+    }];
+}
 /**
  门铃开锁
  */
@@ -956,16 +969,34 @@ typedef struct AA {
         [self outputLog:dataDictionary success:success];
     }];
 }
+/**
+ 设置设t访客密码
+ */
+- (void)setDeviceVisitorPasswordExample {
+    
+    [[GWP2PClient sharedClient] setDeviceVisitorPassword:@"qwrqw121" withAdministratorPassword:self.deviceModel.devicePassword deviceID:self.deviceModel.deviceID completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+        [self outputLog:dataDictionary success:success];
+    }];
+    
+  
+}
 
 /**
  设置报警邮箱
  */
 - (void)setDeviceAlarmEmailExample {
-    [[GWP2PClient sharedClient] setDeviceAlarmEmail:@"test@qq.com" withDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword isSupportSMTP:YES SMTPServer:@"smtp.qq.com" SMTPPort:465 SMTPUser:@"SMTP用户名,如果没设置过,就是邮箱地址" SMTPPassword:@"SMTP动态码(有动态码的就传动态码)或密码" encryptType:GWP2PAlarmEmailEncryptTypeNone emailTitle:@"报警时发送邮件的标题" emailContent:@"报警时发送邮件的内容" completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+    [[GWP2PClient sharedClient] setDeviceAlarmEmail:@"test@qq.com" withDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword isSupportSMTP:YES SMTPServer:@"smtp.qq.com" SMTPPort:465 SMTPUser:@"123123" SMTPPassword:@"1231231" encryptType:GWP2PAlarmEmailEncryptTypeNone emailTitle:@"报警时发送邮件的标题" emailContent:@"报警时发送邮件的内容" completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
         [self outputLog:dataDictionary success:success];
     }];
 }
-
+/**
+ 获取报警邮箱
+ */
+- (void)getDeviceAlarmEmailExample {
+    [[GWP2PClient sharedClient] getDeviceAlarmEmailWithDeviceID:self.deviceModel.deviceID  devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+        [self outputLog:dataDictionary success:success];
+    }];
+}
 /**
  设备报警时,解除报警邮箱绑定
  */

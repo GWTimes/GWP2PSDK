@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TGC-Sz-gKE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TGC-Sz-gKE">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="IPC_YunWei_Group" borderStyle="roundedRect" placeholder="配网WiFi名称,设备和手机要在同一局域网" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ckn-mb-V8R">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="GW-2.4G-APP1" borderStyle="roundedRect" placeholder="配网WiFi名称,设备和手机要在同一局域网" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ckn-mb-V8R">
                                 <rect key="frame" x="16" y="36" width="343" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="WnH-o6-0eW"/>
@@ -31,7 +31,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PLZ-0a-F6D">
-                                <rect key="frame" x="114" y="258" width="146" height="35"/>
+                                <rect key="frame" x="114.5" y="258" width="146" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="ToS-Hl-5Ct"/>
                                     <constraint firstAttribute="width" constant="146" id="vOn-H1-6sB"/>
@@ -41,7 +41,7 @@
                                     <action selector="smartLink:" destination="TGC-Sz-gKE" eventType="touchUpInside" id="IqK-od-DfW"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="29088360" borderStyle="roundedRect" placeholder="配网WiFi密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EHo-8j-NBU">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="29418680" borderStyle="roundedRect" placeholder="配网WiFi密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EHo-8j-NBU">
                                 <rect key="frame" x="16" y="87" width="343" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="vtK-pT-zlq"/>

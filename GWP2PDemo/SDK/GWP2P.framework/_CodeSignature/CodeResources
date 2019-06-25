@@ -66,7 +66,7 @@
 		</data>
 		<key>Headers/GWP2PClient.h</key>
 		<data>
-		wfW/FSLqnWLcNollxT+5k9p0xYI=
+		RYvGLk9NxfGf3yLt0TtgMvEw0so=
 		</data>
 		<key>Headers/GWP2PDefine.h</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>Headers/GWP2PDevice.h</key>
 		<data>
-		RgsP3k7cqDz9MKc/o+C6MkJ01ws=
+		G8/oP9uZevx53PoZD5T/9vzN/DQ=
 		</data>
 		<key>Headers/GWP2PDeviceLinker.h</key>
 		<data>
@@ -102,7 +102,7 @@
 		</data>
 		<key>Headers/MD5Manager.h</key>
 		<data>
-		AUNlmZF9J/diTQOhzm0T2eaVNZs=
+		9Ap+BCQmV4CE/09z8spNS9mQ77k=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -284,11 +284,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wfW/FSLqnWLcNollxT+5k9p0xYI=
+			RYvGLk9NxfGf3yLt0TtgMvEw0so=
 			</data>
 			<key>hash2</key>
 			<data>
-			OSfHL++HoGY8D/KgFmrpfvbWwxBdh0o3Tabc/tdLCRw=
+			CJI8BirmzaJFuN1ZFFikCr9zTkyOto5JRMYsYmi5Ntw=
 			</data>
 		</dict>
 		<key>Headers/GWP2PDefine.h</key>
@@ -306,11 +306,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RgsP3k7cqDz9MKc/o+C6MkJ01ws=
+			G8/oP9uZevx53PoZD5T/9vzN/DQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			li6sGL0KHKeXgwn2DMy1d5sNaf5K4xI586VfMdVeFRk=
+			A4XIwRTo78MWLG8iwGYPjg849rPVbe6rhbPyh99oAhA=
 			</data>
 		</dict>
 		<key>Headers/GWP2PDeviceLinker.h</key>
@@ -383,11 +383,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			AUNlmZF9J/diTQOhzm0T2eaVNZs=
+			9Ap+BCQmV4CE/09z8spNS9mQ77k=
 			</data>
 			<key>hash2</key>
 			<data>
-			Y6AKHotGffuSL2JJvsdQ+xggWQ53jO07IwE2uckzWss=
+			Wncj1YD0K0JzELPMsoW+k1G4sC6LrnbwWY4Z1C0i/VI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

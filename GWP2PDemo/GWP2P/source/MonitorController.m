@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *screenShotView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *playViewRatio;
 
+@property (assign, nonatomic) IBOutlet BOOL loop;
+
 @property (weak, nonatomic) IBOutlet UIToolbar *PTZDirectionBar;
 @end
 
@@ -25,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.loop = NO;
     self.navigationItem.title = _deviceModel.deviceID;
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.navigationController.interactivePopGestureRecognizer.enabled = NO;
@@ -239,6 +242,11 @@
         mode = PM_HALF_SPHERE;
     }
     self.player.showMode = mode;
+}
+- (IBAction)widge:(id)sender {
+    //180设备才有用
+    [self.player setWideAngleAuto:!self.loop];
+    self.loop = !self.loop;
 }
 
 #pragma mark - 代理回调测试

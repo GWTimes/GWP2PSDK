@@ -33,9 +33,9 @@ szPassword:  1～30位字符串
  szUserID:登陆账号关联的ID
  szOutputBuffer:用于保存明文的缓存，由用户提供
   iLength:用于保存明文的缓存的长度
- 返回值:0-成功 1-因输出缓存太小而执行失败
+ 返回值:YES成功 NO因输出缓存太小而执行失败
  */
-+(unsigned int)PassswrodDecrypt:(char*)szSrcData UserID:(char*)szUserID Dst:(char*)szOutputBuffer Len:(unsigned int)iLength;
++(BOOL)PassswrodDecrypt:(char*)szSrcData UserID:(char*)szUserID Dst:(char*)szOutputBuffer Len:(unsigned int)iLength;
 
 /*
  函数功能:服务器保存的设备密码的加密函数（应用场景：上传设备列表到服务器）
@@ -43,9 +43,9 @@ szPassword:  1～30位字符串
  szUserID:登陆账号关联的ID
  szOutputBuffer:用于保存密文的缓存，由用户提供
  iLength:用于保存密文的缓存的长度
- 返回值:0-成功 1-因输出缓存太小而执行失败
+ 返回值:YES成功 NO因输出缓存太小而执行失败
  */
-+(unsigned int)PasswordEncrypt:(char*)szSrcData UserID:(char*)szUserID Dst:(char*)szOutputBuffer Len:(unsigned int)iLength;
++(BOOL)PasswordEncrypt:(char*)szSrcData UserID:(char*)szUserID Dst:(char*)szOutputBuffer Len:(unsigned int)iLength;
 
 /*
  函数功能:base64解密,扫描二维码用到。
