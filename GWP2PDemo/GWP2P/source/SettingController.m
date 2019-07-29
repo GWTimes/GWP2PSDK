@@ -167,8 +167,11 @@
                             [SettingExample exampleWithTitle:@"获取IP地址,网关地址，子网地址,DNS地址" sel:@selector(getDeviceDnsAndIpAndSubNetAndGateWayExample)],
                             [SettingExample exampleWithTitle:@"设置IP地址,网关地址，子网地址,DNS地址" sel:@selector(setDeviceDnsAndIpAndSubNetAndGateWayExample)],
                               [SettingExample exampleWithTitle:@"获取设备NVR信息" sel:@selector(getDeviceNVRInifomationExample)],
-
+                              [SettingExample exampleWithTitle:@"设置设备Wifi信息" sel:@selector(setWifiExample)],
+                            [SettingExample exampleWithTitle:@"获取设备Wifi信息" sel:@selector(getWifiExample)],
                               ],
+                        
+                    
                         },
                       
                       @{@"category":@"在线状态",
@@ -207,6 +210,7 @@
                                 [SettingExample exampleWithTitle:@"普通布撤防" sel:@selector(defenceOperationExample)],
                                 [SettingExample exampleWithTitle:@"获取设备定时布撤防数据" sel:@selector(getDeviceSheduleDefenceDataExample)],
                                 [SettingExample exampleWithTitle:@"转向某预置位" sel:@selector(operateDevicePresetPositionExample)],
+                                [SettingExample exampleWithTitle:@"添加某预置位" sel:@selector(addDevicePresetPositionExample)],
                             ],
                         },
                       
@@ -506,6 +510,28 @@
         [self outputLog:dataDictionary success:success];
     }];
 }
+/**
+ 获取wifiw信息
+ */
+- (void)getWifiExample {
+    [[GWP2PClient sharedClient] getDeviceWifiListWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary)
+     {
+         
+         [self outputLog:dataDictionary success:success];
+     }];
+}
+
+
+
+/**
+ 设置wifiw信息
+ */
+- (void)setWifiExample {
+    [[GWP2PClient sharedClient] setDeviceWifiInNetworkModeWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword wifiEncryptedType:2 wifiName:@"SricamGC03" wifiPassword:@"999Sricam" completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary)
+     {
+       [self outputLog:dataDictionary success:success];
+     }];
+}
 
 /**
  获取SD卡信息
@@ -682,8 +708,8 @@ typedef struct AA {
         byte[i] = i;
     }
     NSData *data = [NSData dataWithBytes:&byte length:128];
-    //NSString *s = @"1";
-    //data = [s dataUsingEncoding:NSUTF8StringEncoding];
+    NSString *s = @"1";
+    data = [s dataUsingEncoding:NSUTF8StringEncoding];
     [[GWP2PClient sharedClient] sendSerialTransmissionData:data withSendingMode:GWSerialTransmissionSendingModeIPC1 deviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
         [self outputLog:dataDictionary success:success];
     }];
@@ -879,6 +905,14 @@ typedef struct AA {
     }];
 }
 
+/**
+ 增加某预置位
+ */
+- (void)addDevicePresetPositionExample {
+    [[GWP2PClient sharedClient] operateDevicePresetPositionWithOperationType:GWPresetPositionOperationTypeSet presetPositionIndexArray:@[@(0)] deviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+        [self outputLog:dataDictionary success:success];
+    }];
+}
 /**
  转向某预置位
  */

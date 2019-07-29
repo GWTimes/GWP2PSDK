@@ -38,6 +38,9 @@
 		CEC31FD120883003005190C6 /* GWSharingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC31FCF20883003005190C6 /* GWSharingViewController.xib */; };
 		CEC31FD520883621005190C6 /* GWSharingFlowchartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC31FD320883621005190C6 /* GWSharingFlowchartViewController.m */; };
 		CEC31FD620883621005190C6 /* GWSharingFlowchartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEC31FD420883621005190C6 /* GWSharingFlowchartViewController.xib */; };
+		FF272C9E22C618CC005050EC /* WiledLinkAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF272C9D22C618CC005050EC /* WiledLinkAddViewController.m */; };
+		FF272CA122C620A2005050EC /* GWNoPasswordConnectNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF272CA022C620A2005050EC /* GWNoPasswordConnectNetworkViewController.m */; };
+		FF272CA422C620BF005050EC /* GWHasPasswordConnectNetworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FF272CA322C620BF005050EC /* GWHasPasswordConnectNetworkViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,6 +112,12 @@
 		CEC31FD220883621005190C6 /* GWSharingFlowchartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GWSharingFlowchartViewController.h; sourceTree = "<group>"; };
 		CEC31FD320883621005190C6 /* GWSharingFlowchartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GWSharingFlowchartViewController.m; sourceTree = "<group>"; };
 		CEC31FD420883621005190C6 /* GWSharingFlowchartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GWSharingFlowchartViewController.xib; sourceTree = "<group>"; };
+		FF272C9C22C618CC005050EC /* WiledLinkAddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WiledLinkAddViewController.h; sourceTree = "<group>"; };
+		FF272C9D22C618CC005050EC /* WiledLinkAddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WiledLinkAddViewController.m; sourceTree = "<group>"; };
+		FF272C9F22C620A2005050EC /* GWNoPasswordConnectNetworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GWNoPasswordConnectNetworkViewController.h; sourceTree = "<group>"; };
+		FF272CA022C620A2005050EC /* GWNoPasswordConnectNetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GWNoPasswordConnectNetworkViewController.m; sourceTree = "<group>"; };
+		FF272CA222C620BF005050EC /* GWHasPasswordConnectNetworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GWHasPasswordConnectNetworkViewController.h; sourceTree = "<group>"; };
+		FF272CA322C620BF005050EC /* GWHasPasswordConnectNetworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GWHasPasswordConnectNetworkViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +246,7 @@
 		8C411A331ED584B800CD30E9 /* DeviceLinker(配网) */ = {
 			isa = PBXGroup;
 			children = (
+				FF272C9B22C6186F005050EC /* WiredLink(有线配网) */,
 				18390DA01ED57D4700C9B932 /* LanDevicesController.h */,
 				18390DA11ED57D4700C9B932 /* LanDevicesController.m */,
 				18390D991ED579FE00C9B932 /* DeviceLinkerController.h */,
@@ -308,6 +318,19 @@
 				CEC31FD420883621005190C6 /* GWSharingFlowchartViewController.xib */,
 			);
 			name = "分享";
+			sourceTree = "<group>";
+		};
+		FF272C9B22C6186F005050EC /* WiredLink(有线配网) */ = {
+			isa = PBXGroup;
+			children = (
+				FF272C9C22C618CC005050EC /* WiledLinkAddViewController.h */,
+				FF272C9D22C618CC005050EC /* WiledLinkAddViewController.m */,
+				FF272C9F22C620A2005050EC /* GWNoPasswordConnectNetworkViewController.h */,
+				FF272CA022C620A2005050EC /* GWNoPasswordConnectNetworkViewController.m */,
+				FF272CA222C620BF005050EC /* GWHasPasswordConnectNetworkViewController.h */,
+				FF272CA322C620BF005050EC /* GWHasPasswordConnectNetworkViewController.m */,
+			);
+			name = "WiredLink(有线配网)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,12 +417,15 @@
 				18390D8E1ED56F7B00C9B932 /* PlaybackController.m in Sources */,
 				8C604CBF1EDEA3180051AEBE /* MBProgressManager.m in Sources */,
 				18390D9B1ED579FE00C9B932 /* DeviceLinkerController.m in Sources */,
+				FF272CA422C620BF005050EC /* GWHasPasswordConnectNetworkViewController.m in Sources */,
 				189E32EC2147CF2D00069884 /* NSDictionary+Log.m in Sources */,
 				189E32ED2147CF2D00069884 /* NSArray+Log.m in Sources */,
 				CEC31FD520883621005190C6 /* GWSharingFlowchartViewController.m in Sources */,
 				189E32F62147CF9A00069884 /* LoginResult.m in Sources */,
 				18281E921ED7C7900069ED4B /* PlaybackListsController.m in Sources */,
 				8C3D76A21ED2D7E400B1340A /* AppDelegate.m in Sources */,
+				FF272C9E22C618CC005050EC /* WiledLinkAddViewController.m in Sources */,
+				FF272CA122C620A2005050EC /* GWNoPasswordConnectNetworkViewController.m in Sources */,
 				CEC31FCA208823EE005190C6 /* GWNetViewController.m in Sources */,
 				18390D861ED5579500C9B932 /* MonitorController.m in Sources */,
 				18D6FF311ED5359600A0E1C4 /* DeviceListController.m in Sources */,
@@ -567,6 +593,7 @@
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/SDK",
 				);
+				GCC_OPTIMIZATION_LEVEL = 0;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/GWP2P/GWNet\"";
 				INFOPLIST_FILE = GWP2P/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

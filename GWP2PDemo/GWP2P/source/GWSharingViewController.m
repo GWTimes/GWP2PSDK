@@ -64,7 +64,7 @@
     //要使用分享的功能,需要技威服务器后台支持,请联系商务配置服务器
     //一主人操作
     //1 配网,这一步可以是智能连机,也可以是ap配网,步骤是一致的,这里只以智能连机来说明,ap配网时会设置主人密码,第2步与第3步合并
-    [[GWP2PDeviceLinker shareInstance] p2pSmartLinkDeviceWithWiFiSSID:wifiSSID password:wifiPassword deviceLinkIn:^(NSDictionary *deviceDict) {
+    [[GWP2PDeviceLinker shareInstance] p2pSmartLinkDeviceWithWiFiSSID:wifiSSID password:wifiPassword useSimpleConfig:NO deviceLinkIn:^(NSDictionary *deviceDict) {
         if (weakSelf.isDeviceLinkIn) {//会回调多次,用一个变量拦截,只处理一次
             NSLog(@"已经处理过");
             return;

@@ -8,7 +8,7 @@
 
 #import "LanDevicesController.h"
 #import <GWP2P/GWP2P.h>
-
+#import "WiledLinkAddViewController.h"
 @interface LanDevicesController ()
 
 ///列表数组
@@ -28,10 +28,13 @@
     
     self.listsArr = [NSMutableArray array];
     
-    [self getLists];
+ 
     
 }
-
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+       [self getLists];
+}
 #pragma mark 获取设备列表
 -(void)getLists {
 
@@ -111,10 +114,22 @@
 
 -(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    return NO;
+    return YES;
 
 }
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    GWP2PLanDevice *localDevice = self.listsArr[indexPath.row];
+    WiledLinkAddViewController *vc = [[WiledLinkAddViewController alloc]init];
+    vc.device = localDevice;
+    [self.navigationController pushViewController:vc animated:YES];
+    /*GWLoadingConfigurationViewController *loadingConfigurationViewController = [[GWLoadingConfigurationViewController alloc] init];
+     loadingConfigurationViewController.contact = contact;
+     loadingConfigurationViewController.customID = localDevice.customID;
+     loadingConfigurationViewController.macAddr = localDevice.macAddr;
+     [self.navigationController pushViewController:loadingConfigurationViewController animated:YES];*/
 
+}
 
 #pragma mark 根据设备类型的枚举转换成对应字符串
 -(NSString *)getTypeFromEnum:(GWP2PDeviceType)type {

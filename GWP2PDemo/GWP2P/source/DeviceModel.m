@@ -42,7 +42,9 @@ static NSMutableArray *deviceModels = nil;
     for (NSString *deviceFile in deviceFiles) {
         NSString *devicePath = [userPath stringByAppendingPathComponent:deviceFile];
         DeviceModel *deviceModel = [NSKeyedUnarchiver unarchiveObjectWithFile:devicePath];
+        if (deviceModel){
         [deviceModels addObject:deviceModel];
+        }
     }
 }
 

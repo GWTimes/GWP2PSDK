@@ -67,7 +67,7 @@
     //需要注意deviceLinkIn会被回调很多次
     self.isDeviceLinkIn = NO;
     
-    [[GWP2PDeviceLinker shareInstance] p2pSmartLinkDeviceWithWiFiSSID:_wifiSSIDTF.text password:_wifiPasswordTF.text deviceLinkIn:^(NSDictionary *deviceDict) {
+    [[GWP2PDeviceLinker shareInstance] p2pSmartLinkDeviceWithWiFiSSID:_wifiSSIDTF.text password:_wifiPasswordTF.text useSimpleConfig:NO deviceLinkIn:^(NSDictionary *deviceDict) {
         NSLog(@"声波配网成功,返回数据:%@",deviceDict);
         if (weakSelf.isDeviceLinkIn) {
             return;
