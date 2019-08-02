@@ -15,7 +15,7 @@ GWP2P SDK 是基于技威时代的纯C语言P2P库，使用Objective-C进行封�
 6. 修复bug，提高稳定性
 7. GWP2P.framework支持-force_load编译参数，请参考demo的other linker flags进行设置，以防编译不过，推荐不再用-ObjC
 8. 因为采用的是动态库所以要在工程-General-Embedded Binaries中添加，动态库上架必须只能用真机库
-![image](https://github.com/GWTimes/GWP2PSDK/tree/master/GWP2PDemo/png/embeded.png "不设置工程会报错找不到库文件")
+![image](https://raw.githubusercontent.com/GWTimes/GWP2PSDK/master/GWP2PDemo/png/embeded.png "不设置工程会报错找不到库文件")
 9. 因为新SDK支持2.0和3.0设备，默认监控3.0设备，如果要兼容2.0设备，在监控之前先要获取设备支持的p2p版本号,请调用下面的接口。
 - (void)getDevicesOrUersStatusWithDeviceIDs:(NSArray<NSString *> *)deviceIDsArray
 completionBlock:(CompletionBlock)completionBlock;
