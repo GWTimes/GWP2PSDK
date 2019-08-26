@@ -5,7 +5,7 @@ GWP2P SDK 是基于技威时代的纯C语言P2P库，使用Objective-C进行封�
 
 ### 更新日志：
 
-2019.08.02
+2019.08.26
 
 1. 因为SDK的包名与appid和token是进行了绑定了的，运行Demo时请将申请的包名及AppId，AppToken,AppVersion在LoginViewController进行替换，否则将无法进行请求和运行。
 2. **为了防止与其它SDK冲突，我们整合了所有静态库，打包成了一个动态库，因此整个SDK只有一个GWP2P.framework，不需要加入任何依赖**
@@ -19,6 +19,7 @@ GWP2P SDK 是基于技威时代的纯C语言P2P库，使用Objective-C进行封�
 9. 因为新SDK支持2.0和3.0设备，默认监控3.0设备，如果要兼容2.0设备，在监控之前先要获取设备支持的p2p版本号,请调用下面的接口。
 - (void)getDevicesOrUersStatusWithDeviceIDs:(NSArray<NSString *> *)deviceIDsArray
 completionBlock:(CompletionBlock)completionBlock;
+10.增加扫码配网功能GWQRCodeManager.h在这个文件内
 
 
 2018.09.19
