@@ -119,6 +119,19 @@ typedef enum GWUnbindAlarmAccountOperationType {
                       completionBlock:(CompletionBlock)completionBlock;
 
 /**
+ 设置AI实验室人形侦测开关状态
+ 获取AI实验室人形侦测开关状态请调 getMultipledeviceStatusWithDeviceID:password:completionBlock:
+ @param detectionOn 开关状0关，1开
+ @param deviceID                设备ID
+ @param devicePassword          设备密码
+ @param completionBlock         与设备交互完成后的回调Block
+ */
+- (void)setDeviceAIHumanoidDetectionState:(BOOL)detectionOn
+                            withDeviceID:(NSString *)deviceID
+                          devicePassword:(NSString *)devicePassword
+                         completionBlock:(CompletionBlock)completionBlock;
+
+/**
  设置设备红蓝灯开关状态
  获取设备红蓝灯开关状态请调 getMultipledeviceStatusWithDeviceID:password:completionBlock:
  @param alarmOn 开关状0关，1开

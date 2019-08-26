@@ -87,7 +87,8 @@ typedef void (^DeviceReceiveBlock)(NSString *deviceId, BOOL isSupport);
  */
 - (void)p2pSmartLinkDeviceWithWiFiSSID:(NSString *)ssid
                               password:(NSString *)password
-                          deviceLinkIn:(DeviceLinkInBlock)deviceLinkInBlock DEPRECATED_ATTRIBUTE;
+                          useSoundWave:(BOOL)useSoundWave
+                          deviceLinkIn:(DeviceLinkInBlock)deviceLinkInBlock;
 
 
 

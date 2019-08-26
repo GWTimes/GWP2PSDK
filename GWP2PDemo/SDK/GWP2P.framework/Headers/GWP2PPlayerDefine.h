@@ -139,7 +139,7 @@ typedef NS_ENUM(NSUInteger, GWP2PPTZDirection) {
 /**
  视频清晰度
  */
-typedef NS_ENUM(NSUInteger, GWP2PPTZDefinition) {
+typedef NS_ENUM(NSInteger, GWP2PPTZDefinition) {
     GWP2PPTZDefinitionLD = 0,   //流畅,NPC:320*240 IPC:320*180
     GWP2PPTZDefinitionSD,       //标清,NPC:640*480 IPC:640*360
     GWP2PPTZDefinitionHD,       //高清,NPC:None    IPC:1280*720

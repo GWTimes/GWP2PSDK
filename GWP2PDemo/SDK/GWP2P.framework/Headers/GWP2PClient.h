@@ -129,8 +129,13 @@
 
 @property (nonatomic, assign) BOOL isAPMode;/**< 是不是AP模式。此属性只保存上次与路由器交互后的数据，调 getDeviceIDInAPMode 方法会重新与路由器交互更新APMode状态，每次app进入前台时会更新APMode状态 */
 @property (nonatomic, assign) NSInteger port;/**< 广播端口 */
+@property (nonatomic, strong) NSString* apSSIDPrefix;/**< 自定ap模式wifi前缀如GW_AP_XXXXXXXX,传 GW_AP_ */
+@property (nonatomic, assign) BOOL ackBackPreset;/**< 是否预置位ack回复就返回成功，默认是等转到位置再回复*/
+@property (nonatomic, assign) BOOL supportIPSendCommand;/**< 是否预设备在局域网内用ip发送命令，默认为NO*/
 
 @property (nonatomic, copy) NSString *serverList; /**< P2P服务器列表，自建服务器需要设置此属性，格式"|p2p1.cloudlinks.cn|p2p2.cloudlinks.cn|p2p3.cloud-links.net" */
+
+@property (nonatomic, copy) NSString *appVersion;
 
 #pragma mark 获取单例
 /**

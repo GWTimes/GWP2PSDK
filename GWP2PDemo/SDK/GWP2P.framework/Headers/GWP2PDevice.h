@@ -84,6 +84,8 @@ typedef NS_ENUM(NSUInteger, GWP2PDeviceIPCSubtype) {
     GWP2PDeviceIPCSubtypeSC3035Fisheye360D, //360全景
     GWP2PDeviceIPCSubtypeSC3035Fisheye180D = 36, //180全景
     
+    GWP2PDeviceIPCSubtypeHiSi3516EV200 = 37, //HiSI 3516E V200 大镜头变焦变倍设备
+
 };
 
 

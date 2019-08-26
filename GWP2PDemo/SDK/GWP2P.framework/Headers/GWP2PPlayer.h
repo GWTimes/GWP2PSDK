@@ -92,8 +92,8 @@ typedef void (^ScreenshotCompletionBlock)(UIImage *screenshot, NSTimeInterval ti
 /** 是否正在播放, 从call开始就为YES，播放中断置为NO */
 @property (nonatomic, assign, readonly) BOOL isPlaying;
 
-/** 无声播放 */
-@property (nonatomic, assign, getter=isSilent) BOOL silent;
+/** 麦克风 */
+@property (nonatomic, assign) BOOL micEnable;
 
 /** 静音, 当`silent=YES`时`mute=YES` */
 @property (nonatomic, assign, getter=isMute) BOOL mute;
@@ -109,7 +109,8 @@ typedef void (^ScreenshotCompletionBlock)(UIImage *screenshot, NSTimeInterval ti
 
 /** 当前全景视频pts,转化成时间戳(秒)=pts/(1000*1000) */
 @property (nonatomic, assign, readonly) uint64_t panoPTS;
-
+/** 刷新*/
+@property (nonatomic, assign) BOOL panoPause;
 /**
  构造方法
 

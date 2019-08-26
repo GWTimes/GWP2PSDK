@@ -251,7 +251,23 @@ typedef enum GWP2PRecordDefinition {
                             devicePassword:(NSString *)devicePassword
                                  dayDate:(NSDate *)dayDate
                                   completionBlock:(CompletionBlock)completionBlock;
+#pragma mark -  获取设备卡回放有有回放文件的列表
 
+/**
+ 获取设备卡回放有没有云存储
+
+ @param deviceID        设备ID
+ @param devicePassword  设备密码
+ @param endDate /从哪一天开始向前查找
+ @param days /要查找多少天（包括endDate）
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+-(void)getDevcieRecodePlaybackDatesWithDeviceID:(NSString *)deviceID
+                                 devicePassword:(NSString *)devicePassword
+                                        enddate:(NSDate *)endDate
+                                  andSearchDays:(NSInteger )days
+                                completionBlock:(CompletionBlock)completionBlock;
+#pragma mark -  设置设备云回放上传的质量
 /**
  设置设备云回放上传的质量
 

@@ -44,5 +44,7 @@
 //服务器加密
 #import "MD5Manager.h"
 
+//二维码
+#import "GWQRCodeManager.h"
 
 

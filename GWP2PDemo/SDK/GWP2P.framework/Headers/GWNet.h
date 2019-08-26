@@ -104,7 +104,17 @@ extern NSString * const kGWNetSessionIdErrorNotification;
             withPassword:(NSString*)pwd//密码,需要32位的md5加密处理,如果提供明文密码,内部会自动加密
           withAppleToken:(NSString*)token//苹果设备Token,用来远程推送,可空,空时则无法推送
             withTimeZone:(NSInteger)timeZone//App用户当前时区，传输格式分钟，例：东八区 480
-              completion:(GWNetCompletionBlock)completion;//请求完成回调
+              completion:(GWNetCompletionBlock)completion;//请求完成回
+#pragma mark 上传ios推送token
+/**
+ 上传ios推送token，要在token变化或没有上传成功时才调用
+
+ @param token ios推送token
+ @param userID 用户ID
+ @param sessionID 会话ID
+ @param completion 请求完成回调
+ */
+-(void)uploadIosPushToken:(NSString *)token withUserID:(NSString *)userID sessionID:(NSString *)sessionID completion:(GWNetCompletionBlock)completion;
 
 #pragma mark 第三方登录
 /**
@@ -834,6 +844,19 @@ extern NSString * const kGWNetSessionIdErrorNotification;
  @param completion        绑定完成后的block
  */
 - (void)getBindedStatusDevice:(NSString *)deviceID
+                   withUserID:(NSString *)userID
+                    sessionID:(NSString *)sessionID
+                   completion:(GWNetCompletionBlock)completion;
+#pragma mark - 检查设备绑定状态V2,用来只设置访客密码，不设管理密码，把id添加切换成分享模式进行统计
+/**
+ 检查设备绑定状态
+ 
+ @param deviceID          设备ID
+ @param userID            用户(主人)ID
+ @param sessionID         登陆会话ID
+ @param completion        绑定完成后的block
+ */
+- (void)getBindedStatusV2Device:(NSString *)deviceID
                    withUserID:(NSString *)userID
                     sessionID:(NSString *)sessionID
                    completion:(GWNetCompletionBlock)completion;

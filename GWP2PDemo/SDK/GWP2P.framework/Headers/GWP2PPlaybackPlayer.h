@@ -18,6 +18,8 @@
 
 /** 当前播放的文件 */
 @property (nonatomic, readonly) GWPlaybackFileModel *playbackFile;
+/** 当前播放的文件的时间 */
+@property (nonatomic, assign) uint64_t startTime;
 
 /** 当前播放的时间,单位:微秒μs,可监听此时间变化更新播放进度条*/
 @property (nonatomic, readonly) uint64_t currentTime;
@@ -49,14 +51,37 @@
                                  accept:(P2PAcceptBlock)acceptBlock
                                  reject:(P2PRejectBlock)rejectBlock
                                   ready:(P2PReadyBlock)readyBlock;
-
+/**
+ 播放设备远程录像文件,原理和监控设备是一样的,需要呼叫连接设备
+ 
+ @param deviceId      设备ID
+ @param password      设备密码
+ @param playbackFile  回放文件对象,由GWP2PClient+Record中的获取回放文件列表方法获取
+ @param callingBlock  正在呼叫回调,详见block定义注释
+ @param acceptBlock   接收呼叫回调,详见block定义注释
+ @param rejectBlock   拒绝连接回调,详见block定义注释
+ @param readyBlock    连接就绪回调,详见block定义注释
+ */
+- (void)p2pCallPlaybackFileWithDeviceId:(NSString *)deviceId
+                               password:(NSString *)password
+                                filepts:(unsigned int)pts
+                           playbackFile:(GWPlaybackFileModel *)playbackFile
+                                calling:(P2PCallingBlock)callingBlock
+                                 accept:(P2PAcceptBlock)acceptBlock
+                                 reject:(P2PRejectBlock)rejectBlock
+                                  ready:(P2PReadyBlock)readyBlock;
 /**
  播放远程录像文件,如果已经连接上设备,调用此方法即可快速切换回放文件
 
  @param playbackFile 回放文件对象
  */
 - (void)p2pPlayPlaybackFile:(GWPlaybackFileModel *)playbackFile;
-
+/**
+ 播放远程录像文件,如果已经连接上设备,调用此方法即可快速切换回放文件
+ 
+ @param playbackFile 回放文件对象 ,指定播放时间
+ */
+- (void)p2pPlayPlaybackFile:(GWPlaybackFileModel *)playbackFile andPts:(NSUInteger)pts ;
 
 /**
  暂停或者继续播放
@@ -67,7 +92,10 @@
  暂停
  */
 - (void)p2pPause;
-
+/**
+ 播放
+ */
+- (void)p2pPlay;
 /**
  快进或者取消快进
  */

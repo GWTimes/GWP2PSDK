@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/GWNet.h</key>
 		<data>
-		/D/h3V7xJHk/BcZAej7Qdp1XAW8=
+		qOvnF0hkPDvokoux41oP8C9VOR0=
 		</data>
 		<key>Headers/GWNetError.h</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Headers/GWP2P.h</key>
 		<data>
-		M7yDtyM42ylW+TUlmhIzAeQMm48=
+		liZyR4OOyDZJLVYePutP2FGuZ6w=
 		</data>
 		<key>Headers/GWP2PClient+APMode.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Headers/GWP2PClient+Alarm.h</key>
 		<data>
-		gjdTj+8WL0bZiRGOy/uygkTrEWc=
+		BP9SrnAEh2hirTF5DzfyK2FInjI=
 		</data>
 		<key>Headers/GWP2PClient+Defense.h</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>Headers/GWP2PClient+Record.h</key>
 		<data>
-		Azon8Lg4aPzChgoQ/xWyNhraqa4=
+		5bOV2cllYEWFjtNSr/WSShm2AEc=
 		</data>
 		<key>Headers/GWP2PClient+SceneMode.h</key>
 		<data>
-		pwlPuiVmuZhyMjlyGO2egM3C18s=
+		+DFyByRLpU2+QlXi/QVYRtHtEHE=
 		</data>
 		<key>Headers/GWP2PClient+Sensor.h</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>Headers/GWP2PClient.h</key>
 		<data>
-		RYvGLk9NxfGf3yLt0TtgMvEw0so=
+		hR5W3NX/58FZYHAvjuOrYu5YBw8=
 		</data>
 		<key>Headers/GWP2PDefine.h</key>
 		<data>
@@ -74,11 +74,11 @@
 		</data>
 		<key>Headers/GWP2PDevice.h</key>
 		<data>
-		G8/oP9uZevx53PoZD5T/9vzN/DQ=
+		r9ERvKBsChVgYdEgPH3oCNtOx30=
 		</data>
 		<key>Headers/GWP2PDeviceLinker.h</key>
 		<data>
-		ynGGxd+LY4crGQkTI1NLbdDMvpY=
+		SNU9iYiYC47fBYLndeQidexS0Bs=
 		</data>
 		<key>Headers/GWP2PLanDevice.h</key>
 		<data>
@@ -86,19 +86,23 @@
 		</data>
 		<key>Headers/GWP2PPlaybackPlayer.h</key>
 		<data>
-		+blua7Uvw/zRvv9+evEuYFEBlgI=
+		A9vFPZlggZCfl2/yOxDoeTN59Xg=
 		</data>
 		<key>Headers/GWP2PPlayer.h</key>
 		<data>
-		l7uVOYTsc/CfKJPvCUkpkiL6xHE=
+		htZ01wr4y8f2Ld/PbpG1Wec31Lc=
 		</data>
 		<key>Headers/GWP2PPlayerDefine.h</key>
 		<data>
-		YTMpNTvqgumbSqfzU1FBvzK7xlI=
+		tclepECQZUkTcauXyarYOMeINbA=
 		</data>
 		<key>Headers/GWP2PVideoPlayer.h</key>
 		<data>
 		BngQ84XqDG3xpnszWomlx3Boh14=
+		</data>
+		<key>Headers/GWQRCodeManager.h</key>
+		<data>
+		kIAxpq1Z60YvXk4jJSR2CcAd7ro=
 		</data>
 		<key>Headers/MD5Manager.h</key>
 		<data>
@@ -119,11 +123,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/D/h3V7xJHk/BcZAej7Qdp1XAW8=
+			qOvnF0hkPDvokoux41oP8C9VOR0=
 			</data>
 			<key>hash2</key>
 			<data>
-			oj8DULbME/XrojhVsH9vFLl1XLent2Sdu5x1p9A3MJ4=
+			ZumI3TsE2ot1c4IY6lTZH5ONLSzQxuMiAHuJkK7DJmo=
 			</data>
 		</dict>
 		<key>Headers/GWNetError.h</key>
@@ -141,11 +145,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			M7yDtyM42ylW+TUlmhIzAeQMm48=
+			liZyR4OOyDZJLVYePutP2FGuZ6w=
 			</data>
 			<key>hash2</key>
 			<data>
-			SYZLQZCuVeESvX/qZvtm5MMR6leqfds0aNxcMy42U/8=
+			CArVnTeUTjI/UzBiRA4uW9iQ5wBWa+ENTOYwjIpEI6g=
 			</data>
 		</dict>
 		<key>Headers/GWP2PClient+APMode.h</key>
@@ -163,11 +167,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gjdTj+8WL0bZiRGOy/uygkTrEWc=
+			BP9SrnAEh2hirTF5DzfyK2FInjI=
 			</data>
 			<key>hash2</key>
 			<data>
-			s6rg3KlpjqO4giyxE0OYvJG42+pnzuiyt/t8HJDHVco=
+			o4Me3JeSbi0kReFNPJoctpn+P5kStisdPdaX4eHmBio=
 			</data>
 		</dict>
 		<key>Headers/GWP2PClient+Defense.h</key>
@@ -240,22 +244,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Azon8Lg4aPzChgoQ/xWyNhraqa4=
+			5bOV2cllYEWFjtNSr/WSShm2AEc=
 			</data>
 			<key>hash2</key>
 			<data>
-			W7kyLABk/LawcZ+9ZpwnHbTKphiUJ75XMtZ0hs/Wjxg=
+			jmMpVcBaOKv2p/37inz8msilwARs2kxyoJAkubrteTQ=
 			</data>
 		</dict>
 		<key>Headers/GWP2PClient+SceneMode.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			pwlPuiVmuZhyMjlyGO2egM3C18s=
+			+DFyByRLpU2+QlXi/QVYRtHtEHE=
 			</data>
 			<key>hash2</key>
 			<data>
-			8DrEWWnGtOANRPXQoDaQVpO3z7pQB9Bm/rRMZC+gJlM=
+			sfIYKrZQeLjOwDRmfU5agZwipjx3AM2N7GSAEDmApcI=
 			</data>
 		</dict>
 		<key>Headers/GWP2PClient+Sensor.h</key>
@@ -284,11 +288,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RYvGLk9NxfGf3yLt0TtgMvEw0so=
+			hR5W3NX/58FZYHAvjuOrYu5YBw8=
 			</data>
 			<key>hash2</key>
 			<data>
-			CJI8BirmzaJFuN1ZFFikCr9zTkyOto5JRMYsYmi5Ntw=
+			GbXJCamCzLaBtBHrDe8e2qUKcosxv9+ZYaOM/Tm+HhQ=
 			</data>
 		</dict>
 		<key>Headers/GWP2PDefine.h</key>
@@ -306,22 +310,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			G8/oP9uZevx53PoZD5T/9vzN/DQ=
+			r9ERvKBsChVgYdEgPH3oCNtOx30=
 			</data>
 			<key>hash2</key>
 			<data>
-			A4XIwRTo78MWLG8iwGYPjg849rPVbe6rhbPyh99oAhA=
+			hq76cD3su7KZwpO2FzOxjh9HhCMt2f1XNvF0a+mmrkA=
 			</data>
 		</dict>
 		<key>Headers/GWP2PDeviceLinker.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ynGGxd+LY4crGQkTI1NLbdDMvpY=
+			SNU9iYiYC47fBYLndeQidexS0Bs=
 			</data>
 			<key>hash2</key>
 			<data>
-			s8Voc6sCJn8BjsAXJJDGUDnrxEFNvhVZRRiVWeYT5PA=
+			xdWYPxEsat0fBBthyGFQ3yC/xBR4sMWR1L4GuVzG+gI=
 			</data>
 		</dict>
 		<key>Headers/GWP2PLanDevice.h</key>
@@ -339,33 +343,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+blua7Uvw/zRvv9+evEuYFEBlgI=
+			A9vFPZlggZCfl2/yOxDoeTN59Xg=
 			</data>
 			<key>hash2</key>
 			<data>
-			fCbJW58v8fFL2guvsn6wZ1o9t7zRonmcvDXlRV80DXY=
+			ds7+FxuUguCSh11xYIzLv7aPM4MgLc+CWxKEeAYzTk8=
 			</data>
 		</dict>
 		<key>Headers/GWP2PPlayer.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			l7uVOYTsc/CfKJPvCUkpkiL6xHE=
+			htZ01wr4y8f2Ld/PbpG1Wec31Lc=
 			</data>
 			<key>hash2</key>
 			<data>
-			nujAzHkU1eAeqoJX41QIuENbJmNST46VskCKMksstFA=
+			ftFc90AfZVS/XHDlrQKYs1iCcgaEO11JKStE7rII3as=
 			</data>
 		</dict>
 		<key>Headers/GWP2PPlayerDefine.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YTMpNTvqgumbSqfzU1FBvzK7xlI=
+			tclepECQZUkTcauXyarYOMeINbA=
 			</data>
 			<key>hash2</key>
 			<data>
-			edkPjmBz3IjZ3K+48tWugH1KiIPqfbDzy2fJjabfmYQ=
+			bQH3yY1GE6ukMWghneVwxKpq+m3WXhtADYGjPIfTx80=
 			</data>
 		</dict>
 		<key>Headers/GWP2PVideoPlayer.h</key>
@@ -377,6 +381,17 @@
 			<key>hash2</key>
 			<data>
 			Ra6aFpCNNl/BwtNWr3IoZMEkpNG46c+/w9XhN6+jMMU=
+			</data>
+		</dict>
+		<key>Headers/GWQRCodeManager.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			kIAxpq1Z60YvXk4jJSR2CcAd7ro=
+			</data>
+			<key>hash2</key>
+			<data>
+			TaBsJLmgQ6Zfeghkk2WxPYr72/x7s316O4Ig4uHFCwQ=
 			</data>
 		</dict>
 		<key>Headers/MD5Manager.h</key>

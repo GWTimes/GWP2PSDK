@@ -77,8 +77,8 @@ typedef NS_ENUM(uint8_t, GWProtectionSettingState) {
  */
 typedef NS_ENUM(uint8_t, GWProtectionSettingBodyState) {
     GWProtectionSettingBodyStateNotSurpport = 0, /**< 设备不支持 */
-    GWProtectionSettingBodyStateOn = 3,    /**< 状态开 */
-    GWProtectionSettingBodyStateOnlyBodyOff =7, /**< 状态关 */
+    GWProtectionSettingBodyStateOn = 7,    /**< 状态开 */
+    GWProtectionSettingBodyStateOnlyBodyOff =3, /**< 状态关 */
  
 };
 
