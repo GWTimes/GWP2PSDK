@@ -299,7 +299,7 @@ typedef NS_ENUM(NSUInteger, GWDeviceRTSPPasswordMode) {
  必须保证手机与设备在同一局域网中,否则回调只会收到参数错误. 这一接口在发指令时一定要确保手机与设备在同一局域网中,指令将deviceID转成4位设备IP的最后一位,若不在同一局域网,获取不到设备IP,指令不会成功
  
  @param initialPassword         初始密码,必须为包含字母、数字、其它字符中两种的6~30位的字符串
- @param deviceID                设备ID,直接传设备ID,内部处理成IP地址,也可以传4位IP的最后一位数字
+ @param deviceID                设备ID,直接传设备ID
  @param completionBlock         与设备交互完成后的回调Block
  */
 - (void)setDeviceInitialPassword:(NSString *)initialPassword

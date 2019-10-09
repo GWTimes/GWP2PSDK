@@ -27,6 +27,7 @@ typedef void(^GWNetCompletionBlock)(BOOL success, NSString *errorCode, NSString 
 extern NSString * const kGWNetSessionIdErrorNotification;
 
 
+/// <#Description#>
 @interface GWNet : NSObject
 
 @property (nonatomic, assign) BOOL connectWithHttps;/**< 以https的方式连接我们的服务器.默认为NO,用http的方式连接 */
@@ -626,6 +627,8 @@ extern NSString * const kGWNetSessionIdErrorNotification;
                        guestID:(NSString *)guestID
                    guestRemark:(NSString *)guestRemark
                      appendMsg:(NSString *)appendMsg
+                masterNickName:(NSString *)masterNickName
+                deviceNickName:(NSString *)deviceNickName
                     completion:(GWNetCompletionBlock)completion;
 
 #pragma mark 获取访客列表
@@ -642,6 +645,23 @@ extern NSString * const kGWNetSessionIdErrorNotification;
                       deviceID:(NSString *)deviceID
                     completion:(GWNetCompletionBlock)completion;
 
+
+#pragma mark 取消访客信息
+
+/**
+取消访客信息
+
+@param userID     用户(主人)ID
+@param sessionID  登陆会话ID
+@param deviceID   设备ID
+@param guestID    访客ID
+@param completion 绑定完成后的block
+*/
+-(void)cancelGuestShare:(NSString *)userID
+              sessionID:(NSString *)sessionID
+               deviceID:(NSString *)deviceID
+                guestID:(NSString *)guestID
+             completion:(GWNetCompletionBlock)completion;
 #pragma mark 删除访客信息
 /**
  删除访客信息

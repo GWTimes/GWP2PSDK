@@ -24,8 +24,11 @@ typedef void (^P2PCallingBlock)(NSDictionary *parameters);
 /**
  设备接受了呼叫请求,回调相关参数
  
- @param parameters kP2PCallAcceptIsVideo960PKey:视频是否960P
-                   kP2PCallAcceptIsVideoWidescreenKey:是否是否宽屏(16:9)
+ @param parameters kP2PCallingIsSameDomainKey; //与对方是否在同个局域网
+                   kP2PCallAcceptIsVideo960PKey; //对方视频是否960P
+                   kP2PCallAcceptIsVideoWidescreenKey; //对方视频是否宽屏(16:9)
+                   kP2PCallAcceptVideoScaleKey; //视频画面边缘切边比例，NSNumber(float)，范围0~1
+                   kP2PCallAcceptVideoCenterKey; //视频画面中心点, NSValue(CGPoint)，范围(0,0)~(1,1)
  */
 typedef void (^P2PAcceptBlock)(NSDictionary *parameters);
 
@@ -70,12 +73,14 @@ typedef void (^ScreenshotCompletionBlock)(UIImage *screenshot, NSTimeInterval ti
 
 
 /**
- 更新时间戳
-
+ 更新时间戳和视频尺寸
+ 
  @param player 播放器对象
  @param pts 显示时间戳(Presentation Time Stamp)
+ @param size 视频尺寸
+ 
  */
-- (void)p2pPlayer:(GWP2PPlayer *)player updatePTS:(NSTimeInterval)pts;
+- (void)p2pPlayer:(GWP2PPlayer *)player didUpdatePTS:(NSTimeInterval)pts size:(CGSize)size;
 
 @end
 
