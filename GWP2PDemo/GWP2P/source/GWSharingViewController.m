@@ -178,7 +178,7 @@ static NSString *inviteCode = nil;
     //获取邀请码, 这一步是主人账号获取,获取后通过一定的途径(如二维码,纯文本)分享给访客账号
     NSString *account = [LoginResult getAccount];
     NSString *sessionID = [LoginResult getSessionID1];
-    [GWNetSingleton getShareLinkWithUserID:account sessionID:sessionID deviceID:self.deviceID permission:1 guestID:@"" guestRemark:@"" appendMsg:@"" completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
+    [GWNetSingleton getShareLinkWithUserID:account sessionID:sessionID deviceID:self.deviceID permission:1 guestID:@"" guestRemark:@"" appendMsg:@""  masterNickName:@"ss" deviceNickName:@"12" completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
         NSLog(@"获取分享邀请码 errorCode:%@ errorString:%@ %@", errorCode, errorString, json);
         if ([errorCode isEqualToString:GWNET_RET_OPERATION_SUCCESS]) {
             NSString *inviteLink = [NSString stringWithFormat:@"%@", json[@"ShareLink"]];//邀请链接,也可以直接分享给访客,访客拿到后解析出邀请码
