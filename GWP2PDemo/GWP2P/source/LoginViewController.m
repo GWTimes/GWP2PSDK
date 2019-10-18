@@ -41,7 +41,7 @@
     GWNetSingleton.theAppVersion = @"04.73.00.00";
     GWNetSingleton.theAppId = @"d6bf22be8aed98714beedc1d5297e6b2";
     GWNetSingleton.theAppToken = @"465993f9d8974b448e993889cba499fd5afb94955412f7020a255b0e1b236572";
-    GWP2PClient.sharedClient.supportIPSendCommand = YES; //支持内网，要根据设备是否支持来判断
+    GWP2PClient.sharedClient.supportIPSendCommand = YES; //支持内网，要根据设备是否支持来判断 ,如要调用初始化密码这类接口要使用，因为有些设备是不支持局域网的，所以要开发者手动打开
 }
 
 - (IBAction)loginBtnAction:(UIButton *)sender {
