@@ -93,10 +93,12 @@
     NSString *localPath = [NSString stringWithFormat:@"%@/%.0f.png", documentPath, [NSDate date].timeIntervalSince1970];
     NSLog(@"下载图片 硬件路径:%@ 手机路径:%@", pictureDic[@"path"], localPath);
     [client downloadAlarmPictureWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword pictureNumber:pictureCount toDownloadIndex:toDownloadIndex remoteFilePath:pictureDic[@"path"] localFilePath:localPath];
+      [self outputLog:alarmDictionary success:YES];
 }
 
 - (void)client:(GWP2PClient *)client receavedDoorbellRingingBySerialTransmission:(NSDictionary<NSString *,id> *)ringingDictionary {
     NSLog(@"门铃设备通过串口透传推送响铃:%@", ringingDictionary);
+      [self outputLog:ringingDictionary success:YES];
 }
 
 - (void)client:(GWP2PClient *)client didDownloadFile:(BOOL)success withFilePath:(NSString *)filePath deviceID:(NSString *)deviceID result:(NSDictionary<NSString *,NSString *> *)resultDictionary {
@@ -186,6 +188,7 @@
                             @[
                                 [SettingExample exampleWithTitle:@"设置报警邮箱" sel:@selector(setDeviceAlarmEmailExample)],
                                 [SettingExample exampleWithTitle:@"获取报警邮箱" sel:@selector(getDeviceAlarmEmailExample)],
+                                [SettingExample exampleWithTitle:@"打开移动侦测" sel:@selector(setMotionDetectExample)],
                                 [SettingExample exampleWithTitle:@"移动侦测灵敏度" sel:@selector(setMotionDetectSensityvityExample)],
                                 [SettingExample exampleWithTitle:@"设置报警账号" sel:@selector(setDeviceAlarmAccountExample)],
                                 [SettingExample exampleWithTitle:@"获取报警账号" sel:@selector(getDeviceAlarmAccountExample)],
@@ -897,6 +900,14 @@ typedef struct AA {
 }
 
 /**
+ 打开移动侦测灵敏度
+ */
+- (void)setMotionDetectExample {
+    [[GWP2PClient sharedClient] setDeviceMotionDetetionState:YES withDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+          [self outputLog:dataDictionary success:success];
+    }];
+}
+/**
  设置移动侦测灵敏度
  */
 - (void)setMotionDetectSensityvityExample {
@@ -967,7 +978,7 @@ typedef struct AA {
  */
 - (void)defenceOperationExample {
     NSLog(@"defenceOperationExample");
-    [[GWP2PClient sharedClient] setDeviceDefenceState:NO withDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+    [[GWP2PClient sharedClient] setDeviceDefenceState:YES withDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
         [self outputLog:dataDictionary success:success];
     }];
 }
