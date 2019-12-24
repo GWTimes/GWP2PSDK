@@ -5,6 +5,9 @@ GWP2P SDK 是基于技威时代的纯C语言P2P库，使用Objective-C进行封�
 
 ### 更新日志：
 
+2019.12.24
+1.修复iOS13截图崩溃的问题
+
 2019.08.26
 
 1. 因为SDK的包名与appid和token是进行了绑定了的，运行Demo时请将申请的包名及AppId，AppToken,AppVersion在LoginViewController进行替换，否则将无法进行请求和运行。
