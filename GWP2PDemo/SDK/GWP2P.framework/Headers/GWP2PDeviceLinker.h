@@ -135,5 +135,14 @@ typedef void (^DeviceReceiveBlock)(NSString *deviceId, BOOL isSupport);
  停止AP配网。如果配网中途停止，调此方法停止发送数据，正常配网成功不需要调此方法
  */
 - (void)p2pStopAPLink;
-
+/**
+ 获取设备IP
+ 
+ 若设备与手机在同一局域网中,则返回设备局域网IP,用于手机与设备的局域网通信,否则返回 0
+ 
+ @param deviceID 设备ID
+ 
+ @return 设备IP地址
+ */
++ (NSInteger)getDeviceIPByID:(NSString *)deviceID;
 @end

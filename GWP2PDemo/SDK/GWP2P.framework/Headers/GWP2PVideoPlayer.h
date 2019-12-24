@@ -50,7 +50,13 @@ extern NSString * const kGWP2PDeviceIsRejectNotification;
  @param speed 网速
  */
 - (void)p2pVideoPlayer:(GWP2PVideoPlayer *)player networkSpeedChanged:(NSInteger)speed;
-
+/**
+ 监控人形追踪框变化
+ 
+ @param player 播放器
+ @param humanTrack 人形追踪内容，个数及坐标，大小
+ */
+- (void)p2pVideoPlayer:(GWP2PVideoPlayer *)player humanTrackChanged:(NSDictionary *)humanTrack;
 /**
  远程录像(SD卡录像)状态发送改变
 

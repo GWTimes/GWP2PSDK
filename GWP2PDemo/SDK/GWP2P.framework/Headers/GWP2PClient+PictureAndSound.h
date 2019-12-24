@@ -74,6 +74,20 @@ typedef enum GWP2PColorMode{
                       withDeviceID:(NSString *)deviceID
                     devicePassword:(NSString *)devicePassword
                    completionBlock:(CompletionBlock)completionBlock;
+/**
+ 设置图像画框开关
+ 
+ 获取图像画框开关 getMultipledeviceStatusWithDeviceID:password:completionBlock:
+ 
+ @param isImageReversed         图像是否倒转
+ @param deviceID                设备ID
+ @param devicePassword          设备密码
+ @param completionBlock         与设备交互完成后的回调Block
+ */
+- (void)setDeviceHumanTrackState:(BOOL)isOpen
+                      withDeviceID:(NSString *)deviceID
+                    devicePassword:(NSString *)devicePassword
+                   completionBlock:(CompletionBlock)completionBlock;
 
 /**
  获取设备指示灯状态

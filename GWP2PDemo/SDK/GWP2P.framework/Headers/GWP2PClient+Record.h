@@ -211,6 +211,19 @@ typedef enum GWP2PRecordDefinition {
                    devicePassword:(NSString *)devicePassword
                   completionBlock:(CompletionBlock)completionBlock;
 
+#pragma mark - 设置云回放上传开关
+/**
+ 设置云回放上传开关
+ 
+ @param on        开关
+ @param deviceID                设备ID
+ @param devicePassword          设备密码
+ @param completionBlock         与设备交互完成后的回调Block
+ */
+- (void)setVasSwitchOn:(BOOL)on
+              deviceID:(NSString *)deviceID
+        devicePassword:(NSString *)devicePassword
+       completionBlock:(CompletionBlock)completionBlock;
 #pragma mark - 获取回话文件
 /**
  获取设备回放文件

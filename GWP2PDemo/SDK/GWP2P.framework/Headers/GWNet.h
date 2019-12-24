@@ -27,7 +27,7 @@ typedef void(^GWNetCompletionBlock)(BOOL success, NSString *errorCode, NSString 
 extern NSString * const kGWNetSessionIdErrorNotification;
 
 
-/// <#Description#>
+///
 @interface GWNet : NSObject
 
 @property (nonatomic, assign) BOOL connectWithHttps;/**< 以https的方式连接我们的服务器.默认为NO,用http的方式连接 */
@@ -116,7 +116,16 @@ extern NSString * const kGWNetSessionIdErrorNotification;
  @param completion 请求完成回调
  */
 -(void)uploadIosPushToken:(NSString *)token withUserID:(NSString *)userID sessionID:(NSString *)sessionID completion:(GWNetCompletionBlock)completion;
-
+#pragma mark - ios上传极光推送
+/**
+ ios上传极光推送
+ 
+ @param regid ios极光推送regid
+ @param userID 用户ID
+ @param sessionID 会话ID
+ @param completion 请求完成回调
+ */
+-(void)UploadPushParam:(NSString *)regid withUserID:(NSString *)userID sessionID:(NSString *)sessionID completion:(GWNetCompletionBlock)completion;
 #pragma mark 第三方登录
 /**
  第三方登录
@@ -165,6 +174,23 @@ extern NSString * const kGWNetSessionIdErrorNotification;
                     withUserId:(NSString *)userId
                      sessionId:(NSString *)sessionId
                     completion:(GWNetCompletionBlock)completion;
+#pragma mark 注销用户
+/**
+ 注销用户  注销后用户的所有信息会被清空要重新注册
+ 
+ @param userId 用户ID,数据从登录时返回的json里获取
+ @param sessionId 会话ID,数据从登录时返回的json里获取
+ @param pwd 密码,需要32位的md5加密处理,如果提供明文密码,内部会自动加密
+ @param type 注销类型 注销原因类型：1：设备坏了、不好用 2：APP不好用 3：广告太多 4：已有其他平台账号
+ @param desc 注销原因
+ @param completion 回调
+ */
+-(void)cancellationWithUserId:(NSString*)userId//这个应该从登录时返回的json里获取
+                withSessionId:(NSString*)sessionId//这个应该从登录时返回的json里获取
+                      withPwd:(NSString*)pwd //密码,需要32位的md5加密处理,如果提供明文密码,内部会自动加密
+                     withType:(NSString*)type //注销类型
+                     withDesc:(NSString*)desc //注销原因
+                   completion:(GWNetCompletionBlock)completion;//请求完成回调
 #pragma mark 退出登录
 /**
  退出登录
@@ -176,6 +202,8 @@ extern NSString * const kGWNetSessionIdErrorNotification;
 -(void)unLoginWithUserId:(NSString*)userId//这个应该从登录时返回的json里获取
            withSessionId:(NSString*)sessionId//这个应该从登录时返回的json里获取
               completion:(GWNetCompletionBlock)completion;//请求完成回调
+
+
 
 #pragma mark 邮箱注册
 -(void)regEmailWithEmail:(NSString*)name //邮箱地址
@@ -461,7 +489,24 @@ extern NSString * const kGWNetSessionIdErrorNotification;
                    remarkName:(NSString*)remarkName//设备昵称
                    permission:(NSInteger)permission
                    completion:(GWNetCompletionBlock)completion;
+#pragma mark 4g设备添加方式
+/**
+ 添加4g设备,修改一台设备信息
+ 
+ @param userID 用户ID
+ @param sessionID 会话ID
+ @param deviceId 设备ID
+ @param MasterKey 设备的主人密码
+ @param GuestKey 设备的访客密码
 
+ @param completion 回调
+ */
+- (void)addDeviceByNetworkWithUserID:(NSString *)userID
+                           sessionID:(NSString *)sessionID
+                            deviceId:(NSString *)deviceId
+                           masterKey:(NSString *)MasterKey
+                            guestKey:(NSString *)GuestKey
+                          completion:(GWNetCompletionBlock)completion;
 #pragma mark 设备同步-批量更新设备
 /**
  设备同步-批量更新设备
@@ -588,7 +633,40 @@ extern NSString * const kGWNetSessionIdErrorNotification;
            macAddr:(NSString *)macAddr//Mac地址，长度固定为12，获取不到时用0填充
          isSupport:(BOOL)isSupport//是否支持权限管理，1代表支持，0或者传空代表不支持
         completion:(GWNetCompletionBlock)completion;
-
+/*
+@param deviceID          设备ID
+@param userID            用户(主人)ID
+@param sessionID         登陆会话ID
+@param modifyTime        绑定时时间戳
+@param deviceInfoVersion 设备信息版本号(现在传 0，后续可使用不同版本号对应不同的加密方式等)
+@param groupID           分组ID(现在传 0，表示不支持设备分组)
+@param permission        权限(必须是开启权限功能且是主人,按权限值计算)
+@param secretKey         设备加密后的密码(主人密码)
+@param guestKey          设备加密后的访客密码
+@param remarkName        设备备注名称
+@param keyID             由DeviceID+Rkey组成(其中DeviceID、RKey需要加密)
+@param customID          顾客ID,获取不到时应传入0
+@param macAddr           Mac地址，长度固定为12，获取不到时用0填充
+@param isSupport         是否支持权限管理，1代表支持，0或者传空代表不支持
+@param completion        绑定完成后的block
+*/
+#pragma mark 绑定主人
+- (void)bindDevice:(NSString *)deviceID
+        withUserID:(NSString *)userID
+         sessionID:(NSString *)sessionID
+        modifyTime:(NSString *)modifyTime
+ deviceInfoVersion:(NSString *)deviceInfoVersion
+           groupID:(NSString *)groupID
+        permission:(NSInteger)permission
+         secretKey:(NSString *)secretKey
+          guestKey:(NSString *)guestKey
+        remarkName:(NSString *)remarkName
+             keyID:(UInt64)keyID
+          customID:(int)customID
+           macAddr:(NSString *)macAddr
+         isSupport:(BOOL)isSupport
+       isSupport4g:(BOOL)isSupport4g
+        completion:(GWNetCompletionBlock)completion;
 #pragma mark 获取邀请码
 /**
  获取邀请码,此接口已经不用,改用获取邀请链接
@@ -881,6 +959,7 @@ extern NSString * const kGWNetSessionIdErrorNotification;
                     sessionID:(NSString *)sessionID
                    completion:(GWNetCompletionBlock)completion;
 
+
 #pragma mark 已联网方式转分享模式
 /**
  已联网方式转分享模式
@@ -922,6 +1001,24 @@ extern NSString * const kGWNetSessionIdErrorNotification;
 - (void)shouldShowSplashADWithUserID:(NSString *)userID
                            sessionID:(NSString *)sessionID
                           completion:(GWNetCompletionBlock)completion;
+#pragma mark 用户反馈信息
+/**
+ 用户反馈信息
+ 
+ @param userID      用户(主人)ID
+ @param email   邮箱
+ @param content   反馈消息内容
+ @param type     问题分类(1：连接问题; 2：录像问题; 3：离线问题; 4：配网问题; 5：云服务问题; 9：其它问题;)
+ @param appVersion  app版本号
+ @param imagePath     反馈图片或视频文件url地址
+ @param completion  回调
+ */
+- (void)feedBackWithUserID:(NSString *)userID
+                 email:(NSString *)email
+                   content:(NSString *)content
+                      type:(NSString *)type
+                appVersion:(NSString *)appVersion
+                 imagePath:(NSString*)imagePath completion:(GWNetCompletionBlock)completion;
 
 #pragma mark - 自定义服务器地址请求
 /**

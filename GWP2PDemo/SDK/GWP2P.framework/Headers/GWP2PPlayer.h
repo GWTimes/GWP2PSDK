@@ -169,5 +169,12 @@ typedef void (^ScreenshotCompletionBlock)(UIImage *screenshot, NSTimeInterval ti
  设置开启关闭自动巡航
  */
 - (void)setWideAngleAuto:(BOOL)isAuto ;
-
+/*
+ 是否支持人形框，默认支持
+ */
+- (void)setShowHumanTack:(BOOL)isEnable;
+/*
+设置人形框的缩放因数，l默认为1
+*/
+- (void)setShowHumanTackZoom:(float)zoom;
 @end

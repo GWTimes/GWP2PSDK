@@ -212,6 +212,27 @@ typedef NS_ENUM(NSUInteger, GWDeviceRTSPPasswordMode) {
                 withDeviceID:(NSString *)deviceID
               devicePassword:(NSString *)devicePassword
              completionBlock:(CompletionBlock)completionBlock;
+/**
+ 设置4g设备网络的模组
+ 
+ @param deviceID        设备ID
+ @param devicePassword  设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)getDevice4gNetworkTypeWithDeviceID:(NSString *)deviceID
+              devicePassword:(NSString *)devicePassword
+             completionBlock:(CompletionBlock)completionBlock;
+
+/**
+ 回复收到4g邦定信息
+ 
+ @param deviceID        设备ID
+ @param devicePassword  设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)backDevice4gBindNotiyWithDeviceID:(NSString *)deviceID
+                            devicePassword:(NSString *)devicePassword
+                           completionBlock:(CompletionBlock)completionBlock;
 
 /**
  不再使用
