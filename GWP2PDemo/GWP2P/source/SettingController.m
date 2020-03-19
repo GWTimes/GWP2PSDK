@@ -9,7 +9,7 @@
 #import "SettingController.h"
 #import "DeviceModel.h"
 #import "LoginResult.h"
-
+#import <GWP2P/GWNet.h>
 @interface SettingExample : NSObject
 
 @property (nonatomic, copy) NSString *title;
@@ -186,6 +186,7 @@
                       @{@"category":@"报警",
                         @"example":
                             @[
+                                [SettingExample exampleWithTitle:@"打开接收报警" sel:@selector(operateAcceptAlarmMessageCellButton)],
                                 [SettingExample exampleWithTitle:@"设置报警邮箱" sel:@selector(setDeviceAlarmEmailExample)],
                                 [SettingExample exampleWithTitle:@"获取报警邮箱" sel:@selector(getDeviceAlarmEmailExample)],
                                 [SettingExample exampleWithTitle:@"打开移动侦测" sel:@selector(setMotionDetectExample)],
@@ -314,6 +315,24 @@
 - (void)getDeviceNVRInifomationExample {
     [[GWP2PClient sharedClient] getDeviceNVRInfomationWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
         [self outputLog:dataDictionary success:success];
+    }];
+}
+/**
+打开接收报警
+ */
+- (void)operateAcceptAlarmMessageCellButton{
+    __block int permission = 271;
+    if (false) {
+       
+        permission = (permission | 0b100000000);//现在只用第9位操作是否开启报警，第10位是否接受不用
+    }else if (true) {
+      
+        permission = (permission & 0b11111111111111111111111011111111);
+    }
+    NSString *myAccountID = [LoginResult getAccount];
+    [[GWNet shareInstance]modifyPermissionWithUserID:myAccountID sessionID:[LoginResult getSessionID1] deviceID:self.deviceModel.deviceID guestID:myAccountID permission:@(permission).stringValue completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary<NSString *,id> *json) {
+        [self outputLog:json success:success];
+        
     }];
 }
 
