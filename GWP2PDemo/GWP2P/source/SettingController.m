@@ -317,6 +317,20 @@
         [self outputLog:dataDictionary success:success];
     }];
 }
+
+
+#pragma mark - 强制绑定，上传设备关系链设备,这样3.0的设备才能收到在线推送
+- (void)bindDevice {
+    //5 绑定设备
+    NSString *myAccountID = [LoginResult getAccount];
+    NSString *modifyTimeString = [NSString stringWithFormat:@"%0.f", [[NSDate date] timeIntervalSince1970]];
+    UInt64 secretDeviceId = [MD5Manager getSecretDeviceIdWithDeviceId:self.deviceModel.deviceID];
+
+    [GWNetSingleton bindDevice:self.deviceModel.deviceID withUserID:myAccountID sessionID:[LoginResult getSessionID1] modifyTime:modifyTimeString deviceInfoVersion:@"0" groupID:@"0" permission:271 secretKey:@"0" guestKey:self.deviceModel.devicePassword remarkName:@"填个名字" keyID:secretDeviceId customID:0 macAddr:@"0" isSupport:NO completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
+        [self outputLog:json success:success];
+    }];
+}
+
 /**
 打开接收报警
  */
