@@ -4,7 +4,9 @@ GWP2P SDK 是基于技威时代的纯C语言P2P库，使用Objective-C进行封�
 文档连接：http://sdk.yoosee.co/
 
 ### 更新日志：
-
+2021.07.13
+1.增加pod引入支持
+pod 'GWP2P'
 2019.12.24
 1.修复iOS13截图崩溃的问题
 

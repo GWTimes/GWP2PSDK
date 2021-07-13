@@ -17,7 +17,6 @@
 		18390D9D1ED57B1500C9B932 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18390D9C1ED57B1500C9B932 /* Setting.storyboard */; };
 		18390DA21ED57D4700C9B932 /* LanDevicesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18390DA11ED57D4700C9B932 /* LanDevicesController.m */; };
 		18390DA41ED5833100C9B932 /* DeviceLinker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18390DA31ED5833100C9B932 /* DeviceLinker.storyboard */; };
-		1855E6A7223A08A900F352E3 /* GWP2P.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1855E6A4223A088B00F352E3 /* GWP2P.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		189E32EC2147CF2D00069884 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 189E32EA2147CF2D00069884 /* NSDictionary+Log.m */; };
 		189E32ED2147CF2D00069884 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 189E32EB2147CF2D00069884 /* NSArray+Log.m */; };
 		189E32F42147CF9A00069884 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 189E32EF2147CF9A00069884 /* Login.storyboard */; };
@@ -27,6 +26,7 @@
 		18D6FF2F1ED5359600A0E1C4 /* DeviceListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D6FF2A1ED5359600A0E1C4 /* DeviceListCell.m */; };
 		18D6FF301ED5359600A0E1C4 /* DeviceListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D6FF2B1ED5359600A0E1C4 /* DeviceListCell.xib */; };
 		18D6FF311ED5359600A0E1C4 /* DeviceListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D6FF2D1ED5359600A0E1C4 /* DeviceListController.m */; };
+		255A43A775B423AD3B2F891A /* Pods_GWP2PDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68E54298D692ABC8201DDCC6 /* Pods_GWP2PDemo.framework */; };
 		8C3D769F1ED2D7E400B1340A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D769E1ED2D7E400B1340A /* main.m */; };
 		8C3D76A21ED2D7E400B1340A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C3D76A11ED2D7E400B1340A /* AppDelegate.m */; };
 		8C3D76AA1ED2D7E400B1340A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C3D76A91ED2D7E400B1340A /* Assets.xcassets */; };
@@ -50,7 +50,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1855E6A7223A08A900F352E3 /* GWP2P.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,7 +73,6 @@
 		18390DA01ED57D4700C9B932 /* LanDevicesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LanDevicesController.h; sourceTree = "<group>"; };
 		18390DA11ED57D4700C9B932 /* LanDevicesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LanDevicesController.m; sourceTree = "<group>"; };
 		18390DA31ED5833100C9B932 /* DeviceLinker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DeviceLinker.storyboard; sourceTree = "<group>"; };
-		1855E6A4223A088B00F352E3 /* GWP2P.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GWP2P.framework; sourceTree = "<group>"; };
 		189E32E82147CF2D00069884 /* NSArray+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
 		189E32E92147CF2D00069884 /* NSDictionary+Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
 		189E32EA2147CF2D00069884 /* NSDictionary+Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Log.m"; sourceTree = "<group>"; };
@@ -90,7 +88,9 @@
 		18D6FF2B1ED5359600A0E1C4 /* DeviceListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceListCell.xib; sourceTree = "<group>"; };
 		18D6FF2C1ED5359600A0E1C4 /* DeviceListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceListController.h; sourceTree = "<group>"; };
 		18D6FF2D1ED5359600A0E1C4 /* DeviceListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceListController.m; sourceTree = "<group>"; };
-		18F16465223A242000C97A6C /* SDK使用说明 */ = {isa = PBXFileReference; lastKnownFileType = text; path = "SDK使用说明"; sourceTree = "<group>"; };
+		5BEA5C2F81519BAD581E5E94 /* Pods-GWP2PDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GWP2PDemo.release.xcconfig"; path = "Target Support Files/Pods-GWP2PDemo/Pods-GWP2PDemo.release.xcconfig"; sourceTree = "<group>"; };
+		68E54298D692ABC8201DDCC6 /* Pods_GWP2PDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GWP2PDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74FD6C2DFEC08059256F9A13 /* Pods-GWP2PDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GWP2PDemo.debug.xcconfig"; path = "Target Support Files/Pods-GWP2PDemo/Pods-GWP2PDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		8C3D769A1ED2D7E400B1340A /* GWP2PDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GWP2PDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C3D769E1ED2D7E400B1340A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8C3D76A01ED2D7E400B1340A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -125,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				255A43A775B423AD3B2F891A /* Pods_GWP2PDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,15 +144,6 @@
 			name = "Login(登录)";
 			sourceTree = "<group>";
 		};
-		189E32FF2147D4FF00069884 /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-				18F16465223A242000C97A6C /* SDK使用说明 */,
-				1855E6A4223A088B00F352E3 /* GWP2P.framework */,
-			);
-			path = SDK;
-			sourceTree = "<group>";
-		};
 		18D6FF271ED5359600A0E1C4 /* source */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,12 +159,30 @@
 			path = source;
 			sourceTree = "<group>";
 		};
+		75B6B64BB10A5876048A51EE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74FD6C2DFEC08059256F9A13 /* Pods-GWP2PDemo.debug.xcconfig */,
+				5BEA5C2F81519BAD581E5E94 /* Pods-GWP2PDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8404689A10DB77C653B3D1FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68E54298D692ABC8201DDCC6 /* Pods_GWP2PDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8C3D76911ED2D7E400B1340A = {
 			isa = PBXGroup;
 			children = (
 				8C3D769C1ED2D7E400B1340A /* GWP2P */,
-				189E32FF2147D4FF00069884 /* SDK */,
 				8C3D769B1ED2D7E400B1340A /* Products */,
+				75B6B64BB10A5876048A51EE /* Pods */,
+				8404689A10DB77C653B3D1FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -340,10 +350,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8C3D76B11ED2D7E400B1340A /* Build configuration list for PBXNativeTarget "GWP2PDemo" */;
 			buildPhases = (
+				9C8739EFDAB40988F64BCC2B /* [CP] Check Pods Manifest.lock */,
 				8C3D76961ED2D7E400B1340A /* Sources */,
 				8C3D76971ED2D7E400B1340A /* Frameworks */,
 				8C3D76981ED2D7E400B1340A /* Resources */,
 				1855E6A8223A08AA00F352E3 /* Embed Frameworks */,
+				802485CDAAF9B4B96C6EAB73 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -408,6 +420,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		802485CDAAF9B4B96C6EAB73 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GWP2PDemo/Pods-GWP2PDemo-frameworks.sh",
+				"${PODS_ROOT}/GWP2P/GWP2PDemo/SDK/GWP2P.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GWP2P.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GWP2PDemo/Pods-GWP2PDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C8739EFDAB40988F64BCC2B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GWP2PDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8C3D76961ED2D7E400B1340A /* Sources */ = {
@@ -539,6 +594,7 @@
 		};
 		8C3D76B21ED2D7E400B1340A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74FD6C2DFEC08059256F9A13 /* Pods-GWP2PDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -583,6 +639,7 @@
 		};
 		8C3D76B31ED2D7E400B1340A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BEA5C2F81519BAD581E5E94 /* Pods-GWP2PDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
