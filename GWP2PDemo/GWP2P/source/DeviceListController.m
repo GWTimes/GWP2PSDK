@@ -84,21 +84,28 @@
     __weak typeof(self) weakSelf = self;
     
     if (buttonIndex == 1) {//在线验证后添加
-        //alertView的消失会导致MBProgressHUD一起消失,所以要添加到tabBarController.view
-        [MBProgressManager showWaitingWithTitle:@"获取设备状态..." inView:self.tabBarController.view];
-        [[GWP2PClient sharedClient] getMultipleDeviceStatusWithDeviceID:deviceID password:devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
-            [MBProgressManager hideAlert];
-            NSNumber *errorValue = dataDictionary[GWP2PMessageErrorValue];
-            if (success ||
-                errorValue.integerValue == P2PClientMessageErrorNoRight) {
-                deviceModel.deviceType = [dataDictionary[@"device type"] intValue];
-                deviceModel.deviceSubtype = [dataDictionary[@"device subtype"] intValue];
-                [DeviceModel saveDeviceModel:deviceModel];
-                [weakSelf.tableView reloadData];
-            } else {
-                [MBProgressManager showBriefAlert:@"添加失败" inView:self.tabBarController.view];
-            }
+        //这一步是用来确认设备是2.0,还是3.0设备的，p2p库要先知道设备版本才能发消息成功，一般在拉取设备列表的时候调用。
+        [[GWP2PClient sharedClient] getDevicesOrUersStatusWithDeviceIDs:@[ deviceID] completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+            //alertView的消失会导致MBProgressHUD一起消失,所以要添加到tabBarController.view
+            [MBProgressManager showWaitingWithTitle:@"获取设备状态..." inView:self.tabBarController.view];
+            //这个接口是提前校验设备密码是否正确和设备是否在线，如果确定没有问题就不用调用，可以直接调用你们服务器的添加设备接口
+            [[GWP2PClient sharedClient] getMultipleDeviceStatusWithDeviceID:deviceID password:devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+                [MBProgressManager hideAlert];
+                NSNumber *errorValue = dataDictionary[GWP2PMessageErrorValue];
+                if (success ||
+                    errorValue.integerValue == P2PClientMessageErrorNoRight) {
+                    deviceModel.deviceType = [dataDictionary[@"device type"] intValue];
+                    deviceModel.deviceSubtype = [dataDictionary[@"device subtype"] intValue];
+                    [DeviceModel saveDeviceModel:deviceModel];
+                    [weakSelf.tableView reloadData];
+                } else {
+                    [MBProgressManager showBriefAlert:@"添加失败" inView:self.tabBarController.view];
+                }
+            }];
         }];
+        
+        
+       
     } else if (buttonIndex == 2) {//不验证直接添加
         [DeviceModel saveDeviceModel:deviceModel];
         [weakSelf.tableView reloadData];
