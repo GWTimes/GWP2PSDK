@@ -186,6 +186,7 @@
                       @{@"category":@"报警",
                         @"example":
                             @[
+                                [SettingExample exampleWithTitle:@"3.0设备关联关系链" sel:@selector(bindDevice)],
                                 [SettingExample exampleWithTitle:@"打开接收报警" sel:@selector(operateAcceptAlarmMessageCellButton)],
                                 [SettingExample exampleWithTitle:@"设置报警邮箱" sel:@selector(setDeviceAlarmEmailExample)],
                                 [SettingExample exampleWithTitle:@"获取报警邮箱" sel:@selector(getDeviceAlarmEmailExample)],
@@ -326,7 +327,7 @@
     NSString *modifyTimeString = [NSString stringWithFormat:@"%0.f", [[NSDate date] timeIntervalSince1970]];
     UInt64 secretDeviceId = [MD5Manager getSecretDeviceIdWithDeviceId:self.deviceModel.deviceID];
 
-    [GWNetSingleton bindDevice:self.deviceModel.deviceID withUserID:myAccountID sessionID:[LoginResult getSessionID1] modifyTime:modifyTimeString deviceInfoVersion:@"0" groupID:@"0" permission:271 secretKey:@"0" guestKey:self.deviceModel.devicePassword remarkName:@"填个名字" keyID:secretDeviceId customID:0 macAddr:@"0" isSupport:NO completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
+    [GWNetSingleton bindDevice:self.deviceModel.deviceID withUserID:myAccountID sessionID:[LoginResult getSessionID1] modifyTime:modifyTimeString deviceInfoVersion:@"0" groupID:@"0" permission:271 secretKey:@"0" guestKey:self.deviceModel.devicePassword remarkName:@"填个名字" keyID:secretDeviceId customID:0 macAddr:@"000000000000" isSupport:NO completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
         [self outputLog:json success:success];
     }];
 }
@@ -1011,7 +1012,7 @@ typedef struct AA {
  */
 - (void)defenceOperationExample {
     NSLog(@"defenceOperationExample");
-    [[GWP2PClient sharedClient] setDeviceDefenceState:YES withDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+    [[GWP2PClient sharedClient] setDeviceDefenceState:arc4random() %2 ? true : false withDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
         [self outputLog:dataDictionary success:success];
     }];
 }
