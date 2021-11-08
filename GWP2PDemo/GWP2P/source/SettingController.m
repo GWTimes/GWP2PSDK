@@ -327,7 +327,7 @@
     NSString *modifyTimeString = [NSString stringWithFormat:@"%0.f", [[NSDate date] timeIntervalSince1970]];
     UInt64 secretDeviceId = [MD5Manager getSecretDeviceIdWithDeviceId:self.deviceModel.deviceID];
 
-    [GWNetSingleton bindDevice:self.deviceModel.deviceID withUserID:myAccountID sessionID:[LoginResult getSessionID1] modifyTime:modifyTimeString deviceInfoVersion:@"0" groupID:@"0" permission:271 secretKey:@"0" guestKey:self.deviceModel.devicePassword remarkName:@"填个名字" keyID:secretDeviceId customID:0 macAddr:@"000000000000" isSupport:NO completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
+    [GWNetSingleton bindDevice:self.deviceModel.deviceID withUserID:myAccountID sessionID:[LoginResult getSessionID1] modifyTime:modifyTimeString deviceInfoVersion:@"0" groupID:@"0" permission:271 secretKey:self.deviceModel.devicePassword guestKey:self.deviceModel.devicePassword remarkName:@"填个名字" keyID:secretDeviceId customID:0 macAddr:@"000000000000" isSupport:NO completion:^(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary *json) {
         [self outputLog:json success:success];
     }];
 }
