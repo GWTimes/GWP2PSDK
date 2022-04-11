@@ -78,11 +78,11 @@
  给设备发送更新命令后，设备开始更新，此方法会不停的调用，返回更新进度百分比,此方法在主线程运行，方便UI处理
  
  @param client  GWP2PClient 类
- @param persent 更新到百分之多少
+ @param percent 更新到百分之多少
  @param resultCode NSNumber对应更新结果：1更新中 65更新完成
  @param deviceID 设备ID
  */
-- (void)client:(GWP2PClient *)client updateProgress:(NSInteger)persent resultCode:(NSNumber *)resultCode ofDeviceID:(NSString *)deviceID;
+- (void)client:(GWP2PClient *)client updateProgress:(NSInteger)percent resultCode:(NSNumber *)resultCode ofDeviceID:(NSString *)deviceID;
 
 /**
  收到串口透传的数据
@@ -224,5 +224,23 @@
             withDevicePassword:(NSString *)devicePassword
                           data:(NSData *)data
                completionBlock:(CompletionBlock)completionBlock;
+#pragma mark - HTTP请求透传
+/**
+ 通过p2p进行http请求
+ 
+ @param url 请求的url
+ @param param 请求的参数
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+-(void)requestUrl:(NSString *)url
+         andParam:(NSDictionary*)param
+      completionBlock:(CompletionBlock)completionBlock;
+#pragma mark - 网络变化
+/**
+ 网络变化通过p2p进行重置网络
+ */
+-(void)vP2PResetNetwork;
 
+/// 获取注册发验证码的加密key
+-(NSDictionary*)getRegistersecretIdsecretKey;
 @end

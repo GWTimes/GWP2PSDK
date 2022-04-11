@@ -160,6 +160,52 @@ extern NSString * const kGWNetSessionIdErrorNotification;
                          timeZone:(NSInteger)timeZone//App用户当前时区，传输格式分钟，例：东八区 480
                        completion:(GWNetCompletionBlock)completion;//请求完成回调
 
+
+
+
+/**
+国内第三方登录v2（微信）
+
+@param platformType 平台,1表示微信
+@param option 1 仅登录 2绑定老用户并登录 3登录,若不存在则自动注册
+@param code 第三方code
+@param user Yoosee用户名,第三方平台登录后,绑定账号时要传,其它情况下可不传.可为手机,如+86-15200002222,或邮箱,或ID号,如010000,
+@param userPwd Yoosee账号密码,第三方平台登录后,绑定账号时要传,其它情况下可不传
+@param token 苹果设备Token,用来远程推送,可空,空时则无法推送
+@param timeZone App用户当前时区，传输格式分钟，例：东八区 480
+@param completion 回调
+*/
+-(void)thirdLoginWithWX:(NSString*)platformType
+             withOption:(NSString*)option
+               withCode:(NSString*)code
+               withUser:(NSString*)user
+           withPassword:(NSString*)userPwd
+         withAppleToken:(NSString*)token
+               timeZone:(NSInteger)timeZone
+             completion:(GWNetCompletionBlock)completion;
+
+
+/**
+国外第三方登录v2（facebooke、line）
+
+@param platformType 第三方平台类型（4:facebook,5:line,6:Appleid)
+@param option 1 仅登录 2绑定老用户并登录 3登录,若不存在则自动注册
+@param accessToken 第三方accessToken
+@param user Yoosee用户名,第三方平台登录后,绑定账号时要传,其它情况下可不传.可为手机,如+86-15200002222,或邮箱,或ID号,如010000,
+@param userPwd Yoosee账号密码,第三方平台登录后,绑定账号时要传,其它情况下可不传
+@param token 苹果设备Token,用来远程推送,可空,空时则无法推送
+@param timeZone App用户当前时区，传输格式分钟，例：东八区 480
+@param completion 回调
+*/
+#pragma mark -国外第三方登录v2（facebooke、line）
+- (void)thirdLoginWithAbroad:(NSString*)platformType
+                 withOption:(NSString*)option
+            withAccessToken:(NSString*)accessToken
+                   withUser:(NSString*)user
+               withPassword:(NSString*)userPwd
+             withAppleToken:(NSString*)token
+                   timeZone:(NSInteger)timeZone
+                 completion:(GWNetCompletionBlock)completion;
 /**
  第三方登陆后,初始化密码
  
@@ -286,7 +332,20 @@ extern NSString * const kGWNetSessionIdErrorNotification;
                   withPhoneNum:(NSString*)num//手机号
                 withVerifyCode:(NSString*)vCode//短信验证码
     completion:(GWNetCompletionBlock)completion;//请求完成回调
-
+#pragma mark - 发验证码带图形验证码
+-(void)sendSmsV2WithCountryCode:(NSString*)code
+                   withPhoneNum:(NSString*)num
+                           type:(NSString*)type
+                         ticket:(NSString*)ticket
+                        randstr:(NSString*)randstr
+                     completion:(GWNetCompletionBlock)completion;
+#pragma mark - 发验证码带签名
+-(void)sendSmsV2WithCountryCodeV3:(NSString*)code
+                     withPhoneNum:(NSString*)num
+                             type:(NSString*)type
+                     withsecretId:(NSString*)secretId
+                        secretKey:(NSString*)secretKey
+                       completion:(GWNetCompletionBlock)completion;
 #pragma mark  通过邮箱找回
 /**
  通过邮箱找回密码,会向这个邮箱发一封找回的邮件,按照操作能重置密码
@@ -297,7 +356,7 @@ extern NSString * const kGWNetSessionIdErrorNotification;
 -(void)findFromEmailWithEmail:(NSString*)email//会向这个邮箱发一封找回的邮件,仅此而已
                    completion:(GWNetCompletionBlock)completion;//请求完成回调
 
-#pragma mark 通过手机找回来重置密码必需严格按顺序按照下面3步执行,过程中会用到2个不同的vKey,都是由服务器返回
+#pragma mark
 #pragma mark 1.手机找回
 /**
  手机找回,服务器会自动向手机发验证码,不需要调用上面发验证码的方法
@@ -376,7 +435,7 @@ extern NSString * const kGWNetSessionIdErrorNotification;
 
 #pragma mark 设置账户安全信息
 /**
- 设置账户安全信息,用于绑定邮箱和手机号
+ 设置账户安全信息,用于绑定手机号
 
  @param userID 用户ID
  @param sessionID 会话ID
@@ -398,7 +457,22 @@ extern NSString * const kGWNetSessionIdErrorNotification;
                     withSms:(NSString*)sms//当绑定手机的时候需要提供手机验证码,可以调发验证码的接口就行了
                  completion:(GWNetCompletionBlock)completion;//请求完成回调
 
+
 #pragma mark 设置账户信息(增加邮箱验证码)
+/**
+设置账户安全信息,用于绑定邮箱
+
+@param userID 用户ID
+@param sessionID 会话ID
+@param email 邮箱,此参数当bFlag传"2"或者"0"时有效,为空则解除绑定邮箱
+@param cCode 国码,此参数当bFlag传"1"或者"0"时有效,为空则解除绑定手机
+@param phone 手机号,此参数当bFlag传"1"或者"0"时有效,为空则解除绑定手机,绑定的手机应该是未被注册过的手机
+@param Pwd 密码,绑定邮箱或者手机需要验证密码,需要32位的md5加密处理,如果提供明文密码,内部会自动加密
+@param bFlag //绑定标志(0:同时绑定手机和邮箱 1:仅绑定手机 2:仅绑定邮箱) 不可空
+@param isValidMail //校验标志(0:不校验 1:校验 )
+@param mailCode 验证码,绑定手机的时候需要提供手机验证码,先调发验证码接口
+@param completion 回调
+*/
 -(void)stUserInfoWithUserID:(NSString*)userID//这个应该从登录时返回的json里获取
               withSessionID:(NSString*)sessionID//这个应该从登录时返回的json里获取
                   withEmail:(NSString*)email//绑定邮箱,此参数当bFlag=2或者0时有效,为空则解除绑定邮箱
@@ -429,6 +503,41 @@ extern NSString * const kGWNetSessionIdErrorNotification;
                           withRePwd:(NSString*)rePwd//两次确认的新密码,需要32位的md5加密处理,如果提供明文密码,内部会自动加密
                          completion:(GWNetCompletionBlock)completion;//请求完成回调
 
+#pragma mark 第三方登录后首次绑定手机账号并设置密码
+/**
+修改用户账号密码
+
+@param userID 用户iD
+@param sessionID 会话ID
+@param cCode 国家码86
+@param sms 短信验证码
+@param phone 绑定手机号
+@param completion 回调
+*/
+-(void)thirdBindPhoneWithUserID:(NSString*)userID
+                  withSessionID:(NSString*)sessionID
+                withCountryCode:(NSString*)cCode
+                   withPhoneNum:(NSString*)phone
+                    withUserPwd:(NSString*)Pwd
+                        withValidCode:(NSString*)ValidCode
+                     completion:(GWNetCompletionBlock)completion;
+#pragma mark 第三方登录后首次绑定邮箱账号并设置密码
+/**
+修改用户账号密码
+
+@param userID 用户iD
+@param sessionID 会话ID
+@param Email 绑定邮箱
+@param Pwd 账号的新密码,需要32位的md5加密处理,如果提供明文密码,内部会自动加密
+@param ValidCode 验证码
+@param completion 回调
+*/
+-(void)thirdBindEmailWithUserID:(NSString*)userID
+                  withSessionID:(NSString*)sessionID
+                   withEmail:(NSString*)Email
+                    withUserPwd:(NSString*)Pwd
+                        withValidCode:(NSString*)ValidCode
+                     completion:(GWNetCompletionBlock)completion;
 #pragma mark - 设备同步接口
 #pragma mark 设备同步-增加设备
 /**
@@ -449,6 +558,7 @@ extern NSString * const kGWNetSessionIdErrorNotification;
                   deviceID:(NSString*)deviceID//设备ID
                  devicePwd:(NSString*)devicePwd//设备加密后的密码
                 remarkName:(NSString*)remarkName//设备昵称
+                   GroupID:(NSString*)GroupID//设备场景
                 permission:(NSInteger)permission//权限（初始为0，表示不支持权限配置)
                 completion:(GWNetCompletionBlock)completion;
 
@@ -487,6 +597,7 @@ extern NSString * const kGWNetSessionIdErrorNotification;
                      deviceID:(NSString*)deviceID//设备ID
                      devicePwd:(NSString*)devicePwd//设备加密后的密码
                    remarkName:(NSString*)remarkName//设备昵称
+                      GroupID:(NSString*)GroupID//设备场景
                    permission:(NSInteger)permission
                    completion:(GWNetCompletionBlock)completion;
 #pragma mark 4g设备添加方式
@@ -1019,7 +1130,8 @@ extern NSString * const kGWNetSessionIdErrorNotification;
                       type:(NSString *)type
                 appVersion:(NSString *)appVersion
                  imagePath:(NSString*)imagePath completion:(GWNetCompletionBlock)completion;
-
+#pragma mark - 获取常用场景列表
+-(void)getScenListWithCompletion:(GWNetCompletionBlock)completion;
 #pragma mark - 自定义服务器地址请求
 /**
  自定义链接请求,适用于单独的Web API或者测试
@@ -1029,5 +1141,7 @@ extern NSString * const kGWNetSessionIdErrorNotification;
  @param completion 回调
  */
 - (void)requestWithURLString:(NSString *)urlStr parameters:(NSDictionary *)paras completion:(GWNetCompletionBlock)completion;
-
+- (NSString*)gtRealyUnionIDWithUnionID:(NSString*)unionID;
+#pragma mark - 添加公共参数
+- (NSDictionary*)gtCommonParameterWithDic:(NSDictionary*)dic;
 @end

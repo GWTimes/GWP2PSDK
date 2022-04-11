@@ -47,7 +47,7 @@ typedef NS_ENUM(NSUInteger, GWP2PSceneMode) {
  防护模式
  */
 typedef NS_ENUM(NSInteger, GWProtectionPlanMode) {
-    GWProtectionPlanModeNotSurpport, /**< 设备不支持 */
+    GWProtectionPlanModeNotSupport, /**< 设备不支持 */
     GWProtectionPlanModeOut = 1,    /**< 外出 值和固件保持一致 */
     GWProtectionPlanModeAtHome, /**< 在家 */
 };

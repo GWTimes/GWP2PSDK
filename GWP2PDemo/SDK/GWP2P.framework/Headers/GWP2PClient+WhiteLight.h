@@ -127,12 +127,12 @@
  
  获取亮度请调 getMultipledeviceStatusWithDeviceID:password:completionBlock:
 
- @param brightnessPersent 亮度百分比,取值范围0-100,建议设置范围为10-100
+ @param brightnessPercent 亮度百分比,取值范围0-100,建议设置范围为10-100
  @param deviceID 设备ID
  @param devicePassword 设备密码
  @param completionBlock 与设备交互完成后的回调Block
  */
-- (void)setDeviceWhiteLightBrightness:(NSUInteger)brightnessPersent
+- (void)setDeviceWhiteLightBrightness:(NSUInteger)brightnessPercent
                          withDeviceID:(NSString *)deviceID
                        devicePassword:(NSString *)devicePassword
                       completionBlock:(CompletionBlock)completionBlock;

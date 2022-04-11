@@ -19,6 +19,7 @@ typedef NS_ENUM(NSUInteger, GWP2PDeviceType) {
     GWP2PDeviceTypeDoorbell = 5,
     GWP2PDeviceTypeIPC = 7,
     GWP2PDeviceTypeNVR = 11,
+    GWP2PDeviceTypeIOT = 20
 };
 
 //设备加密功能选项枚举值
@@ -49,7 +50,7 @@ typedef NS_ENUM(NSUInteger, GWP2PDeviceIPCSubtype) {
 
     GWP2PDeviceIPCSubtypeNvrPtz = 6,        //预留
     GWP2PDeviceIPCSubtypeNvrNoPtz,          //预留
-    GWP2PDeviceIPCSubtypeSmarthome868,      //支持 868 + 情景模式
+    GWP2PDeviceIPCSubtypeSmartHome868,      //支持 868 + 情景模式
     GWP2PDeviceIPCSubtypeRsv4,              //预留 9
     
     GWP2PDeviceIPCSubtype130wNormal,        //130w,摇头机,全功能

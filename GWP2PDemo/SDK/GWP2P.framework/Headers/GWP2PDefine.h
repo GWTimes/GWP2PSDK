@@ -151,7 +151,15 @@ typedef NS_ENUM(NSInteger, P2PCloudPlayBackError) {
     P2PCloudPlayBackErrorNoPlayback = 10908103,      /**< 没有回放视频 */
     P2PCloudPlayBackErrorLoginError =10903007 ,           /**< 登录错误 */
     P2PCloudPlayBackErrorMessageIsSending = 9996,  /**< 当前请求正在进行 */
-    P2PCloudPlayBackErrorUnKnow = 9999      /**< 未知错误,返回结果一般不会描述错误原因 */
+    P2PCloudPlayBackErrorUnKnow = 9999 ,     /**< 未知错误,返回结果一般不会描述错误原因 */
+    P2PCloudPlayBackErrorParameterEmpty = 10901501 ,     /**< :参数为空*/
+    P2PCloudPlayBackErrorParameterFormatError = 10901021 ,     /**< 参数格式错误*/
+    P2PCloudPlayBackErrorNoVideoRecording = 10908505 ,     /**< 未无视频记录 */
+    P2PCloudPlayBackErrorServiceHasExpired = 10906209 ,     /**< 服务已经过期 */
+    P2PCloudPlayBackErrorReceiveeD = 10906207 ,     /**< 免费套餐设备已经领取过 */
+    P2PCloudPlayBackErrorFailureReceive = 10906208 ,     /**< 免费套餐领取失败 */
+    P2PCloudPlayBackErrorSystemmaintenance = 10901500 ,     /**< 系统维护 */
+    P2PCloudPlayBackErrorSystemwartungUpgrade = 10901501 ,     /**< 系统维护升级中，请稍后再试 */
 
 };
 

@@ -50,13 +50,7 @@ extern NSString * const kGWP2PDeviceIsRejectNotification;
  @param speed 网速
  */
 - (void)p2pVideoPlayer:(GWP2PVideoPlayer *)player networkSpeedChanged:(NSInteger)speed;
-/**
- 监控人形追踪框变化
- 
- @param player 播放器
- @param humanTrack 人形追踪内容，个数及坐标，大小
- */
-- (void)p2pVideoPlayer:(GWP2PVideoPlayer *)player humanTrackChanged:(NSDictionary *)humanTrack;
+
 /**
  远程录像(SD卡录像)状态发送改变
 
@@ -137,7 +131,9 @@ extern NSString * const kGWP2PDeviceIsRejectNotification;
  @param rejectBlock 拒绝连接回调,详见block定义注释
  @param readyBlock  连接就绪回调,详见block定义注释
  */
-- (void)p2pAcceptCallingWithaccept:(P2PAcceptBlock)acceptBlock
+- (void)p2pAcceptCallingWithChannelid:(int)channelid
+                             deviceid:(NSString*)deviceid
+                               accept:(P2PAcceptBlock)acceptBlock
                             reject:(P2PRejectBlock)rejectBlock
                              ready:(P2PReadyBlock)readyBlock;
 

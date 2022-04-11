@@ -43,5 +43,7 @@
 
 /** 设备加密功能选项 */
 @property (nonatomic, assign) uint64_t deviceFuciton;
+/// IoT设备是否已经被绑定
+@property (nonatomic, assign) BOOL iotHasOwner;
 
 @end

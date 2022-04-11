@@ -15,7 +15,7 @@
 szPassword:  1～30位字符串
 返回:         10位以下的unsigned int型数字
  */
-+(unsigned int)GetTreatedPassword:(const char*) szPassword;
++(unsigned int)GetTreatedPassword:(char*) szPassword;
 
 
 /*
@@ -24,7 +24,7 @@ szPassword:  1～30位字符串
  szOutputBuffer:    32个字节的字符串，用来保存md5密码后的数据
  返回:               YES成功加密，结果保存在szOutputBuffer中；NO加密失败
  */
-+(BOOL)GetMD5PasswordWithSrc:(const char*)szInputBuffer Dst:(char*)szOutputBuffer;
++(BOOL)GetMD5PasswordWithSrc:(char*)szInputBuffer Dst:(char*)szOutputBuffer;
 
 
 /*

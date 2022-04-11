@@ -97,6 +97,9 @@ typedef void (^ScreenshotCompletionBlock)(UIImage *screenshot, NSTimeInterval ti
 /** 是否正在播放, 从call开始就为YES，播放中断置为NO */
 @property (nonatomic, assign, readonly) BOOL isPlaying;
 
+/** 音视频传输的通道 */
+@property (nonatomic, assign) int channelID;
+
 /** 麦克风 */
 @property (nonatomic, assign) BOOL micEnable;
 
@@ -116,7 +119,9 @@ typedef void (^ScreenshotCompletionBlock)(UIImage *screenshot, NSTimeInterval ti
 @property (nonatomic, assign, readonly) uint64_t panoPTS;
 /** 刷新*/
 @property (nonatomic, assign) BOOL panoPause;
-/**
+/** 清晰度 */
+@property (nonatomic, assign) GWP2PPTZDefinition definition;
+ /**
  构造方法
 
  @param usePano 是否使用新全景进行播放。目前所有情况都使用新全景库播放，此接口现在等价于默认的init方法。
@@ -124,13 +129,25 @@ typedef void (^ScreenshotCompletionBlock)(UIImage *screenshot, NSTimeInterval ti
  */
 - (instancetype)initWithUsingPano:(BOOL)usePano;
 
-
+/**
+ 停止监控/视频/回放
+ */
+- (BOOL)getAudioStatus;
+- (void)startAudioPlay;
 /**
  停止监控/视频/回放
  */
 - (void)p2pStop;
+/**
+ 主动停止监控/视频/回放
+ */
+- (void)p2pSelfStop;
 
 
+/**
+ 停止监控/视频/回放
+ */
+- (void)p2pStop:(int)channelid;
 /**
  截图
  @param completionBlock 回调
@@ -154,7 +171,7 @@ typedef void (^ScreenshotCompletionBlock)(UIImage *screenshot, NSTimeInterval ti
 /**
  设置全景模式
  */
-@property (nonatomic, assign) PanoMode showMode;
+@property (nonatomic, assign)  PanoMode showMode;
 
 
 /**

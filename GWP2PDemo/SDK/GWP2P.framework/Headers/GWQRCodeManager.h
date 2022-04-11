@@ -73,7 +73,19 @@ typedef void(^GWQRCodeScanCallback)(NSString * _Nullable scanResult, NSString * 
  */
 + (nullable UIImage *)createQRCodeWithWifiName:(NSString *)wifiName wifiPwd:(NSString *)wifiPwd userID:(NSString *)userID qrSize:(CGSize)size;
 
-
+/**
+ 生成二维码
+ 
+ @param wifiName Wi-Fi名称
+ @param wifiPwd Wi-Fi密码
+ @param userID 有看头ID
+ @param languageCode 语言代码用来设备进行配网语音提示
+ //英文    1   中文(简体/繁体)    2泰语    3越南语    4德语    5韩语    6 法语    7葡萄牙语(巴西)    8意大利    9俄语    10日语    11西班牙语    12波兰语    13土耳其语    14波斯语    15印尼语    16马来语    17捷克    18斯洛伐克语    19荷兰语    20
+ @param size 二维码尺寸
+ 
+ @return 二维码图片, 失败时为nil
+ */
++ (nullable UIImage *)createQRCodeWithWifiName:(NSString *)wifiName wifiPwd:(NSString *)wifiPwd userID:(NSString *)userID languageCode:(NSString *)languageCode qrSize:(CGSize)size;
 /**
  生成二维码
 
@@ -82,6 +94,13 @@ typedef void(^GWQRCodeScanCallback)(NSString * _Nullable scanResult, NSString * 
  @return 二维码图片, 失败时为nil
  */
 + (nullable UIImage *)createQRCodeWithString:(NSString *)qrString qrSize:(CGSize)size;
+/**
+ 识别二维码
+ 
+ @param 二维码图片 image
+ @return 二维码NSString, 二维码的字符串
+ */
++(NSString*)getQRCodeStringWithImage:(UIImage*)image;
 
 @end
 

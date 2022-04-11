@@ -60,19 +60,28 @@ typedef void (^DeviceReceiveBlock)(NSString *deviceId, BOOL isSupport);
 /** 智能联机是否发送声波 默认YES */
 @property (nonatomic, assign) BOOL smarkLinkSoundEnable;
 
+/// UDP SOCKET 是否停止接受数据
+@property (nonatomic, assign) BOOL udpSocketStopWorking;
+
 /**
  单例初始化
  */
 + (instancetype)shareInstance;
 
-
+/// 开始监听局域网设备 Socker
+- (void)startScanLanDeviceSocket;
+/// 停止监听局域网设备 Socker
+- (void)stopScanLanDevicesSocket;
 
 /**
-强制刷新局域网设备
+强制刷新局域网设备,删除设备
  */
 - (void)forceScanLanDevices;
 
-
+/**
+ 刷新局域网设备
+ */
+- (void)refleshScanLanDevices;
 
 /**
  智能联机，内部会同时发送声波、空中发包、SimpleConfig数据

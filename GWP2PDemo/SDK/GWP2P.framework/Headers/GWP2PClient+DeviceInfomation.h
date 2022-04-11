@@ -45,7 +45,7 @@ typedef NS_ENUM(NSUInteger, GWDeviceRTSPPasswordMode) {
  
  completionBlock返回：
  
- @"defence state" （布防状态）: 类型：BOOL （YES 布防 , NO 撤防）
+ @"defend state" （布防状态）: 类型：BOOL （YES 布防 , NO 撤防）
  
  @"buzzer state" （蜂鸣器蜂鸣时长）: 0 off , 1 2 3 min 蜂鸣时长 类型：NSNumber
  
@@ -101,11 +101,11 @@ typedef NS_ENUM(NSUInteger, GWDeviceRTSPPasswordMode) {
  
  @"confirm RTSP password mode" (需不需要确认RTSP密码模式,需要时,调确认RTSP密码模式接口后才能正常配置RTSP密码)
  
- @"white light suppurted" (是否支持白光灯功能) @(BOOL)
+ @"white light support" (是否支持白光灯功能) @(BOOL)
  
  @"white light on" (白光灯灯关是否打开) @(BOOL)
  
- @"sound control suppurted" (是否支持声音控制功能) @(BOOL)
+ @"sound control support" (是否支持声音控制功能) @(BOOL)
  
  @"white light brightness" (白光灯亮度) @(int)
  
@@ -522,8 +522,8 @@ typedef NS_ENUM(NSUInteger, GWDeviceRTSPPasswordMode) {
     @"操作描述" : @"获取好友用户及设备列表在线状态等信息",
     @"status" : @[  @{//一个字典对应一个设备或一个好友用户信息
                     @"deviceID" : @"设备ID或好友用户ID",
-                    @"defence flag" : @(-1),//布防状态获取的时间标识,此值越大,表示获取的时间越晚,用于判断是否要刷新布防状态. -1表示不支持或设备不在线
-                    @"defence state" : @(-1),//-1表示不支持或设备不在线
+                    @"defend flag" : @(-1),//布防状态获取的时间标识,此值越大,表示获取的时间越晚,用于判断是否要刷新布防状态. -1表示不支持或设备不在线
+                    @"defend state" : @(-1),//-1表示不支持或设备不在线
                     @"online state" : @(YES),//接口一定支持
                     @"subtype" : @(-1)//-1表示不支持或设备不在线
                     }

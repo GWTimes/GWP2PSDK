@@ -26,7 +26,7 @@
 #import "GWP2PDefine.h"
 #import "GWP2PClient+P2PInfo.h"
 #import "GWP2PClient+RemoteControl.h"
-
+#import "GWP2PUtils.h"
 
 //监控、视频通话、回放
 #import "GWP2PPlayer.h"                 //播放器基类

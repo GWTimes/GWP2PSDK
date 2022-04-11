@@ -44,8 +44,9 @@ typedef enum  GWHXVisonPreseSubcmdType {
                   withDeviceID:(NSString *)deviceID
                 devicePassword:(NSString *)devicePassword
                          point:(CGPoint)point
-                          size:(CGSize)size;
+                          size:(CGSize)size
+                  andChannelid:(int)channelid;
 
-- (void)sendHXCommandTypeandOption:(GWP2PHXVisonDirection)direction;
+- (void)sendHXCommandTypeandOption:(GWP2PHXVisonDirection)direction      andChannelid:(int)channelid;
 
 @end

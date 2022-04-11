@@ -38,7 +38,7 @@
  
  @param completionBlock         与设备交互完成后的回调Block
  */
-- (void)getDeviceWiFiHasBeSettedWithCompletionBlock:(CompletionBlock)completionBlock;
+- (void)getDeviceWiFiIfHadSetWithCompletionBlock:(CompletionBlock)completionBlock;
 
 /**
  AP模式下设置设备wifi，设置后设备切回连网模式并连接设置的wifi (若设备不支持，只会超时，此bug待日后更新)

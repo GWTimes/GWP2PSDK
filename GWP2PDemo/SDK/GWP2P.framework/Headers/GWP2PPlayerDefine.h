@@ -71,6 +71,11 @@ typedef NS_ENUM(NSUInteger, GWP2PCallError) {
     GWP2PCallErrorConnFail,
     GWP2PCallErrorNotSupport,
     GWP2PCallErrorNotPermissions,    //15无监控权限
+    GWP2PCallErrorSELF_HANGUP,    // 16 主动挂断
+    GWP2PCallErrorNOT_SUPPORT_OLDVER_APP_TO_NEWVER_DEV,    //17不支持旧版本的APP访问新版本的设备
+    GWP2PCallError_4G_CONNECT_LIMIT,    //18 4G设备连接时间限制
+    GWP2PCallError_4G_CONNECT_FILTER,    //19 4G设备连接白名单过滤断开
+    GWP2PCallError_4G_DEVICE_GWELL_NODATA , //!= 0x14 20< 自运营gwell 4G设备没有流量
 
 };
 

@@ -39,6 +39,18 @@ NS_ASSUME_NONNULL_BEGIN
          devicePassword:(NSString *)devicePassword
         completionBlock:(CompletionBlock)completionBlock;
 
+/**
+ 手动重启设备
+ 
+ @param on 是否重启,1开；0关
+ @param deviceID 设备ID
+ @param devicePassword 设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)setRemoteReboot:(BOOL)on
+               deviceID:(NSString *)deviceID
+         devicePassword:(NSString *)devicePassword
+        completionBlock:(CompletionBlock)completionBlock ;
 @end
 
 NS_ASSUME_NONNULL_END

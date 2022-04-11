@@ -12,7 +12,7 @@
  操作预置位方式
  */
 typedef enum GWPresetPositionOperationType {
-    GWPresetPositionOperationTypeTurnTo,/**< 转向某预置位 */
+    GWPresetPositionOperationTypeTurnTo = 0,/**< 转向某预置位 */
     GWPresetPositionOperationTypeSet,/**< 在当前设备摄像头角度下增加给定索引的预置位，若给定索引设置过预置位，则覆盖原信息 */
     GWPresetPositionOperationTypeQuery,/**< 查看所有预置位信息 */
     GWPresetPositionOperationTypeDelete,/**< 删除某索引的预置位 */
