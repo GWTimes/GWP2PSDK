@@ -2,15 +2,15 @@ PODS:
   - GWP2P (1.9.0)
 
 DEPENDENCIES:
-  - GWP2P (from `../`)
+  - GWP2P
 
-EXTERNAL SOURCES:
-  GWP2P:
-    :path: "../"
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - GWP2P
 
 SPEC CHECKSUMS:
   GWP2P: b577debe3a2c1f7c6738ea611a412873986eb9d6
 
-PODFILE CHECKSUM: e61b6c0b0bec51216ed22df0ef5dadee953c017c
+PODFILE CHECKSUM: 87ad3c705c2f1119fc7c00de6d806ab8197ca4e4
 
 COCOAPODS: 1.11.2

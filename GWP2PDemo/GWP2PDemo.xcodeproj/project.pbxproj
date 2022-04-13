@@ -429,7 +429,7 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GWP2PDemo/Pods-GWP2PDemo-frameworks.sh",
-				"${PODS_ROOT}/../SDK/GWP2P.framework",
+				"${PODS_ROOT}/GWP2P/GWP2PDemo/SDK/GWP2P.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
