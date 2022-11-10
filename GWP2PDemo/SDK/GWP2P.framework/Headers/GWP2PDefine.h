@@ -31,6 +31,7 @@ static NSString *const GWP2PMessageResult = @"result";/**< 结果 对应NSNumber
 static NSString *const GWP2PMessageFailure = @"failure"; /**< 失败 */
 static NSString *const GWP2PMessageSuccess = @"success"; /**< 成功 */
 static NSString *const GWP2PMessageErrorValue = @"error value"; /**< NSNumber 包装的 P2PClientMessageError 枚举值 */
+static NSString *const GWP2PMessageSetErrorValue = @"Set error value"; /**< NSNumber 包装的 P2PClientMessageError 枚举值 */
 
 
 /**
@@ -44,7 +45,7 @@ typedef NS_ENUM(NSUInteger, P2PClientMessageError) {
     P2PClientMessageErrorNoRight,           /**< 没有权限 */
     P2PClientMessageErrorSendFailed = 5,        /**< 因缓存不够发送失败 */
     P2PClientMessageErrorDeviceOffline = 6,     /**< 设备离线 */
-    
+    P2PClientMessageErrorLdRecordOnFail = 137,     /**< 操作频繁,请稍后再试 */
     P2PClientMessageErrorMessageIsSending = 9996,  /**< 当前请求正在进行 */
     P2PClientMessageErrorParameterError = 9997,    /**< 传递参数错误 */
     P2PClientMessageErrorOtherError = 9998, /**< 其它错误,返回结果一般会描述错误原因 */

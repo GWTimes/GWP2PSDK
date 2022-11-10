@@ -100,7 +100,7 @@
     cell.textLabel.font = [UIFont systemFontOfSize:14];
     GWPlaybackFileModel *fillModel = self.listsArr[indexPath.row];
     
-    cell.textLabel.text = [NSString stringWithFormat:@"%zd-%zd-%zd_%zd:%zd:%zd_%@(%zd)",fillModel.year,fillModel.month,fillModel.day,fillModel.hour,fillModel.minute,fillModel.second,fillModel.cType,fillModel.time];
+    cell.textLabel.text = [NSString stringWithFormat:@"%zd-%zd-%zd_%zd:%zd:%zd_%@(%zd)",fillModel.year,fillModel.month,fillModel.day,fillModel.hour,fillModel.minute,fillModel.second,fillModel.cType,fillModel.duration];
     return cell;
 }
 

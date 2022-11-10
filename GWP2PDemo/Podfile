@@ -7,6 +7,6 @@ target 'GWP2PDemo' do
   use_frameworks!
 
   # Pods for GWP2PDemo
-  pod 'GWP2P'
+  pod 'GWP2P' ,  :path => '../'
 
 end

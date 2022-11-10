@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "GWP2P"
-  spec.version      = "1.9.0"
+  spec.version      = "1.9.1"
   spec.summary      = "A short description of GWP2P."
 
   # This description is used to generate tags and improve search results.

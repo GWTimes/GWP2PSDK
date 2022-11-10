@@ -35,11 +35,13 @@ typedef NS_ENUM(NSUInteger, GWP2PCallStatus) { //呼叫状态
     GWP2PCallStatusRejected,    //呼叫被对方拒绝
     GWP2PCallStatusAccepted,    //呼叫被对方接受
     GWP2PCallStatusReady,       //连接准备就绪
+    GWP2PCallStatusPlaying,     //正常播放中
 };
 
 typedef NS_ENUM(NSUInteger, GWP2PPlaybackState) { //回放状态
     GWP2PPlaybackStateNone,        //默认
     GWP2PPlaybackStatePause,       //暂停
+    GWP2PPlaybackStateReady,       //暂停
     GWP2PPlaybackStatePlaying,     //正常播放中
     GWP2PPlaybackStateFastForward, //快进中
     GWP2PPlaybackStateStop         //停止
@@ -169,25 +171,25 @@ typedef NS_ENUM(NSUInteger, GWP2PPlaybackControl) {
 /**
  汇讯视通控制镜头
  */
-typedef NS_ENUM(NSUInteger, GWP2PHXVisonDirection) {
-    GWP2PHXVisonDirectionLeft = 0,  //左，保持移动
-    GWP2PHXVisonDirectionRight,     //右，保持移动
-    GWP2PHXVisonDirectionUp,        //上，保持移动
-    GWP2PHXVisonDirectionDown,      //下，保持移动
-    GWP2PHXVisonDirectionZoomOut,   //缩小
-    GWP2PHXVisonDirectionZoomIn,    //放大
-    GWP2PHXVisonDirectionStop,      //停止，停止移动
+typedef NS_ENUM(NSUInteger, GWP2PHXVisionDirection) {
+    GWP2PHXVisionDirectionLeft = 0,  //左，保持移动
+    GWP2PHXVisionDirectionRight,     //右，保持移动
+    GWP2PHXVisionDirectionUp,        //上，保持移动
+    GWP2PHXVisionDirectionDown,      //下，保持移动
+    GWP2PHXVisionDirectionZoomOut,   //缩小
+    GWP2PHXVisionDirectionZoomIn,    //放大
+    GWP2PHXVisionDirectionStop,      //停止，停止移动
 };
 
 
 /**
  汇讯视通3D手势
  */
-typedef NS_ENUM(NSUInteger, GWP2PHXVison3DGestureZoomType)
+typedef NS_ENUM(NSUInteger, GWP2PHXVision3DGestureZoomType)
 {
-    GWP2PHXVison3DGestureZoomTele = 0,  //3D放大
-    GWP2PHXVison3DGestureZoomWide,      //3D缩小
-    GWP2PHXVison3DGestureZoomLocate,    //3D定位移动
+    GWP2PHXVision3DGestureZoomTele = 0,  //3D放大
+    GWP2PHXVision3DGestureZoomWide,      //3D缩小
+    GWP2PHXVision3DGestureZoomLocate,    //3D定位移动
 };
 
 #endif /* GWP2PPlayerDefine_h */

@@ -74,6 +74,7 @@
     
     [MBProgressManager showWaitingWithTitle:@"正在缓冲"];
     //[self.playbackPlayer setValue:@(GWP2PPlaybackStatePlaying) forKey:@"playbackState"];
+   
     [self.playbackPlayer p2pCallPlaybackFileWithDeviceId:self.deviceModel.deviceID password:self.deviceModel.devicePassword playbackFile:self.fillModelArr[self.currentIndex] calling:^(NSDictionary *parameters) {
         NSLog(@"P2PCallingBlock--%@",parameters);
     } accept:^(NSDictionary *parameters) {
@@ -84,6 +85,8 @@
     } ready:^{
         NSLog(@"p2pCallPlaybackFile ready");
         [MBProgressManager hideAlert];
+    }playing:^{
+        NSLog(@"p2pCallPlaybackFile playing");
     }];
 }
 

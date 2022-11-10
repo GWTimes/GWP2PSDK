@@ -96,6 +96,7 @@ extern NSString * const kGWP2PDeviceIsRejectNotification;
  @param acceptBlock   接收呼叫回调,详见block定义注释
  @param rejectBlock   拒绝连接回调,详见block定义注释
  @param readyBlock    连接就绪回调,详见block定义注释
+ @param playingBlock   开始显示回调,详见block定义注释
  */
 - (void)p2pCallDeviceWithDeviceId:(NSString *)deviceId
                          password:(NSString *)password
@@ -104,6 +105,7 @@ extern NSString * const kGWP2PDeviceIsRejectNotification;
                            accept:(P2PAcceptBlock)acceptBlock
                            reject:(P2PRejectBlock)rejectBlock
                             ready:(P2PReadyBlock)readyBlock
+                          playing:(P2PPlayingBlock)playingBlock
                          allowLAN:(BOOL)allowLAN;
 
 /**
@@ -115,13 +117,15 @@ extern NSString * const kGWP2PDeviceIsRejectNotification;
  @param acceptBlock   接收呼叫回调,详见block定义注释
  @param rejectBlock   拒绝连接回调,详见block定义注释
  @param readyBlock    连接就绪回调,详见block定义注释
+ @param playingBlock   开始显示回调,详见block定义注释
  */
 - (void)p2pCallNPCDeviceWithDeviceId:(NSString *)deviceId
                             password:(NSString *)password
                              calling:(P2PCallingBlock)callingBlock
                               accept:(P2PAcceptBlock)acceptBlock
                               reject:(P2PRejectBlock)rejectBlock
-                               ready:(P2PReadyBlock)readyBlock;
+                               ready:(P2PReadyBlock)readyBlock
+                             playing:(P2PPlayingBlock)playingBlock;
 
 
 /**
@@ -130,20 +134,14 @@ extern NSString * const kGWP2PDeviceIsRejectNotification;
  @param acceptBlock 接收呼叫回调,详见block定义注释
  @param rejectBlock 拒绝连接回调,详见block定义注释
  @param readyBlock  连接就绪回调,详见block定义注释
+ @param playingBlock   开始显示回调,详见block定义注释
  */
-- (void)p2pAcceptCallingWithChannelid:(int)channelid
+- (void)p2pAcceptCallingWithChannelid:(int)channelId
                              deviceid:(NSString*)deviceid
                                accept:(P2PAcceptBlock)acceptBlock
                             reject:(P2PRejectBlock)rejectBlock
-                             ready:(P2PReadyBlock)readyBlock;
-
-
-/**
- 讲话开关。开启时向设备发送麦克风音频，默认关闭。
-
- @param enable YES:开启,NO:关闭
- */
-- (void)p2pEnableSpeak:(BOOL)enable;
+                             ready:(P2PReadyBlock)readyBlock
+                              playing:(P2PPlayingBlock)playingBlock;
 
 /**
  控制摇头机镜头转向
@@ -164,7 +162,7 @@ extern NSString * const kGWP2PDeviceIsRejectNotification;
  
  @param  direction 镜头转动方向
  */
-- (void)p2pHXVsionTurnDirection:(GWP2PHXVisonDirection)direction;
+- (void)p2pHXVsionTurnDirection:(GWP2PHXVisionDirection)direction;
 
 /**
  汇讯视通3D手势
@@ -173,7 +171,7 @@ extern NSString * const kGWP2PDeviceIsRejectNotification;
  @param point 手势坐标
  @param size  手势大小,当定位移动时，宽高必须传0
  */
-- (void)p2pHXVsionOperate3DGesture:(GWP2PHXVison3DGestureZoomType)zoomType point:(CGPoint)point size:(CGSize)size;
+- (void)p2pHXVsionOperate3DGesture:(GWP2PHXVision3DGestureZoomType)zoomType point:(CGPoint)point size:(CGSize)size;
 
 /**
  开始摄像

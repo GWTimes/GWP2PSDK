@@ -97,7 +97,7 @@
  P2P库接收到通知，包括 设备升级、系统消息、权限通知等
  
  @param client GWP2PClient 类
- @param noti 通知数据字典
+ @param userInfo 通知数据字典
  
     "PermissionMessage"
     "AppNeedUpdate"
@@ -127,7 +127,7 @@
 
 @property (nonatomic, weak) id<GWP2PClientProtocol> delegate;/**< GWP2PClient的代理，一些设备事件的通知对象 */
 
-@property (nonatomic, assign) BOOL isAPMode;/**< 是不是AP模式。此属性只保存上次与路由器交互后的数据，调 getDeviceIDInAPMode 方法会重新与路由器交互更新APMode状态，每次app进入前台时会更新APMode状态 */
+@property (nonatomic, assign) BOOL isAPMode;/**< 是不是AP模式 */
 @property (nonatomic, assign) NSInteger port;/**< 广播端口 */
 @property (nonatomic, strong) NSString* apSSIDPrefix;/**< 自定ap模式wifi前缀如GW_AP_XXXXXXXX,传 GW_AP_ */
 @property (nonatomic, assign) BOOL ackBackPreset;/**< 是否预置位ack回复就返回成功，默认是等转到位置再回复*/

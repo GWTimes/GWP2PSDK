@@ -43,10 +43,14 @@ typedef void (^P2PRejectBlock)(GWP2PCallError error, NSString *errorCode);
 
 
 /**
- 连接上设备并准备就绪,开始显示画面
+ 连接上设备并准备就绪
  */
 typedef void (^P2PReadyBlock)(void);
 
+/**
+ 开始显示画面
+ */
+typedef void (^P2PPlayingBlock)(void);
 
 /**
  截图完成回调
@@ -96,6 +100,9 @@ typedef void (^ScreenshotCompletionBlock)(UIImage *screenshot, NSTimeInterval ti
 
 /** 是否正在播放, 从call开始就为YES，播放中断置为NO */
 @property (nonatomic, assign, readonly) BOOL isPlaying;
+
+/** 设备Id */
+@property (nonatomic, copy) NSString *deviceId;
 
 /** 音视频传输的通道 */
 @property (nonatomic, assign) int channelID;
@@ -147,7 +154,7 @@ typedef void (^ScreenshotCompletionBlock)(UIImage *screenshot, NSTimeInterval ti
 /**
  停止监控/视频/回放
  */
-- (void)p2pStop:(int)channelid;
+- (void)p2pStop:(int)channelId;
 /**
  截图
  @param completionBlock 回调

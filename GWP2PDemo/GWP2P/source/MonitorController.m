@@ -79,6 +79,8 @@
     __weak typeof(self) weakSelf = self; //这里的几个代码块都要用弱引用
     [self.activityView startAnimating];
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
+         
+
         
         [weakSelf.player p2pCallDeviceWithDeviceId:_deviceModel.deviceID password:_deviceModel.devicePassword definition:GWP2PPTZDefinitionSD calling:^(NSDictionary *parameters) {
             NSLog(@"[p2pCallDevice-Calling],paras=%@",parameters);
@@ -105,7 +107,9 @@
             } else {
                 //其它设备用默认的显示，没有形变
             }
-        } allowLAN:YES];
+        } playing:^{
+            NSLog(@"p2pCallPlaybackFile playing");
+        }allowLAN:YES];
         
         
         
@@ -121,7 +125,7 @@
     talkSwitch = !talkSwitch;
     NSLog(@"talkSwitch %d",talkSwitch);
     
-    [self.player p2pEnableSpeak:talkSwitch];
+    [self.player setMicEnable:YES];
     
 }
 

@@ -75,7 +75,7 @@ typedef enum GWPresetPositionOperationType {
  @param devicePassword          设备密码
  @param completionBlock         与设备交互完成后的回调Block
  */
-- (void)getDeviceSheduleDefenceDataWithDeviceID:(NSString *)deviceID
+- (void)getDeviceScheduleDefenceDataWithDeviceID:(NSString *)deviceID
                                  devicePassword:(NSString *)devicePassword
                                 completionBlock:(CompletionBlock)completionBlock;
 

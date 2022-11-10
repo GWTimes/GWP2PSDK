@@ -43,6 +43,7 @@
  @param acceptBlock   接收呼叫回调,详见block定义注释
  @param rejectBlock   拒绝连接回调,详见block定义注释
  @param readyBlock    连接就绪回调,详见block定义注释
+ @param playingBlock   开始显示回调,详见block定义注释
  */
 - (void)p2pCallPlaybackFileWithDeviceId:(NSString *)deviceId
                                password:(NSString *)password
@@ -50,7 +51,8 @@
                                 calling:(P2PCallingBlock)callingBlock
                                  accept:(P2PAcceptBlock)acceptBlock
                                  reject:(P2PRejectBlock)rejectBlock
-                                  ready:(P2PReadyBlock)readyBlock;
+                                  ready:(P2PReadyBlock)readyBlock
+                                playing:(P2PPlayingBlock)playingBlock;
 /**
  播放设备远程录像文件,原理和监控设备是一样的,需要呼叫连接设备
  
@@ -61,6 +63,7 @@
  @param acceptBlock   接收呼叫回调,详见block定义注释
  @param rejectBlock   拒绝连接回调,详见block定义注释
  @param readyBlock    连接就绪回调,详见block定义注释
+ @param playingBlock   开始显示回调,详见block定义注释
  */
 - (void)p2pCallPlaybackFileWithDeviceId:(NSString *)deviceId
                                password:(NSString *)password
@@ -69,7 +72,8 @@
                                 calling:(P2PCallingBlock)callingBlock
                                  accept:(P2PAcceptBlock)acceptBlock
                                  reject:(P2PRejectBlock)rejectBlock
-                                  ready:(P2PReadyBlock)readyBlock;
+                                  ready:(P2PReadyBlock)readyBlock
+                                playing:(P2PPlayingBlock)playingBlock;
 /**
  播放远程录像文件,如果已经连接上设备,调用此方法即可快速切换回放文件
 

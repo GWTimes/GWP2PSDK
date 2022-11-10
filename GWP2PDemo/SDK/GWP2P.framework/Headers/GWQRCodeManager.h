@@ -97,10 +97,10 @@ typedef void(^GWQRCodeScanCallback)(NSString * _Nullable scanResult, NSString * 
 /**
  识别二维码
  
- @param 二维码图片 image
+ @param image 二维码图片
  @return 二维码NSString, 二维码的字符串
  */
-+(NSString*)getQRCodeStringWithImage:(UIImage*)image;
++(nullable NSString*)getQRCodeStringWithImage:(UIImage*)image;
 
 @end
 

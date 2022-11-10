@@ -81,7 +81,7 @@ typedef void (^DeviceReceiveBlock)(NSString *deviceId, BOOL isSupport);
 /**
  刷新局域网设备
  */
-- (void)refleshScanLanDevices;
+- (void)refreshScanLanDevices;
 
 /**
  智能联机，内部会同时发送声波、空中发包、SimpleConfig数据

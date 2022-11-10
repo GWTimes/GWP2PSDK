@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GWNetError.h"
 
 #ifndef GWNetSingleton
 #define GWNetSingleton [GWNet shareInstance]
@@ -21,7 +22,7 @@
  @param errorString 描述具体的错误原因
  @param json 具体的返回数据
  */
-typedef void(^GWNetCompletionBlock)(BOOL success, NSString *errorCode, NSString *errorString, NSDictionary<NSString*,id> *json);
+typedef void(^GWNetCompletionBlock)(BOOL success, GWNetErrCode errorCode, NSString *errorString, NSDictionary<NSString*,id> *json);
 
 //调接口时会话ID错误发出的通知,会话ID超时/错误时所有接口无法调用,应该让用户重新登录获取新的Session。每个接口处理过于麻烦,所以增加通知。
 extern NSString * const kGWNetSessionIdErrorNotification;
@@ -38,9 +39,6 @@ extern NSString * const kGWNetSessionIdErrorNotification;
 #pragma mark - 获取单例
 /**获取单例,注意,本程序并不是全单例,而是半单例,本程序并没有重写alloc方法,所以alloc出来的依然是独立的地址*/
 +(instancetype)shareInstance;//获取单例
-
-#pragma mark - 设置为输出日志
--(void)stOutputLog:(BOOL)outputLog;
 
 #pragma mark - 必需设置的参数,如果不设置这些参数,会导致SDK传递的信息不正确
 /**
@@ -510,7 +508,7 @@ extern NSString * const kGWNetSessionIdErrorNotification;
 @param userID 用户iD
 @param sessionID 会话ID
 @param cCode 国家码86
-@param sms 短信验证码
+@param ValidCode 短信验证码
 @param phone 绑定手机号
 @param completion 回调
 */
@@ -764,6 +762,7 @@ extern NSString * const kGWNetSessionIdErrorNotification;
 #pragma mark 绑定主人
 - (void)bindDevice:(NSString *)deviceID
         withUserID:(NSString *)userID
+        withRegion:(NSString *)region
          sessionID:(NSString *)sessionID
         modifyTime:(NSString *)modifyTime
  deviceInfoVersion:(NSString *)deviceInfoVersion
@@ -907,7 +906,7 @@ extern NSString * const kGWNetSessionIdErrorNotification;
  @param modifyTime 客户端本地修改时的UTC时间戳
  @param completion 绑定完成后的block
  */
-- (void)getSharedDeviceInfomationWithUserID:(NSString *)userID
+- (void)getSharedDeviceInformationWithUserID:(NSString *)userID
                                   sessionID:(NSString *)sessionID
                                  inviteCode:(NSString *)inviteCode
                                  modifyTime:(NSString *)modifyTime
@@ -918,7 +917,7 @@ extern NSString * const kGWNetSessionIdErrorNotification;
  修改权限
  
  @param userID 用户ID
- @param sesssionID 会话ID
+ @param sessionID 会话ID
  @param deviceID 设备ID
  @param guestID 访客ID
  @param permission 权限值

@@ -25,6 +25,23 @@ typedef enum GWP2PCloudRecordType{
  
 }GWP2PCloudRecordType;
 /**
+ 卡录像质量
+ */
+typedef enum GWP2PCardRecordType{
+    GWP2PCardRecordTypeUnsupport = 0,/**< 不支持设置 */
+    GWP2PCardRecordTypeStandardDefinition = 1,/**< 标清 */
+    GWP2PCardRecordTypeHighDefinition = 2,/**< 高清*/
+}GWP2PCardRecordType;
+
+/**
+ 录制声音开关状态
+ */
+typedef enum GWP2PRecordVolumeSwitchStatus{
+    GWP2PRecordVolumeSwitchStatusUnsupport = 0,/**< 不支持设置 */
+    GWP2PRecordVolumeSwitchStatusClose = 1,/**< 关闭*/
+    GWP2PRecordVolumeSwitchStatusOpen = 2,/**< 开启 */
+}GWP2PRecordVolumeSwitchStatus;
+/**
  录像质量
  */
 typedef enum GWP2PRecordDefinition {
@@ -41,22 +58,22 @@ typedef enum GWP2PRecordDefinition {
  */
 @interface GWPlaybackFileModel : NSObject
 
-@property (nonatomic, assign) NSInteger discID; /**< 文件在存储设备的标识 播放时用 */
-
+/* 文件时间的Component形式  */
 @property (nonatomic, assign) NSInteger year; /**< 文件时间 年 */
 @property (nonatomic, assign) NSInteger month; /**< 文件时间 月 */
 @property (nonatomic, assign) NSInteger day; /**< 文件时间 日 */
 @property (nonatomic, assign) NSInteger hour; /**< 文件时间 时 */
 @property (nonatomic, assign) NSInteger minute; /**< 文件时间 分 */
 @property (nonatomic, assign) NSInteger second; /**< 文件时间 秒 */
+/* 文件时间的NSDate形式  */
+@property (nonatomic, strong) NSDate *date; /**< 记录上面的时间 */
+/* 文件时间的TimeInterval形式  */
+@property (nonatomic, assign) NSInteger startTime;  /**< 开始时间 (秒)*/
+@property (nonatomic, assign) NSInteger endTime;    /**< 结束时间 = startTime + duration (秒) */
+@property (nonatomic, assign) NSInteger duration;   /**< 文件时长 若不支持, 则为-1 (秒)*/
 
-@property (nonatomic, strong) NSDate *date;/**< 记录上面的时间 */
-
-@property (nonatomic, assign) NSInteger totalSec;/**< 记录上面的时间 */
-@property (nonatomic, assign) NSInteger totalEndSec;/**< 记录上面的时间结束为totalsec + time */
-
+@property (nonatomic, assign) NSInteger discID; /**< 文件在存储设备的标识 播放时用 */
 @property (nonatomic, copy) NSString *cType; /**< 文件类型 一个字符 */
-@property (nonatomic, assign) NSInteger time; /**< 文件播放时长 若不支持,则为-1 */
 
 @property (nonatomic, assign) NSInteger month_yoosee; //yoosee专用
 
@@ -89,7 +106,7 @@ typedef enum GWP2PRecordDefinition {
  @param devicePassword          设备密码
  @param completionBlock         与设备交互完成后的回调Block
  */
-- (void)getDeviceStorageInfomationWithDeviceID:(NSString *)deviceID
+- (void)getDeviceStorageInformationWithDeviceID:(NSString *)deviceID
                                 devicePassword:(NSString *)devicePassword
                                completionBlock:(CompletionBlock)completionBlock;
 
@@ -293,4 +310,34 @@ typedef enum GWP2PRecordDefinition {
                          WithDeviceID:(NSString *)deviceID
                        devicePassword:(NSString *)devicePassword
                       completionBlock:(CompletionBlock)completionBlock;
+
+
+#pragma mark -  设置设备卡回放录像的质量
+/**
+ 设置设备卡回放录像的质量
+
+ @param recordType 设置类型。高清与标清
+ @param deviceID        设备ID
+ @param devicePassword  设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+ - (void)setDeviceCardPlayBackQuality:(GWP2PCardRecordType)recordType
+                                 WithDeviceID:(NSString *)deviceID
+                                 devicePassword:(NSString *)devicePassword
+                      completionBlock:(CompletionBlock)completionBlock;
+
+/**
+ 设置录像声音开关
+
+ @param switchStatus 开关类型 0 不支持  1 开 2 关
+ @param deviceID        设备ID
+ @param devicePassword  设备密码
+ @param completionBlock 与设备交互完成后的回调Block
+ */
+- (void)setDeviceRecordVolumeSwitchStatus:(GWP2PRecordVolumeSwitchStatus)status
+                                WithDeviceID:(NSString *)deviceID
+                                devicePassword:(NSString *)devicePassword
+                                completionBlock:(CompletionBlock)completionBlock;
 @end
+
+

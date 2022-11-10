@@ -314,7 +314,7 @@
  获取设备NVR信息
  */
 - (void)getDeviceNVRInifomationExample {
-    [[GWP2PClient sharedClient] getDeviceNVRInfomationWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+    [[GWP2PClient sharedClient] getDeviceNVRInformationWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
         [self outputLog:dataDictionary success:success];
     }];
 }
@@ -583,7 +583,7 @@
  获取SD卡信息
  */
 - (void)getDeviceStorageInfomationExample {
-    [[GWP2PClient sharedClient] getDeviceStorageInfomationWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+    [[GWP2PClient sharedClient] getDeviceStorageInformationWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
         NSNumber *sdCardID = dataDictionary[@"SD card ID"];
         self.sdCardID = sdCardID.integerValue;
         [self outputLog:dataDictionary success:success];
@@ -862,7 +862,7 @@ typedef struct AA {
  情景模式设备获取传感器
  */
 - (void)sceneModeDeviceGetSensorsInfomationExample {
-    [[GWP2PClient sharedClient] sceneModeDeviceGetSensorsInfomationWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+    [[GWP2PClient sharedClient] sceneModeDeviceGetSensorsInformationWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
         [self outputLog:dataDictionary success:success];
     }];
 }
@@ -971,7 +971,7 @@ typedef struct AA {
  获取设备定时布撤防数据,普通布防只是布防与不布防的操作,定时布防有很多数据,参见 GWSheduleDefencesModel
  */
 - (void)getDeviceSheduleDefenceDataExample {
-    [[GWP2PClient sharedClient] getDeviceSheduleDefenceDataWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+    [[GWP2PClient sharedClient] getDeviceScheduleDefenceDataWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
         [self outputLog:dataDictionary success:success];
     }];
 }
@@ -1024,7 +1024,7 @@ typedef struct AA {
 - (void)getDeviceVersionExample {
     NSLog(@"getDeviceVersionExample");
     
-    [[GWP2PClient sharedClient] getDeviceInfomationWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
+    [[GWP2PClient sharedClient] getDeviceInformationWithDeviceID:self.deviceModel.deviceID devicePassword:self.deviceModel.devicePassword completionBlock:^(GWP2PClient *client, BOOL success, NSDictionary<NSString *,id> *dataDictionary) {
         [self outputLog:dataDictionary success:success];
     }];
 

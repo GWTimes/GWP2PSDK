@@ -6,19 +6,19 @@
 	<dict>
 		<key>Headers/GWNet.h</key>
 		<data>
-		dhs+IYEdsw5nIsqgpGTIOplq5uk=
+		/cD/KSjMJ6W4bkSWu1GkZYFXhSo=
 		</data>
 		<key>Headers/GWNetError.h</key>
 		<data>
-		HGmBuYHfnqUsebGOeOjOf3tMtEo=
+		6Waoxt/GbirZ7HJ0KtJWHmhLG6Y=
 		</data>
 		<key>Headers/GWP2P.h</key>
 		<data>
-		Lvl087WeoZiXNaV0JM6vqH6IXX4=
+		Yl3tYGcGBJt6JN8jyqRhhZ4UCV4=
 		</data>
 		<key>Headers/GWP2PClient+APMode.h</key>
 		<data>
-		L+FJBOsZAOhGFyiyDpbP6nqjH7Q=
+		b4qRS6t2TuCVAO+z3hFxc8hqZrg=
 		</data>
 		<key>Headers/GWP2PClient+Alarm.h</key>
 		<data>
@@ -26,11 +26,11 @@
 		</data>
 		<key>Headers/GWP2PClient+Defense.h</key>
 		<data>
-		HhFH/Elk0p/sJS/5gnzdLWwYlIc=
+		zLLrt1UFIYZnBG2BUhZ83+NzbwA=
 		</data>
-		<key>Headers/GWP2PClient+DeviceInfomation.h</key>
+		<key>Headers/GWP2PClient+DeviceInformation.h</key>
 		<data>
-		Xqc0WU4IDOtqJ71aSiR7da9Dpws=
+		TaUN18wEc7gPASAafiFDGgwu9pE=
 		</data>
 		<key>Headers/GWP2PClient+GarageLight.h</key>
 		<data>
@@ -38,7 +38,11 @@
 		</data>
 		<key>Headers/GWP2PClient+HXVision.h</key>
 		<data>
-		JLBp2YsiRqsqX/qpFlXohUdI8js=
+		JOiy575jEeAKMv1GGKk8YrOdORg=
+		</data>
+		<key>Headers/GWP2PClient+Message.h</key>
+		<data>
+		46YtkV/n39rrL+pnXSIfxfUh4Sc=
 		</data>
 		<key>Headers/GWP2PClient+P2PInfo.h</key>
 		<data>
@@ -50,7 +54,7 @@
 		</data>
 		<key>Headers/GWP2PClient+Record.h</key>
 		<data>
-		WCRGDWjO7HcImf6nFjIDZOfY9es=
+		xOsPqMRH/scKO9X9ImxDxmXeedI=
 		</data>
 		<key>Headers/GWP2PClient+RemoteControl.h</key>
 		<data>
@@ -62,7 +66,7 @@
 		</data>
 		<key>Headers/GWP2PClient+Sensor.h</key>
 		<data>
-		RqSbrK4aKGQI1YWKjt3a0UmuTKI=
+		L4NrRYR50Z9De9N49pRljsN4kwY=
 		</data>
 		<key>Headers/GWP2PClient+WhiteLight.h</key>
 		<data>
@@ -70,11 +74,11 @@
 		</data>
 		<key>Headers/GWP2PClient.h</key>
 		<data>
-		yn+fatqNW5H0AX+gtJrM3PzAl74=
+		mRpKYVz8wZcmdyDzIPKohadg0Xo=
 		</data>
 		<key>Headers/GWP2PDefine.h</key>
 		<data>
-		U+vYEqKmaPmkCQJ/QdtxYD9jC3U=
+		BIyj9BE10aj40LVb/AhLIyzYEwg=
 		</data>
 		<key>Headers/GWP2PDevice.h</key>
 		<data>
@@ -82,43 +86,55 @@
 		</data>
 		<key>Headers/GWP2PDeviceLinker.h</key>
 		<data>
-		2kOK9VgrD23sx4uXkJ/oh30Pli8=
+		+oO2PfvgOs38hJPDp9RtezPLYWE=
 		</data>
 		<key>Headers/GWP2PLanDevice.h</key>
 		<data>
 		xfFmDLeUBqnv1XhpJ3GuDJegx7o=
 		</data>
+		<key>Headers/GWP2PLogger.h</key>
+		<data>
+		Gpj6nlSD2UTGcLr026FxZzyXaVc=
+		</data>
 		<key>Headers/GWP2PPlaybackPlayer.h</key>
 		<data>
-		A9vFPZlggZCfl2/yOxDoeTN59Xg=
+		8I2A5rdtDvLxIoFBaTlVO88bc2U=
 		</data>
 		<key>Headers/GWP2PPlayer.h</key>
 		<data>
-		ja/2nAKOY7RQ+DBLsBO4fAJN2ZQ=
+		3CS61g9BVj3Kloenii67NyKKO44=
 		</data>
 		<key>Headers/GWP2PPlayerDefine.h</key>
 		<data>
-		XMOCTCVXmSvZDrzTkzhEDahlVZs=
+		S3ZzuFC6Esiq/mddeW+TLztvarU=
 		</data>
 		<key>Headers/GWP2PUtils.h</key>
 		<data>
-		5ZrxRLhFqCad4QKlTM9E3x4C09U=
+		b/kwW4MtI8CxLn0w3jjPTepTOdQ=
 		</data>
 		<key>Headers/GWP2PVideoPlayer.h</key>
 		<data>
-		psVUMYL9HHTeAqGY4JPlh3B+j7g=
+		gty1x18qAkYL0oktTUsieSjZcwk=
 		</data>
 		<key>Headers/GWQRCodeManager.h</key>
 		<data>
-		l6cVxXbrly26sJc+AmHB3lAETxQ=
+		eNHrWEWUzm7qQbU77QPvxD4jlYA=
 		</data>
 		<key>Headers/MD5Manager.h</key>
 		<data>
 		1x73OWCxBWJmbHFlzeUlAiEp4d4=
 		</data>
+		<key>Headers/NSString+P2PClient.h</key>
+		<data>
+		7qVjEQKsNZBK22RvabDXoVcvUJY=
+		</data>
+		<key>Headers/gwGCDAsyncUdpSocket.h</key>
+		<data>
+		bDTc23kv3h1QVoFlrNsIy8r/ZsA=
+		</data>
 		<key>Info.plist</key>
 		<data>
-		X7M6ToH4EJbMgAMn0AqmCvvlc+A=
+		6uOro1oqoCRFoBV+15jo7qdv7OM=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -131,44 +147,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dhs+IYEdsw5nIsqgpGTIOplq5uk=
+			/cD/KSjMJ6W4bkSWu1GkZYFXhSo=
 			</data>
 			<key>hash2</key>
 			<data>
-			Vqlhy26xtn/IVv5FdYBWQD65dOyFN4fahuHNLr8s9TE=
+			aXt2+3ba06JE7wUBN2OPE7cIPCdse3dldXZwuydeAmQ=
 			</data>
 		</dict>
 		<key>Headers/GWNetError.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			HGmBuYHfnqUsebGOeOjOf3tMtEo=
+			6Waoxt/GbirZ7HJ0KtJWHmhLG6Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			FTzOF8jUfxmBfxwXA0jKoPOqVDaD0z/GmxjdbepypGw=
+			ndBpPOnP+q2+HGVhcRAP5t0bI7lhnj9tsj2fRNKvAnw=
 			</data>
 		</dict>
 		<key>Headers/GWP2P.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Lvl087WeoZiXNaV0JM6vqH6IXX4=
+			Yl3tYGcGBJt6JN8jyqRhhZ4UCV4=
 			</data>
 			<key>hash2</key>
 			<data>
-			1iTKJ74Uty4Rn6/LY3o9yTp/FEs3tjgDOPermgOoEGw=
+			55Lm20/k6XND6AbX9MTvTf95Rotfbvao9K/MnRTYjCQ=
 			</data>
 		</dict>
 		<key>Headers/GWP2PClient+APMode.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			L+FJBOsZAOhGFyiyDpbP6nqjH7Q=
+			b4qRS6t2TuCVAO+z3hFxc8hqZrg=
 			</data>
 			<key>hash2</key>
 			<data>
-			+iND/emDcfEJwPpVbM4LP4ZBQNchZPw/xFh0eI1k99U=
+			iBdv9/fiBY60HfezXluRUlKW6f3BsjVpIq4oKNF205s=
 			</data>
 		</dict>
 		<key>Headers/GWP2PClient+Alarm.h</key>
@@ -186,22 +202,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			HhFH/Elk0p/sJS/5gnzdLWwYlIc=
+			zLLrt1UFIYZnBG2BUhZ83+NzbwA=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ahl6r9/JlcF8j4Oaf3H8qU/Gg+Vz+6iBwzc+7anliBM=
+			ALnPsqYouHJ/I2krOvt8cKWq0cGeYYtwMdzPF5TTaYE=
 			</data>
 		</dict>
-		<key>Headers/GWP2PClient+DeviceInfomation.h</key>
+		<key>Headers/GWP2PClient+DeviceInformation.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Xqc0WU4IDOtqJ71aSiR7da9Dpws=
+			TaUN18wEc7gPASAafiFDGgwu9pE=
 			</data>
 			<key>hash2</key>
 			<data>
-			v5lDOxlj3fzTEoeeuZUWdNkyL6lG14FPBZ0kokEulYs=
+			VGJ83WsGDiFoQld+SeL4m12V2fkp8Yu1jCIi+S42zBw=
 			</data>
 		</dict>
 		<key>Headers/GWP2PClient+GarageLight.h</key>
@@ -219,11 +235,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			JLBp2YsiRqsqX/qpFlXohUdI8js=
+			JOiy575jEeAKMv1GGKk8YrOdORg=
 			</data>
 			<key>hash2</key>
 			<data>
-			kmgJBu6InQmjXiBgLn4V6mH5ayapVusF7IvsdJT1SYM=
+			Sgyw+05JEgL7ec5TA222XJfT1N5oJB4b/t30uly6e8M=
+			</data>
+		</dict>
+		<key>Headers/GWP2PClient+Message.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			46YtkV/n39rrL+pnXSIfxfUh4Sc=
+			</data>
+			<key>hash2</key>
+			<data>
+			KnsqHp7A+qIaKn99Ue7fW8Qz+rGnWloshSICw4sraM0=
 			</data>
 		</dict>
 		<key>Headers/GWP2PClient+P2PInfo.h</key>
@@ -252,11 +279,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WCRGDWjO7HcImf6nFjIDZOfY9es=
+			xOsPqMRH/scKO9X9ImxDxmXeedI=
 			</data>
 			<key>hash2</key>
 			<data>
-			7CApwZSAspHgIFf352fxV1Gzma+Q+hsIkB1QwG5KjqQ=
+			wW7xC9DrQ9/OijN4Am8AK1aFvZDWEixl9HyP+2EoOcM=
 			</data>
 		</dict>
 		<key>Headers/GWP2PClient+RemoteControl.h</key>
@@ -285,11 +312,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RqSbrK4aKGQI1YWKjt3a0UmuTKI=
+			L4NrRYR50Z9De9N49pRljsN4kwY=
 			</data>
 			<key>hash2</key>
 			<data>
-			7Mi6k1ye8HIp1lquPjGw1YZLtlv5nYZbBPfxZisDPT4=
+			hXZA1DkjvG6zzCM8X6Iqiir8Sr810PREJPf182IyB/o=
 			</data>
 		</dict>
 		<key>Headers/GWP2PClient+WhiteLight.h</key>
@@ -307,22 +334,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			yn+fatqNW5H0AX+gtJrM3PzAl74=
+			mRpKYVz8wZcmdyDzIPKohadg0Xo=
 			</data>
 			<key>hash2</key>
 			<data>
-			UDxb6290TybBjyTBEEIFx18UQqeCuNW+v8rt96Kesf0=
+			nxkUmYELbBbCqL1lAsCOedhrYCDgGNppnaQyD83kyak=
 			</data>
 		</dict>
 		<key>Headers/GWP2PDefine.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			U+vYEqKmaPmkCQJ/QdtxYD9jC3U=
+			BIyj9BE10aj40LVb/AhLIyzYEwg=
 			</data>
 			<key>hash2</key>
 			<data>
-			dfUydVb6NAkLCOHAF3Vi015THZQ3Mc+PM0+tPIZ5bcA=
+			KP8ymfYfLJVEi3EkjXCyu9+Kh3uJXAJtHmzXVfHNMhs=
 			</data>
 		</dict>
 		<key>Headers/GWP2PDevice.h</key>
@@ -340,11 +367,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			2kOK9VgrD23sx4uXkJ/oh30Pli8=
+			+oO2PfvgOs38hJPDp9RtezPLYWE=
 			</data>
 			<key>hash2</key>
 			<data>
-			BPIRjxtRxhArOovaiIQMAPcMjbnB4c69cVxby73lWz0=
+			FPuDjgSLEDV27EMrQhH8RU8ikM4x182CXBPi5KPfnPE=
 			</data>
 		</dict>
 		<key>Headers/GWP2PLanDevice.h</key>
@@ -358,70 +385,81 @@
 			LEAOakV+bgWiyUmlUKJMWu2QnCZI5+1npanigb0G4RE=
 			</data>
 		</dict>
+		<key>Headers/GWP2PLogger.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Gpj6nlSD2UTGcLr026FxZzyXaVc=
+			</data>
+			<key>hash2</key>
+			<data>
+			9OqmdzPmT+PBeqF3LhN8iBvlM46q0hU3z6R1pcoxpcs=
+			</data>
+		</dict>
 		<key>Headers/GWP2PPlaybackPlayer.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			A9vFPZlggZCfl2/yOxDoeTN59Xg=
+			8I2A5rdtDvLxIoFBaTlVO88bc2U=
 			</data>
 			<key>hash2</key>
 			<data>
-			ds7+FxuUguCSh11xYIzLv7aPM4MgLc+CWxKEeAYzTk8=
+			bhAHcaOyueyxcId9Vp1/vrUvZ7uKD9fOvfNwrQ/fSnw=
 			</data>
 		</dict>
 		<key>Headers/GWP2PPlayer.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			ja/2nAKOY7RQ+DBLsBO4fAJN2ZQ=
+			3CS61g9BVj3Kloenii67NyKKO44=
 			</data>
 			<key>hash2</key>
 			<data>
-			tqiy2NJegX2r4+HAnywL+YocMzscu0xa03vGgfIXm00=
+			JYAzpjiXDNlos57akWgKtjFpc48j9tTISeoQBWylwSM=
 			</data>
 		</dict>
 		<key>Headers/GWP2PPlayerDefine.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XMOCTCVXmSvZDrzTkzhEDahlVZs=
+			S3ZzuFC6Esiq/mddeW+TLztvarU=
 			</data>
 			<key>hash2</key>
 			<data>
-			9lynIfOppMIJuHLUu1p7P5kurHw8h/TVj2EztINEk1A=
+			N7y7iQBOcQsgp6cnW42XI2D+Vq8FU/8FGfxDrVhzAhQ=
 			</data>
 		</dict>
 		<key>Headers/GWP2PUtils.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			5ZrxRLhFqCad4QKlTM9E3x4C09U=
+			b/kwW4MtI8CxLn0w3jjPTepTOdQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			j+ZxNjGLCDd440r9kmcwDMgV0Ge3PRRT867/u5OFFU4=
+			yFrzDUVKpwo6pwnKrRsJRvJ8H6zP0om/cIW7ClFG+1g=
 			</data>
 		</dict>
 		<key>Headers/GWP2PVideoPlayer.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			psVUMYL9HHTeAqGY4JPlh3B+j7g=
+			gty1x18qAkYL0oktTUsieSjZcwk=
 			</data>
 			<key>hash2</key>
 			<data>
-			UeJhShMl2iKMBsgnjz20sAQNbf74DK+rOkNh+p1/FQE=
+			JXj5UDerR5D4lsWIo1CHSQm91wORrZLMOhI52DSVCSc=
 			</data>
 		</dict>
 		<key>Headers/GWQRCodeManager.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			l6cVxXbrly26sJc+AmHB3lAETxQ=
+			eNHrWEWUzm7qQbU77QPvxD4jlYA=
 			</data>
 			<key>hash2</key>
 			<data>
-			DzxdTEm51eWpBuUQrGiVqnTSpt2cyuYXkEm2I1oAfnQ=
+			9kgnK4KqGm5bw/SujPmwjhBhPEPAtztUi2FgizPDOKg=
 			</data>
 		</dict>
 		<key>Headers/MD5Manager.h</key>
@@ -433,6 +471,28 @@
 			<key>hash2</key>
 			<data>
 			G7OTTqV3GRSEmInHIrmrh/bFq41Ht6Qu4t2uNyqI5so=
+			</data>
+		</dict>
+		<key>Headers/NSString+P2PClient.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			7qVjEQKsNZBK22RvabDXoVcvUJY=
+			</data>
+			<key>hash2</key>
+			<data>
+			QhVzBVWDxyFDwwVAJjQgu+ucsjXXk/N0+1UPAIKg3NY=
+			</data>
+		</dict>
+		<key>Headers/gwGCDAsyncUdpSocket.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			bDTc23kv3h1QVoFlrNsIy8r/ZsA=
+			</data>
+			<key>hash2</key>
+			<data>
+			8YbdEx2CAN7mXXjxvXvFt2A0gd8DvjJ+ZYdT+B5Qlu4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

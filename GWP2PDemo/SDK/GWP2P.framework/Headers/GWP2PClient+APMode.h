@@ -63,5 +63,5 @@
  
  @param deviceAry 设备数组[@{@"deviceID":.@"p2p version of device",}]
  */
--(void)p2pSetDevieAry:(NSArray *)deviceAry;
+-(void)p2pSetDeviceAry:(NSArray *)deviceAry;
 @end

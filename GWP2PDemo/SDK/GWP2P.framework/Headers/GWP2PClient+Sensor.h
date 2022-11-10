@@ -364,9 +364,9 @@ typedef enum GWSensorLikeSocketOperationType {
  @param devicePassword          设备密码
  @param completionBlock         与设备交互完成后的回调Block
  */
-- (void)sceneModeDeviceGetSensorsInfomationWithDeviceID:(NSString *)deviceID
-                                         devicePassword:(NSString *)devicePassword
-                                        completionBlock:(CompletionBlock)completionBlock;
+- (void)sceneModeDeviceGetSensorsInformationWithDeviceID:(NSString *)deviceID
+                                          devicePassword:(NSString *)devicePassword
+                                         completionBlock:(CompletionBlock)completionBlock;
 
 /**
  情景模式设备 操作一个插座类型的传感器的开关状态

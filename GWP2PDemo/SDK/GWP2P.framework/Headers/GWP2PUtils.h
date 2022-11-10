@@ -67,3 +67,46 @@
 + (unsigned int)getDeviceIDInAPMode;
 
 @end
+
+
+
+#ifdef __cplusplus
+extern "C"{
+#endif
+
+/// uint8_t *转十六进制NSString
+///
+/// 仅转换前100个字节，超过部分省略，形如 {length=195, bytes=0x00000000 00000000 00000000...}
+/// @param bytes 要转换的bytes
+/// @param len bytes长度
+/// @return bytes的十六进制字符串
+extern NSString *convertBytesToHexStr(const uint8_t *bytes, uint32_t len);
+
+/// uint8_t *转十六进制NSString
+///
+/// 仅转换前maxLen个字节，超过部分省略，形如 {length=195, bytes=0x00000000 00000000 00000000...}
+/// @param bytes 要转换的bytes
+/// @param len bytes长度
+/// @return bytes的十六进制字符串
+extern NSString *convertBytesToHexStr2(const uint8_t *bytes, uint32_t len, uint32_t maxLen);
+
+/// NSData转十六进制NSString
+///
+/// 仅转换前100个字节，超过部分省略，形如 {length=195, bytes=0x00000000 00000000 00000000...}
+/// @param data 要转换的data
+/// @return data的十六进制字符串
+extern NSString *convertDataToHexStr(NSData *data);
+
+/// NSData转十六进制NSString
+///
+/// 仅转换前maxLen个字节，超过部分省略，形如 {length=195, bytes=0x00000000 00000000 00000000...}
+/// @param data 要转换的data
+/// @return data的十六进制字符串
+extern NSString *convertDataToHexStr2(NSData *data, uint32_t maxLen);
+
+/// 十六进制NSString转NSData
+extern NSData *convertHexStrToData(NSString *hexStr);
+
+#ifdef __cplusplus
+}
+#endif

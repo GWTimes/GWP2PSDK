@@ -12,7 +12,7 @@
 
 //设置
 #import "GWP2PClient.h"                     //初始化连接
-#import "GWP2PClient+DeviceInfomation.h"
+#import "GWP2PClient+DeviceInformation.h"
 #import "GWP2PClient+PictureAndSound.h"
 #import "GWP2PClient+Defense.h"
 #import "GWP2PClient+Alarm.h"
@@ -26,7 +26,9 @@
 #import "GWP2PDefine.h"
 #import "GWP2PClient+P2PInfo.h"
 #import "GWP2PClient+RemoteControl.h"
+#import "GWP2PClient+Message.h"
 #import "GWP2PUtils.h"
+#import "NSString+P2PClient.h"
 
 //监控、视频通话、回放
 #import "GWP2PPlayer.h"                 //播放器基类
@@ -48,4 +50,4 @@
 //二维码
 #import "GWQRCodeManager.h"
 
-
+#import "GWP2PLogger.h"
